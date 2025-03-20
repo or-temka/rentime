@@ -1,5 +1,7 @@
 import styles from './page.module.scss'
 
-export default function Home() {
+function Home() {
   return <div className={styles.page}>Главная</div>
 }
+
+export default Home
