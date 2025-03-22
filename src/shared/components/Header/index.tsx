@@ -4,7 +4,7 @@ import { navigationElements } from './constants'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className={styles.header}>
       <Link href={ROUTES.HOME}>
@@ -28,5 +28,3 @@ const Header = () => {
     </header>
   )
 }
-
-export { Header }
