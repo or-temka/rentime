@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.scss'
-import { Header } from '@/shared/components'
+import { Footer, Header } from '@/shared/components'
+import styles from './layout.module.scss'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -53,7 +54,8 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${montserrat.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main className={styles.main}>{children}</main>
+        <Footer />
       </body>
     </html>
   )
