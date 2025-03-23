@@ -1,0 +1,29 @@
+.pageHeader {
+  background-image: url('/main-page-background-image.jpg');
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 614px;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.paragraph {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.comments {
+  max-width: 587px;
+}

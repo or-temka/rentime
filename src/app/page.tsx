@@ -1,7 +1,11 @@
-import styles from './page.module.scss'
+import { PageHeader } from './_components/PageHeader'
 
 function Home() {
-  return <div className={styles.page}>Главная</div>
+  return (
+    <>
+      <PageHeader />
+    </>
+  )
 }
 
 export default Home
