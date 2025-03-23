@@ -34,3 +34,33 @@ a {
     color-scheme: dark;
   }
 }
+
+@media (max-width: 1200px) {
+  :root {
+    --side-content-margin: 90px;
+  }
+}
+
+@media (max-width: 834px) {
+  :root {
+    --side-content-margin: 58px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --side-content-margin: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --side-content-margin: 25px;
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    --side-content-margin: 20px;
+  }
+}
