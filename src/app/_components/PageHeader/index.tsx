@@ -1,5 +1,5 @@
-import { ContentHeader } from '@/shared/components/ContentHeader'
 import styles from './index.module.scss'
+import { Button, ContentHeader } from '@/shared/components'
 
 export const PageHeader = () => {
   return (
@@ -10,7 +10,9 @@ export const PageHeader = () => {
           <p className={styles.paragraph}>
             Зачем покупать, если можно взять напрокат?
           </p>
-          <button>Арендовать</button>
+          <Button theme="light">
+            Арендовать
+          </Button>
         </div>
 
         <div className={styles.comments}>
