@@ -1,0 +1,38 @@
+.button {
+  padding: 12px 30px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 100ms;
+
+  &__light {
+    background-color: var(--light);
+    color: var(--dark);
+    &:hover {
+      opacity: 0.97;
+    }
+  }
+
+  &__dark {
+    background-color: var(--dark);
+    color: var(--light);
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__not-active {
+    background-color: var(--light);
+    color: var(--light-grey);
+    border: 1px solid var(--light-grey);
+    transition: 200ms;
+    &:hover {
+      color: var(--grey);
+      border: 1px solid var(--grey);
+    }
+  }
+}
