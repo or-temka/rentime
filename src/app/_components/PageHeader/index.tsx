@@ -14,10 +14,6 @@ export const PageHeader = () => {
             Арендовать
           </Button>
         </div>
-
-        <div className={styles.comments}>
-          <span>Комментарии</span>
-        </div>
       </div>
     </ContentHeader>
   )
