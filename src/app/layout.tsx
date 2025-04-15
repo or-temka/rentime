@@ -52,6 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Rentime" />
+      </head>
       <body className={`${montserrat.variable}`}>
         <Header />
         <main className={styles.main}>{children}</main>
