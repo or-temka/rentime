@@ -5,6 +5,7 @@ export const Button = ({
   children,
   theme = 'light',
   variant = 'filled',
+  hoverAnimation = false,
   className,
   ...rest
 }: ButtonProps) => {
@@ -15,6 +16,7 @@ export const Button = ({
         styles[`button_${variant}`],
         styles[`button__${theme}`],
         styles[`button__${theme}_${variant}`],
+        hoverAnimation ? styles.button__hoverAnimation : '',
         className,
       ].join(' ')}
       {...rest}

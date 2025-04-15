@@ -21,7 +21,12 @@ export const Header = () => {
             </Link>
           ))}
         </ul>
-        <Button theme="light" variant="outlined" className={styles.writeButton}>
+        <Button
+          theme="light"
+          variant="outlined"
+          hoverAnimation
+          className={styles.writeButton}
+        >
           Написать
         </Button>
       </nav>

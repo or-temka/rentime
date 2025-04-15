@@ -6,6 +6,7 @@ export type ButtonVariant = 'filled' | 'outlined'
 export type ButtonProps = {
   theme?: ButtonTheme
   variant?: ButtonVariant
+  hoverAnimation?: boolean
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
