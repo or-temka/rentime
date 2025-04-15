@@ -1,19 +1,16 @@
-import Image from 'next/image'
 import styles from './index.module.scss'
 import { navigationElements } from './constants'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
+import { Button } from '../Button'
+import { Logo } from '../Logo'
 
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <Link href={ROUTES.HOME}>
-        <Image
-          alt="Логотип компании rentime"
-          src="/next.svg"
-          width={70}
-          height={20}
-        />
+      <Link href={ROUTES.HOME} className={styles.logoContainer}>
+        <Logo width={43} />
+        <span className={styles.siteName}>rentime</span>
       </Link>
 
       <nav className={styles.navigation}>
@@ -24,6 +21,9 @@ export const Header = () => {
             </Link>
           ))}
         </ul>
+        <Button theme="light" variant="outlined" className={styles.writeButton}>
+          Написать
+        </Button>
       </nav>
     </header>
   )

@@ -7,7 +7,22 @@
   width: 100%;
 }
 
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.siteName {
+  color: var(--background);
+  font-family: var(--font-bounded);
+  font-size: 24px;
+}
+
 .navigation {
+  display: flex;
+  gap: 30px;
+
   &_ul {
     display: flex;
     list-style: none;
@@ -18,10 +33,17 @@
     padding: 10px 30px;
     color: var(--background);
     font-weight: 400;
+    font-family: var(--font-bounded);
+    font-size: 14px;
 
     &:hover {
       text-decoration: underline;
       cursor: pointer;
     }
   }
+}
+
+.writeButton {
+  font-family: var(--font-bounded);
+  font-size: 14px;
 }

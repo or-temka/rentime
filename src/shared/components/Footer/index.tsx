@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import styles from './index.module.scss'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { menuSections } from './constants'
+import { Logo } from '../Logo'
 
 export const Footer = () => {
   return (
@@ -10,12 +10,7 @@ export const Footer = () => {
       <div className={styles.main}>
         <div className={styles.aside}>
           <Link href={ROUTES.HOME}>
-            <Image
-              alt="Логотип компании rentime"
-              src="/next.svg"
-              width={300}
-              height={63}
-            />
+            <Logo width={142} />
           </Link>
         </div>
         <nav className={styles.navigation}>

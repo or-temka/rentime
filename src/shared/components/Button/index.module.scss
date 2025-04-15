@@ -15,6 +15,11 @@
     &:hover {
       opacity: 0.97;
     }
+
+    &_outlined {
+      border: 1px solid var(--light);
+      color: var(--light);
+    }
   }
 
   &__dark {
@@ -23,6 +28,15 @@
     &:hover {
       opacity: 0.9;
     }
+
+    &_outlined {
+      border: 1px solid var(--dark);
+      color: var(--dark);
+    }
+  }
+
+  &_outlined {
+    background-color: transparent;
   }
 
   &__not-active {
