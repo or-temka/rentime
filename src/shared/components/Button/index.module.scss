@@ -88,6 +88,14 @@
       border: 1px solid var(--grey);
     }
   }
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 }
 
 @keyframes bubbleButton {
