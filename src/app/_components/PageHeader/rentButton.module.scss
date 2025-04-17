@@ -1,0 +1,62 @@
+.rentButton {
+  align-items: center;
+  overflow: hidden;
+
+  &__text {
+    margin-right: 30px;
+    opacity: 1;
+    transition: opacity 0.25s;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 15px;
+    animation: rentButtonArrowIn 0.25s ease-in-out forwards;
+  }
+
+  &:hover {
+    & .rentButton__text {
+      opacity: 0;
+    }
+
+    & .rentButton__arrow {
+      animation: rentButtonArrowOut 0.35s ease-out forwards;
+    }
+  }
+}
+
+@keyframes rentButtonArrowOut {
+  0% {
+    right: 30px;
+  }
+
+  40% {
+    right: -20px;
+  }
+
+  41% {
+    display: none;
+  }
+
+  42% {
+    right: 200px;
+  }
+
+  43% {
+    display: block;
+  }
+
+  100% {
+    right: 80px;
+  }
+}
+
+@keyframes rentButtonArrowIn {
+  0% {
+    right: 80px;
+  }
+
+  100% {
+    right: 30px;
+  }
+}
