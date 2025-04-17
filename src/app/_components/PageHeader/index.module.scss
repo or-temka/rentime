@@ -4,20 +4,25 @@
 
 .content {
   display: flex;
-  justify-content: space-between;
-}
-
-.mainInfo {
-  display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 614px;
+  gap: 40px;
 }
 
 .title {
   font-family: var(--font-bounded);
   font-size: 70px;
   font-weight: 500;
+}
+
+.splitLine {
+  width: 100%;
+  height: 1px;
+  background-color: #cdcdcd;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
 }
 
 .paragraph {
