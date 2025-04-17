@@ -7,19 +7,30 @@ import { Logo } from '../Logo'
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <Link href={ROUTES.HOME} className={styles.mobileLogo}>
+        <Logo width={43} />
+        <span className={styles.siteName}>rentime</span>
+      </Link>
+
       <div className={styles.main}>
         <div className={styles.aside}>
-          <Link href={ROUTES.HOME}>
+          <Link href={ROUTES.HOME} className={styles.logo}>
             <Logo width={142} />
           </Link>
+          <div className={[styles.logos, styles.logos_mobile].join(' ')}>
+            logos
+          </div>
         </div>
         <nav className={styles.navigation}>
           {menuSections.map((section, index) => {
             return (
               <section key={index} className={styles.navigationSection}>
-                <h3 className={styles.navigationSection_title}>
+                <Link
+                  href={section.link}
+                  className={styles.navigationSection_title}
+                >
                   {section.name}
-                </h3>
+                </Link>
                 <ul className={styles.navigationSection_ul}>
                   {section.items.map((item, index) => (
                     <Link href={item.link} key={index}>
@@ -36,9 +47,16 @@ export const Footer = () => {
       </div>
 
       <div className={styles.additional}>
-        <div>logos</div>
-        <p>© 2025 Rentime. Все права защищены.</p>
-        <Link href={ROUTES.HOME}>Лицензионное соглашение</Link>
+        <div className={[styles.logos, styles.logos_desktop].join(' ')}>
+          logos
+        </div>
+        <div className={styles.additionalRight}>
+          <Link href={ROUTES.HOME} className={styles.licenseLink}>
+            Лицензионное соглашение
+          </Link>
+          <div className={styles.splitTextCircle} />
+          <p>© 2025 Rentime. Все права защищены.</p>
+        </div>
       </div>
     </footer>
   )
