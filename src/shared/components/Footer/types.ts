@@ -5,5 +5,6 @@ export type MenuSectionItem = {
 
 export type MenuSection = {
   name: string
+  link: string
   items: MenuSectionItem[]
 }

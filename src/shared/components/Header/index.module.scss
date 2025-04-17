@@ -27,6 +27,10 @@
     display: flex;
     list-style: none;
     gap: 4px;
+
+    @media (max-width: 1230px) {
+      display: none;
+    }
   }
 
   &_li {
@@ -35,6 +39,14 @@
     font-weight: 400;
     font-family: var(--font-bounded);
     font-size: 14px;
+
+    @media (max-width: 1400px) {
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 1300px) {
+      padding: 10px 15px;
+    }
 
     &:hover {
       text-decoration: underline;
@@ -46,4 +58,8 @@
 .writeButton {
   font-family: var(--font-bounded);
   font-size: 14px;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 }

@@ -4,6 +4,7 @@ import { MenuSection } from './types'
 export const menuSections: MenuSection[] = [
   {
     name: 'Каталог товаров',
+    link: ROUTES.HOME,
     items: [
       { label: 'Отдых и досуг', link: ROUTES.HOME },
       { label: 'Для дома', link: ROUTES.HOME },
@@ -12,6 +13,7 @@ export const menuSections: MenuSection[] = [
   },
   {
     name: 'Условия аренды',
+    link: ROUTES.LEASE_TERMS,
     items: [
       {
         label: 'Кому доступна аренда',
@@ -33,6 +35,7 @@ export const menuSections: MenuSection[] = [
   },
   {
     name: 'Оплата и доставка',
+    link: ROUTES.PAYMENT_AND_DELIVERY,
     items: [
       {
         label: 'Оплата',
@@ -50,6 +53,7 @@ export const menuSections: MenuSection[] = [
   },
   {
     name: 'Контакты',
+    link: ROUTES.CONTACTS,
     items: [
       {
         label: 'Контакты',
