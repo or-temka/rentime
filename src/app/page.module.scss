@@ -1,2 +1,20 @@
-.page {
+.mainContent {
+  margin: 100px var(--side-content-margin);
+
+  @media (max-width: 1400px) {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  @media (max-width: 834px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 400px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 375px) {
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
 }
