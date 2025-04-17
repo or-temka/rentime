@@ -5,14 +5,15 @@ export const PageHeader = () => {
   return (
     <ContentHeader className={styles.pageHeader}>
       <div className={styles.content}>
-        <div className={styles.mainInfo}>
-          <h1 className={styles.title}>Аренда товаров в Ярославле</h1>
+        <h1 className={styles.title}>
+          Аренда товаров <br /> в Ярославле
+        </h1>
+        <div className={styles.splitLine} />
+        <div className={styles.info}>
           <p className={styles.paragraph}>
             Зачем покупать, если можно взять напрокат?
           </p>
-          <Button theme="light">
-            Арендовать
-          </Button>
+          <Button theme="light">Арендовать</Button>
         </div>
       </div>
     </ContentHeader>
