@@ -4,6 +4,6 @@ export * from './Stars'
 
 export * from './Header'
 export * from './Footer'
-export * from './Logo'
+export * from './svgs/Logo'
 
 export * from './ContentHeader'
