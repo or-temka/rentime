@@ -36,7 +36,13 @@ export const ProductCard = ({
             </Link>
           </h4>
           <div className={styles.reviews}>
-            <Stars rating={rating} classNames={{ star: styles.star }} />
+            <Stars
+              rating={rating}
+              classNames={{
+                star: styles.star,
+                container: styles.starContainer,
+              }}
+            />
             <span className={styles.feedbackCount}>
               отзывов: {feedbackCount}
             </span>
