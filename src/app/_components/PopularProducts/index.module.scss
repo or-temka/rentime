@@ -61,11 +61,59 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 }
 
 .categories {
   display: flex;
   gap: 15px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+
+  &__mobile {
+    display: none;
+    position: relative;
+    width: 200px;
+
+    & button {
+      width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      display: block;
+    }
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+  }
+}
+
+.mobileActiveCategory {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &__svg {
+    min-width: 11px;
+  }
+}
+
+.notActiveButtons {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  z-index: 100;
+  width: 100%;
 }
 
 .showAllLink {
@@ -83,6 +131,13 @@
   }
   @media (max-width: 470px) {
     font-size: 14px;
+    padding: 8px 0px;
+    border: none;
+    text-decoration: none;
+    &:hover {
+      border: none;
+      text-decoration: underline;
+    }
   }
   @media (max-width: 400px) {
     font-size: 12px;
@@ -91,12 +146,21 @@
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  grid-template-columns: repeat(3, minmax(325px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  @media (max-width: 1240px) {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
     gap: 15px;
   }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(1, minmax(260px, 1fr));
+  }
+}
+
+.empty {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
 }

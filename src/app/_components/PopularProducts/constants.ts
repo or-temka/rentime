@@ -7,6 +7,7 @@ export const popularProducts: ProductCardProps[] = [
     feedbackCount: 30,
     rating: 4,
     imageURL: 'pico4/pico4screen1.jpg',
+    category: 'rest and leisure',
   },
   {
     id: 'playstation5',
@@ -14,6 +15,7 @@ export const popularProducts: ProductCardProps[] = [
     feedbackCount: 1050,
     rating: 5,
     imageURL: 'playstation5/playstation5screen1.jpg',
+    category: 'rest and leisure',
   },
   {
     id: 'vroculusquest3s',
@@ -21,5 +23,14 @@ export const popularProducts: ProductCardProps[] = [
     feedbackCount: 2,
     rating: 2,
     imageURL: 'pico4/pico4screen1.jpg',
+    category: 'rest and leisure',
+  },
+  {
+    id: 'vroculusquest4s',
+    name: 'VR-очки Oculus Quest 4S',
+    feedbackCount: 2,
+    rating: 2,
+    imageURL: 'pico4/pico4screen1.jpg',
+    category: 'tourism',
   },
 ]

@@ -3,7 +3,7 @@ import { navigationElements } from './constants'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { Button } from '../Button'
-import { Logo } from '../Logo'
+import { Logo } from '../svgs'
 
 export const Header = () => {
   return (

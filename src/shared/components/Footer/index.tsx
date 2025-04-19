@@ -2,7 +2,7 @@ import styles from './index.module.scss'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { menuSections } from './constants'
-import { Logo } from '../Logo'
+import { Logo } from '../svgs'
 
 export const Footer = () => {
   return (
