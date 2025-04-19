@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import { ROUTES } from '@/config/routes'
 import { Button } from '@/shared/components'
 import { ProductCard } from '@/entities/product'
+import { popularProducts } from './constants'
 
 export const PopularProducts = () => {
   return (
@@ -22,9 +23,13 @@ export const PopularProducts = () => {
         </div>
 
         <div className={styles.content}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {popularProducts.map((product) => (
+            <ProductCard
+              {...product}
+              key={product.id}
+              classNames={{ container: styles.product }}
+            />
+          ))}
         </div>
       </div>
     </section>

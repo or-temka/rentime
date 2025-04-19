@@ -1,0 +1,25 @@
+import { ProductCardProps } from '@/entities/product'
+
+export const popularProducts: ProductCardProps[] = [
+  {
+    id: 'vrpico4',
+    name: 'VR очки Pico 4',
+    feedbackCount: 30,
+    rating: 4,
+    imageURL: 'pico4/pico4screen1.jpg',
+  },
+  {
+    id: 'playstation5',
+    name: 'Play station 5',
+    feedbackCount: 1050,
+    rating: 5,
+    imageURL: 'playstation5/playstation5screen1.jpg',
+  },
+  {
+    id: 'vroculusquest3s',
+    name: 'VR-очки Oculus Quest 3S',
+    feedbackCount: 2,
+    rating: 2,
+    imageURL: 'pico4/pico4screen1.jpg',
+  },
+]
