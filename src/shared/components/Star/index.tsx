@@ -1,11 +1,13 @@
 import { useId } from 'react'
 import { StarProps } from './types'
 
-export const Star = ({ fillPercentage }: StarProps) => {
-  const width = 18
-  const height = 16
-  const clipWidth = ((fillPercentage ?? 100) / 100) * width
-
+export const Star = ({
+  fillPercentage = 100,
+  width = 18,
+  height = 16,
+}: StarProps) => {
+  const clipWidth = (fillPercentage / 100) * width
+  
   const starId = useId()
 
   return (
