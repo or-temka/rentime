@@ -1,4 +1,4 @@
-import { PageHeader, PopularProducts } from './_components'
+import { PageHeader, PopularProducts, ProductStand } from './_components'
 import styles from './page.module.scss'
 
 function Home() {
@@ -8,6 +8,7 @@ function Home() {
 
       <div className={styles.mainContent}>
         <PopularProducts />
+        <ProductStand />
       </div>
     </main>
   )

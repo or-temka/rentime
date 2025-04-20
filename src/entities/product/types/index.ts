@@ -1,5 +1,10 @@
+export enum ProductNames {
+  PICO4 = 'pico4',
+  PLAYSTATION5 = 'playstation5',
+}
+
 export type Product = {
-  name: string
+  name: ProductNames
   rating: number
   image: string
   description?: string
