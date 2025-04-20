@@ -1,6 +1,8 @@
 .rentButton {
   align-items: center;
   overflow: hidden;
+  padding: 16px 39px;
+  font-family: var(--font-bounded);
 
   &__text {
     margin-right: 30px;
@@ -10,7 +12,7 @@
 
   &__arrow {
     position: absolute;
-    top: 15px;
+    top: 20px;
     animation: rentButtonArrowIn 0.25s ease-in-out forwards;
   }
 
@@ -21,6 +23,14 @@
 
     & .rentButton__arrow {
       animation: rentButtonArrowOut 0.35s ease-out forwards;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 13px 32px;
+
+    &__arrow {
+      top: 16px;
     }
   }
 }

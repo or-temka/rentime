@@ -1,6 +1,7 @@
+import { Theme } from '@/shared/types'
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 
-export type ButtonTheme = 'light' | 'dark' | 'not-active'
+export type ButtonTheme = Theme | 'not-active'
 export type ButtonVariant = 'filled' | 'outlined'
 
 export type ButtonProps = {
