@@ -3,31 +3,43 @@ import { PRODUCT_IMAGE_ROUTE } from '@/entities/product'
 import { RentButton } from '@/shared/components'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './index.module.scss'
 
 export const ProductStand = () => {
   return (
-    <section>
-      <div>
-        <h2>Playstation 5</h2>
-        <p>
+    <section className={styles.container}>
+      <div className={styles.header}>
+        <h2 className={styles.label}>Playstation 5</h2>
+        <p className={styles.description}>
           Мощная игровая консоль нового поколения с невероятной графикой,
           быстрой загрузкой и полным погружением в игровой процесс
         </p>
-        <Link href={ROUTES.HOME}>Посмотреть детали</Link>
+        <Link
+          href={ROUTES.HOME}
+          className={[styles.link, styles.link__header].join(' ')}
+        >
+          Посмотреть детали
+        </Link>
       </div>
 
-      <div>
+      <div className={styles.imageContainer}>
         <Image
           alt="playstation 5"
           src={`${PRODUCT_IMAGE_ROUTE.playstation5}playstation5_transparent_background.png`}
           width={882}
           height={661}
+          className={styles.image}
         />
       </div>
 
-      <div>
-        <Link href={ROUTES.HOME}>Посмотреть детали</Link>
-        <strong>от 1100 руб</strong>
+      <div className={styles.interaction}>
+        <Link
+          href={ROUTES.HOME}
+          className={[styles.link, styles.link__interaction].join(' ')}
+        >
+          Посмотреть детали
+        </Link>
+        <strong className={styles.price}>от 1100 руб</strong>
         <RentButton theme="dark" />
       </div>
     </section>
