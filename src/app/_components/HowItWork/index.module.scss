@@ -1,25 +1,54 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .title {
+  font-family: var(--font-bounded);
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(325px, 1fr));
+  gap: 20px;
 }
 
 .item {
+  padding: 30px 50px;
+  background-color: var(--lightBackground);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
   &__counter {
+    font-family: var(--font-bounded);
+    font-size: 100px;
+    font-weight: 500;
   }
 
   &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &__title {
+    font-size: 20px;
+    font-weight: 600;
   }
 
   &__paragraph {
+    font-size: 20px;
+    font-weight: 500;
   }
+}
 
-  &__link {
-  }
+.itemLink {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
 }
