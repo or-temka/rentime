@@ -1,0 +1,134 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (max-width: 900px) {
+    gap: 40px;
+  }
+  @media (max-width: 700px) {
+    gap: 35px;
+  }
+  @media (max-width: 600px) {
+    gap: 30px;
+  }
+  @media (max-width: 500px) {
+    gap: 25px;
+  }
+}
+
+.title {
+  font-family: var(--font-bounded);
+  font-size: 25px;
+  font-weight: 500;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 15px;
+  }
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+.item {
+  padding: 30px 50px;
+  background-color: var(--lightBackground);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 1400px) {
+    padding: 27px 43px;
+  }
+  @media (max-width: 1200px) {
+    padding: 23px 35px;
+    gap: 28px;
+  }
+  @media (max-width: 900px) {
+    padding: 20px 30px;
+    gap: 25px;
+  }
+
+  &__counter {
+    font-family: var(--font-bounded);
+    font-size: 100px;
+    font-weight: 500;
+    line-height: 101px;
+
+    @media (max-width: 1400px) {
+      font-size: 85px;
+      line-height: 85px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 75px;
+      line-height: 74px;
+    }
+    @media (max-width: 900px) {
+      font-size: 69px;
+      line-height: 68px;
+    }
+    @media (max-width: 900px) {
+      font-size: 63px;
+      line-height: 55px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 20px;
+    @media (max-width: 1400px) {
+      font-size: 18px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 17px;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      font-size: 16px;
+      gap: 15px;
+    }
+    @media (max-width: 750px) {
+      gap: 13px;
+    }
+    @media (max-width: 600px) {
+      font-size: 15px;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  &__paragraph {
+    font-size: inherit;
+    font-weight: 500;
+  }
+}
+
+.itemLink {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+  }
+}
