@@ -15,7 +15,7 @@ export const RentButton = ({
       <Button theme={theme} className={styles.rentButton}>
         <span className={styles.rentButton__text}>Арендовать</span>
         <RightArrowSVG
-          theme={theme}
+          theme={theme === 'light' ? 'dark' : 'light'}
           className={styles.rentButton__arrow}
           width={20}
         />

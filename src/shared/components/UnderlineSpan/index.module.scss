@@ -1,0 +1,52 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1px;
+
+  &:hover {
+    & .underline {
+      animation: UnderlineHoverIn 0.3s ease-in-out forwards;
+    }
+  }
+
+  &:not(:hover) {
+    & .underline {
+      animation: UnderlineHoverOut 0.3s ease-in-out forwards;
+    }
+  }
+}
+
+.underline {
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark);
+  position: absolute;
+}
+
+@keyframes UnderlineHoverIn {
+  0% {
+    left: 0%;
+  }
+  97% {
+    left: 100%;
+  }
+  98% {
+    display: none;
+  }
+  99% {
+    left: -100%;
+  }
+  100% {
+    display: block;
+    left: -100%;
+  }
+}
+
+@keyframes UnderlineHoverOut {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}

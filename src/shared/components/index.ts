@@ -2,9 +2,10 @@ export * from './Button'
 export * from './Star'
 export * from './Stars'
 export * from './RentButton'
+export * from './UnderlineSpan'
 
 export * from './Header'
 export * from './Footer'
-export * from './svgs/Logo'
+export * from './svgs'
 
 export * from './ContentHeader'
