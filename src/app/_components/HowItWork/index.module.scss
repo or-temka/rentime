@@ -2,18 +2,30 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: 900px) {
+    gap: 40px;
+  }
 }
 
 .title {
   font-family: var(--font-bounded);
   font-size: 25px;
   font-weight: 500;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
 }
 
 .items {
   display: grid;
-  grid-template-columns: repeat(3, minmax(325px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   gap: 20px;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
 }
 
 .item {
@@ -23,25 +35,64 @@
   flex-direction: column;
   gap: 30px;
 
+  @media (max-width: 1400px) {
+    padding: 27px 43px;
+  }
+  @media (max-width: 1200px) {
+    padding: 23px 35px;
+    gap: 28px;
+  }
+  @media (max-width: 900px) {
+    padding: 20px 30px;
+    gap: 25px;
+  }
+
   &__counter {
     font-family: var(--font-bounded);
     font-size: 100px;
     font-weight: 500;
+    line-height: 101px;
+
+    @media (max-width: 1400px) {
+      font-size: 85px;
+      line-height: 85px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 75px;
+      line-height: 74px;
+    }
+    @media (max-width: 900px) {
+      font-size: 69px;
+      line-height: 68px;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    font-size: 20px;
+    @media (max-width: 1400px) {
+      font-size: 18px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 17px;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      font-size: 16px;
+      gap: 15px;
+    }
   }
 
   &__title {
-    font-size: 20px;
+    font-size: inherit;
     font-weight: 600;
   }
 
   &__paragraph {
-    font-size: 20px;
+    font-size: inherit;
     font-weight: 500;
   }
 }
