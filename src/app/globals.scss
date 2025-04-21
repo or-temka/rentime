@@ -1,10 +1,10 @@
-@import './fonts';
+@import url('./fonts.scss');
 @import url('./_styles/side-content-margin.scss');
 
 :root {
-  --background: #F4F4F4;
+  --background: #f4f4f4;
   --foreground: #171717;
-  --lightBackground: #EBEBEB;
+  --lightBackground: #ebebeb;
   --light: #fff;
   --dark: #000;
   --light-grey: #cbcbcb;
