@@ -59,6 +59,10 @@
   }
 }
 
+.mobileLogoSvg {
+  width: calc(20vw);
+}
+
 .logo {
   @media (max-width: 500px) {
     display: none;
@@ -68,11 +72,16 @@
 .siteName {
   color: var(--background);
   font-family: var(--font-bounded);
-  font-size: 24px;
+  font-size: calc(13vw);
+  line-height: calc(13vw);
   font-weight: normal;
 }
 
 .logos {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
   &_desktop {
     @media (max-width: 500px) {
       display: none;
@@ -81,9 +90,22 @@
 
   &_mobile {
     display: none;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
 
     @media (max-width: 500px) {
-      display: block;
+      display: flex;
+    }
+  }
+}
+
+.serviceLogo {
+  cursor: pointer;
+
+  &:hover {
+    & path {
+      fill-opacity: 0.8;
     }
   }
 }
@@ -156,7 +178,6 @@
   display: flex;
   justify-content: space-between;
   font-weight: 400;
-  opacity: 0.3;
 
   @media (max-width: 500px) {
     justify-content: center;
@@ -167,6 +188,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  opacity: 0.3;
 
   @media (max-width: 1050px) {
     font-size: 14px;

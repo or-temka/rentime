@@ -1,3 +1,6 @@
 export * from './Logo'
 export * from './PlayTriangle'
 export * from './RightArrowSVG'
+export * from './VkLogo'
+export * from './AvitoLogo'
+export * from './TelegramLogo'
