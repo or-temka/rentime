@@ -59,6 +59,10 @@
   }
 }
 
+.mobileLogoSvg {
+  width: calc(20vw);
+}
+
 .logo {
   @media (max-width: 500px) {
     display: none;
@@ -68,7 +72,8 @@
 .siteName {
   color: var(--background);
   font-family: var(--font-bounded);
-  font-size: 24px;
+  font-size: calc(13vw);
+  line-height: calc(13vw);
   font-weight: normal;
 }
 
@@ -85,6 +90,9 @@
 
   &_mobile {
     display: none;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
 
     @media (max-width: 500px) {
       display: flex;

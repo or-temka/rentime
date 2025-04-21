@@ -27,7 +27,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Link href={ROUTES.HOME} className={styles.mobileLogo}>
-        <Logo width={43} />
+        <Logo width={43} className={styles.mobileLogoSvg} />
         <span className={styles.siteName}>rentime</span>
       </Link>
 
