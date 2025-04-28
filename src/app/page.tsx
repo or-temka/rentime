@@ -1,7 +1,7 @@
 import { PageHeader } from '@/widgets'
 import { HowItWork, PopularProducts, ProductStand } from './_components'
 import styles from './page.module.scss'
-import { RentButton } from '@/shared/components'
+import { MainContentContainer, RentButton } from '@/shared/components'
 
 function Home() {
   return (
@@ -19,11 +19,11 @@ function Home() {
         className={styles.pageHeader}
       />
 
-      <div className={styles.mainContent}>
+      <MainContentContainer>
         <PopularProducts />
         <ProductStand />
         <HowItWork />
-      </div>
+      </MainContentContainer>
     </main>
   )
 }

@@ -1,0 +1,27 @@
+.content {
+  margin: 100px var(--side-content-margin);
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @media (max-width: 1400px) {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    gap: 70px;
+  }
+  @media (max-width: 834px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    gap: 60px;
+  }
+  @media (max-width: 400px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 50px;
+  }
+  @media (max-width: 375px) {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    gap: 45px;
+  }
+}

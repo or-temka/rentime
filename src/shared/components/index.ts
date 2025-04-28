@@ -9,3 +9,4 @@ export * from './Footer'
 export * from './svgs'
 
 export * from './ContentHeader'
+export * from './MainContentContainer'
