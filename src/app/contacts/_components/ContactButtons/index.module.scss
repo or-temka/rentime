@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.contactBtnIcon {
+  &__phone {
+    width: 25px;
+  }
+
+  &__pin {
+    width: 25px;
+  }
+
+  &__mail {
+    width: 26px;
+  }
+}
+
+.contactMailBtnContent {
+  display: flex;
+  gap: 23px;
+
+  &__link {
+  }
+
+  &__icon {
+    & path {
+      fill-opacity: 1;
+      fill: var(--dark);
+    }
+
+    &__vk {
+      width: 25px;
+    }
+
+    &__avito {
+      width: 60px;
+    }
+
+    &__telegram {
+      width: 22px;
+    }
+  }
+}

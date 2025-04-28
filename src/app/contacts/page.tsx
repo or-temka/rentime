@@ -1,6 +1,7 @@
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
+import { ContactButtons } from './_components'
 
 function ContactsPage() {
   return (
@@ -12,7 +13,7 @@ function ContactsPage() {
       />
 
       <MainContentContainer>
-        
+        <ContactButtons />
       </MainContentContainer>
     </main>
   )
