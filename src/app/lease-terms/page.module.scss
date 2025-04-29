@@ -1,0 +1,14 @@
+.pageHeader {
+  background-image: url('/images/backgrounds/lease-terms-background.jpg');
+
+  @media (max-width: 1000px) {
+    background-position: 1000px 0px !important;
+  }
+  @media (max-width: 600px) {
+    height: 450px !important;
+    background-position: 750px 0px !important;
+  }
+  @media (max-width: 600px) {
+    background-position: 700px 0px !important;
+  }
+}
