@@ -4,6 +4,8 @@ export * from './Stars'
 export * from './RentButton'
 export * from './UnderlineSpan'
 
+export * from './H2'
+
 export * from './Header'
 export * from './Footer'
 export * from './svgs'

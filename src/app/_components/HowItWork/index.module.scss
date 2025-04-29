@@ -17,16 +17,6 @@
   }
 }
 
-.title {
-  font-family: var(--font-bounded);
-  font-size: 25px;
-  font-weight: 500;
-
-  @media (max-width: 900px) {
-    font-size: 24px;
-  }
-}
-
 .items {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));

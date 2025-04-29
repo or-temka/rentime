@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import styles from './index.module.scss'
 import { ROUTES } from '@/config/routes'
-import { Button } from '@/shared/components'
+import { Button, H2 } from '@/shared/components'
 import {
   productCattegoryMap,
   ProductCard,
@@ -49,7 +49,7 @@ export const PopularProducts = () => {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Популярные товары</h2>
+      <H2>Популярные товары</H2>
 
       <div className={styles.main}>
         <div className={styles.header}>
