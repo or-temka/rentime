@@ -1,4 +1,11 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .map {
   width: 100%;
+  min-height: 200px;
   aspect-ratio: 3;
 }

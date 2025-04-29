@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 
 export const OnMap = () => {
   return (
-    <section>
+    <section className={styles.section}>
       <H2>На карте</H2>
       <iframe
         className={styles.map}
