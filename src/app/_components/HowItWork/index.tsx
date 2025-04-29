@@ -3,7 +3,7 @@ import { howItWorkItems } from './constants'
 import { HowItWorkItem } from './types'
 import styles from './index.module.scss'
 import { RightArrowSVG } from '@/shared/components/svgs'
-import { UnderlineSpan } from '@/shared/components'
+import { H2, UnderlineSpan } from '@/shared/components'
 
 export const Item = (item: HowItWorkItem, index: number) => {
   return (
@@ -24,7 +24,7 @@ export const Item = (item: HowItWorkItem, index: number) => {
 export const HowItWork = () => {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Как это работает</h2>
+      <H2>Как это работает</H2>
       <div className={styles.items}>{howItWorkItems.map(Item)}</div>
     </section>
   )

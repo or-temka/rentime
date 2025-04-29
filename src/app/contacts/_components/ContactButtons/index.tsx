@@ -12,7 +12,7 @@ import styles from './index.module.scss'
 
 export const ContactButtons = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <ContactButton
         icon={
           <PhoneSVG
@@ -85,6 +85,6 @@ export const ContactButtons = () => {
           </a>
         </div>
       </ContactButton>
-    </div>
+    </section>
   )
 }
