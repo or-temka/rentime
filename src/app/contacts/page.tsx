@@ -1,7 +1,7 @@
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
-import { ContactButtons } from './_components'
+import { ContactButtons, OnMap } from './_components'
 
 function ContactsPage() {
   return (
@@ -14,6 +14,7 @@ function ContactsPage() {
 
       <MainContentContainer>
         <ContactButtons />
+        <OnMap />
       </MainContentContainer>
     </main>
   )
