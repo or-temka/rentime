@@ -1,7 +1,15 @@
 .rule {
+  background-color: var(--lightBackground);
+  padding: 40px 50px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .title {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .content {
