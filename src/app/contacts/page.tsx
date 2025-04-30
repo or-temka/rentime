@@ -1,4 +1,4 @@
-import { PageHeader } from '@/widgets'
+import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
 import { ContactButtons, OnMap } from './_components'
@@ -6,11 +6,7 @@ import { ContactButtons, OnMap } from './_components'
 function ContactsPage() {
   return (
     <main>
-      <PageHeader
-        title="Контакты"
-        className={styles.pageHeader}
-        shadowClassName={styles.pageHeader__shadow}
-      />
+      <ThinPageHeader title="Контакты" className={styles.pageHeader} />
 
       <MainContentContainer>
         <ContactButtons />
