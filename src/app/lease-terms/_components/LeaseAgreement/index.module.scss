@@ -14,6 +14,9 @@
   @media (max-width: 1000px) {
     gap: 15px;
   }
+  @media (max-width: 600px) {
+    gap: 12px;
+  }
 }
 
 .iconContainer {
@@ -29,6 +32,10 @@
     width: 47px;
     height: 47px;
   }
+  @media (max-width: 600px) {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .icon {
@@ -36,6 +43,9 @@
 
   @media (max-width: 1000px) {
     width: 22px;
+  }
+  @media (max-width: 600px) {
+    width: 18px;
   }
 }
 
@@ -47,6 +57,9 @@
   @media (max-width: 1000px) {
     gap: 8px;
   }
+  @media (max-width: 600px) {
+    gap: 7px;
+  }
 }
 
 .title {
@@ -55,6 +68,9 @@
 
   @media (max-width: 1000px) {
     font-size: 16px;
+  }
+  @media (max-width: 600px) {
+    font-size: 13px;
   }
 }
 
@@ -69,9 +85,10 @@
     font-size: 16px;
     gap: 9px;
   }
-}
-
-.fileType {
+  @media (max-width: 600px) {
+    font-size: 13px;
+    gap: 7px;
+  }
 }
 
 .circle {
@@ -80,7 +97,9 @@
   border-radius: 50%;
   background-color: var(--light-grey-2);
   opacity: 0.7;
-}
 
-.fileWeight {
+  @media (max-width: 600px) {
+    width: 2px;
+    height: 2px;
+  }
 }

@@ -14,9 +14,9 @@ export const LeaseAgreement = () => {
       <div className={styles.content}>
         <span className={styles.title}>Пример договора.pdf</span>
         <div className={styles.info}>
-          <span className={styles.fileType}>PDF</span>
+          <span>PDF</span>
           <div className={styles.circle} />
-          <span className={styles.fileWeight}>115KB</span>
+          <span>115KB</span>
         </div>
       </div>
     </a>
