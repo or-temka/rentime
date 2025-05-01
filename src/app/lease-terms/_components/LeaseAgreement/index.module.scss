@@ -5,9 +5,14 @@
   width: fit-content;
   cursor: pointer;
   border-radius: 3px;
+  align-items: center;
 
   &:hover {
     background-color: var(--lightBackground);
+  }
+
+  @media (max-width: 1000px) {
+    gap: 15px;
   }
 }
 
@@ -19,21 +24,38 @@
   justify-content: center;
   border: 1px solid var(--light-grey);
   border-radius: 2px;
+
+  @media (max-width: 1000px) {
+    width: 47px;
+    height: 47px;
+  }
 }
 
 .icon {
   width: 25px;
+
+  @media (max-width: 1000px) {
+    width: 22px;
+  }
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (max-width: 1000px) {
+    gap: 8px;
+  }
 }
 
 .title {
   font-size: 18px;
   font-weight: 500;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
 }
 
 .info {
@@ -42,6 +64,11 @@
   align-items: center;
   font-size: 18px;
   color: var(--light-grey-2);
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    gap: 9px;
+  }
 }
 
 .fileType {
