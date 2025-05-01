@@ -1,7 +1,7 @@
 import { MainContentContainer } from '@/shared/components'
 import styles from './page.module.scss'
 import { ThinPageHeader } from '@/widgets'
-import { RentRules } from './_components'
+import { LeaseAgreement, RentRules } from './_components'
 
 function LeaseTermsPage() {
   return (
@@ -10,6 +10,7 @@ function LeaseTermsPage() {
 
       <MainContentContainer>
         <RentRules />
+        <LeaseAgreement />
       </MainContentContainer>
     </main>
   )
