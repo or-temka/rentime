@@ -3,6 +3,7 @@ export * from './Star'
 export * from './Stars'
 export * from './RentButton'
 export * from './UnderlineSpan'
+export * from './SegmentedSelect'
 
 export * from './H2'
 
