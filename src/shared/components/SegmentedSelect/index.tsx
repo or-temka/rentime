@@ -10,6 +10,7 @@ export const SegmentedSelect = ({
   options,
   activeOption,
   setActiveOption,
+  classNames,
 }: SegmentedSelectProps) => {
   const mobileButtonsListRef = useRef<HTMLDivElement>(null)
 
@@ -40,21 +41,45 @@ export const SegmentedSelect = ({
 
   return (
     <>
-      <div className={styles.desktopButtons}>
+      <div
+        className={[styles.desktopButtons, classNames?.desktop?.buttons].join(
+          ' '
+        )}
+      >
         {options.map((option) => DesktopButton(option))}
       </div>
 
-      <div className={styles.desktopButtons__mobile}>
+      <div
+        className={[
+          styles.desktopButtons__mobile,
+          classNames?.mobile?.buttons,
+        ].join(' ')}
+      >
         <Button
           theme="dark"
           onClick={() => openSelect()}
           key={activeOption.value}
-          className={styles.mobileActiveButton}
+          className={[
+            styles.mobileActiveButton,
+            classNames?.mobile?.activeButton,
+          ].join(' ')}
         >
           {activeOption.label}{' '}
-          <PlayTriangle width={11} className={styles.mobileActiveButton__svg} />
+          <PlayTriangle
+            width={11}
+            className={[
+              styles.mobileActiveButton__svg,
+              classNames?.mobile?.activeButtonSVG,
+            ].join(' ')}
+          />
         </Button>
-        <div ref={mobileButtonsListRef} className={styles.notActiveButtons}>
+        <div
+          ref={mobileButtonsListRef}
+          className={[
+            styles.notActiveButtons,
+            classNames?.mobile?.notActiveButtons,
+          ].join(' ')}
+        >
           {options
             .filter((option) => option.value !== activeOption.value)
             .map((notActiveOption) => (
