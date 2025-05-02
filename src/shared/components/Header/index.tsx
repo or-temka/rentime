@@ -29,6 +29,11 @@ export const Header = () => {
         >
           Написать
         </Button>
+        <div className={styles.mobileMenuBtn}>
+          <div className={styles.mobileMenuBtn__item} />
+          <div className={styles.mobileMenuBtn__item} />
+          <div className={styles.mobileMenuBtn__item} />
+        </div>
       </nav>
     </header>
   )
