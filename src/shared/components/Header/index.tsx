@@ -88,11 +88,21 @@ export const Header = () => {
                 ))}
               </ul>
             </nav>
-            <div
-              className={styles.aside__closeBtnContainer}
-              onClick={() => setShowMenuModal(false)}
-            >
-              <span className={styles.aside__closeBtn}>Закрыть</span>
+            <div className={styles.bottomNav}>
+              <Button
+                theme="light"
+                variant="outlined"
+                hoverAnimation
+                className={styles.writeButton_mobile}
+              >
+                Написать
+              </Button>
+              <div
+                className={styles.aside__closeBtnContainer}
+                onClick={() => setShowMenuModal(false)}
+              >
+                <span className={styles.aside__closeBtn}>Закрыть</span>
+              </div>
             </div>
           </aside>
         </div>
