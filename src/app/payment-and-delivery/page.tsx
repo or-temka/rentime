@@ -5,13 +5,13 @@ import { PaymentAndDelivery } from './_components'
 
 function PaymentAndDeliveryPage() {
   return (
-    <div>
+    <main>
       <ThinPageHeader title="Оплата и доставка" className={styles.pageHeader} />
 
       <MainContentContainer>
         <PaymentAndDelivery />
       </MainContentContainer>
-    </div>
+    </main>
   )
 }
 

@@ -7,7 +7,7 @@ import { AvitoLogoSVG, Logo, TelegramLogoSVG, VkLogoSVG } from '../svgs'
 export const Logos = () => {
   return (
     <>
-      <a target="_blank">
+      <a target="_blank" href="https://google.com">
         <VkLogoSVG width={32} className={styles.serviceLogo} />
       </a>
       <a
@@ -16,7 +16,7 @@ export const Logos = () => {
       >
         <AvitoLogoSVG width={66} className={styles.serviceLogo} />
       </a>
-      <a target="_blank">
+      <a target="_blank" href="https://google.com">
         <TelegramLogoSVG width={25} className={styles.serviceLogo} />
       </a>
     </>
