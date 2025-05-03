@@ -1,22 +1,23 @@
 import { ROUTES } from '@/config/routes'
 import { H2 } from '@/shared/components'
+import styles from './index.module.scss'
 
 export const DeliverySection = () => {
   return (
-    <section>
-      <div>
-        <div>
-          <h3>В пределах города</h3>
-          <span>
+    <section className={styles.section}>
+      <div className={styles.deliveryInfo}>
+        <div className={styles.infoBlock}>
+          <h3 className={styles.infoBlock__title}>В пределах города</h3>
+          <span className={styles.infoBlock__text}>
             Цена доставки и забора (забрать оборудование после аренды) в
             пределах города указана на интерактивной карте. Цена для доставки
             всегда равняется цене забора.
           </span>
         </div>
 
-        <div>
-          <h3>За городом</h3>
-          <span>
+        <div className={styles.infoBlock}>
+          <h3 className={styles.infoBlock__title}>За городом</h3>
+          <span className={styles.infoBlock__text}>
             Цена доставки за город обсуждается индивидуально. Для уточнения{' '}
             <a target="_blank" href={ROUTES.CONTACTS}>
               напишите нам.
@@ -25,15 +26,15 @@ export const DeliverySection = () => {
         </div>
       </div>
 
-      <div>
-        <p>
+      <div className={styles.additional}>
+        <p className={styles.additional__paragraph}>
           Цена доставки на некоторые товары, к примеру, габаритные,
           рассчитывается индивидуально. У таких товаров в карточке указано
           &quot;Индивидуальная цена доставки&quot;
         </p>
       </div>
 
-      <div>
+      <div className={styles.mapSection}>
         <H2>Карта с ценой доставки</H2>
       </div>
     </section>
