@@ -3,8 +3,9 @@
 import { SegmentedSelect, SegmentedSelectOption } from '@/shared/components'
 import { useState } from 'react'
 import { PAYMENT_AND_DELIVERY_TABS } from './constants'
-import { Payment } from '../Payment'
+import { PaymentSection } from '../PaymentSection'
 import styles from './index.module.scss'
+import { DeliverySection } from '../DeliverySection'
 
 export const PaymentAndDelivery = () => {
   const [activeTab, setActiveTab] = useState<SegmentedSelectOption>(
@@ -19,9 +20,9 @@ export const PaymentAndDelivery = () => {
         setActiveOption={setActiveTab}
       />
 
-      {activeTab.value === 'delivery' && <div>Доставка</div>}
+      {activeTab.value === 'delivery' && <DeliverySection />}
 
-      {activeTab.value === 'payment' && <Payment />}
+      {activeTab.value === 'payment' && <PaymentSection />}
     </section>
   )
 }
