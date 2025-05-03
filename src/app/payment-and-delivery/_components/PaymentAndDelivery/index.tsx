@@ -4,6 +4,7 @@ import { SegmentedSelect, SegmentedSelectOption } from '@/shared/components'
 import { useState } from 'react'
 import { PAYMENT_AND_DELIVERY_TABS } from './constants'
 import { Payment } from '../Payment'
+import styles from './index.module.scss'
 
 export const PaymentAndDelivery = () => {
   const [activeTab, setActiveTab] = useState<SegmentedSelectOption>(
@@ -11,7 +12,7 @@ export const PaymentAndDelivery = () => {
   )
 
   return (
-    <section>
+    <section className={styles.section}>
       <SegmentedSelect
         options={PAYMENT_AND_DELIVERY_TABS}
         activeOption={activeTab}

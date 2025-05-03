@@ -1,0 +1,32 @@
+.article {
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px 40px;
+  background-color: var(--dark);
+  border-radius: 3px;
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--light);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--light);
+}
+
+.paragraph {
+  font-size: 16px;
+  font-weight: 300;
+}
