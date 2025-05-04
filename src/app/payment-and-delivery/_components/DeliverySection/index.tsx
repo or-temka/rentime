@@ -2,6 +2,7 @@ import { ROUTES } from '@/config/routes'
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { Collapse } from '@/shared/components/Collapse'
+import { questionsAnswers } from './constants'
 
 export const DeliverySection = () => {
   return (
@@ -50,10 +51,12 @@ export const DeliverySection = () => {
         ></iframe>
       </div>
 
-      <div>
-        <Collapse title="Загловок">
-          <p>Привет</p>
-        </Collapse>
+      <div className={styles.questions}>
+        {questionsAnswers.map((questionAnswer, index) => (
+          <Collapse title={questionAnswer.question} key={index}>
+            {questionAnswer.answer}
+          </Collapse>
+        ))}
       </div>
     </section>
   )
