@@ -4,6 +4,7 @@ export * from './Stars'
 export * from './RentButton'
 export * from './UnderlineSpan'
 export * from './SegmentedSelect'
+export * from './Collapse'
 
 export * from './H2'
 

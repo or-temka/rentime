@@ -1,5 +1,21 @@
 .article {
   display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @media (max-width: 1200px) {
+    gap: 70px;
+  }
+  @media (max-width: 700px) {
+    gap: 50px;
+  }
+  @media (max-width: 500px) {
+    gap: 40px;
+  }
+}
+
+.paymentMethods {
+  display: flex;
   gap: 20px;
   flex-wrap: wrap;
 

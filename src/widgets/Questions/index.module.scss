@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (max-width: 1200px) {
+    gap: 35px;
+  }
+  @media (max-width: 1000px) {
+    gap: 30px;
+  }
+  @media (max-width: 600px) {
+    gap: 25px;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
