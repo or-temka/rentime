@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 
-export const Payment = () => {
+export const PaymentSection = () => {
   return (
     <article className={styles.article}>
       <div className={styles.container}>
