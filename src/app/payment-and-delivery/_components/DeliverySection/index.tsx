@@ -36,6 +36,12 @@ export const DeliverySection = () => {
 
       <div className={styles.mapSection}>
         <H2>Карта с ценой доставки</H2>
+
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A2c4944bbf1a9773180a7f197bb2031171183e3102db7ec28ee8af7e5773db122&amp;source=constructor"
+          frameBorder="0"
+          className={styles.map}
+        ></iframe>
       </div>
     </section>
   )
