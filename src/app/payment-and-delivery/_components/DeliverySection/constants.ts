@@ -1,4 +1,4 @@
-import { QuestionBlock } from './types'
+import { QuestionBlock } from '@/widgets'
 
 export const questionsAnswers: QuestionBlock[] = [
   {
