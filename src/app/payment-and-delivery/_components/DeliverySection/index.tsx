@@ -1,6 +1,7 @@
 import { ROUTES } from '@/config/routes'
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
+import { Collapse } from '@/shared/components/Collapse'
 
 export const DeliverySection = () => {
   return (
@@ -42,6 +43,12 @@ export const DeliverySection = () => {
           frameBorder="0"
           className={styles.map}
         ></iframe>
+      </div>
+
+      <div>
+        <Collapse title="Загловок">
+          <p>Привет</p>
+        </Collapse>
       </div>
     </section>
   )
