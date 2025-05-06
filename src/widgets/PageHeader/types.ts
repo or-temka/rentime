@@ -4,7 +4,7 @@ export type PageHeaderProps = {
   title?: ReactNode
   info?: {
     text: string
-    button: ReactNode
+    button?: ReactNode
   }
   className?: string
   shadowClassName?: string
