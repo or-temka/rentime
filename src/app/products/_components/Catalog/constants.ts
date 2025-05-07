@@ -4,6 +4,13 @@ import {
   productCattegoryMap,
 } from '@/entities/product'
 import { SegmentedSelectOption } from '@/shared/components'
+import { Sort } from './types'
+
+export const sortMap: Record<Sort, string> = {
+  no: 'по умолчанию',
+  bottom: 'сначала дешевле',
+  top: 'сначала дороже',
+}
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {

@@ -1,19 +1,31 @@
 'use client'
 
-import { SegmentedSelect, SegmentedSelectOption } from '@/shared/components'
-import { productCategoriesOptions, products } from './constants'
+import {
+  BottomArrowSVG,
+  SegmentedSelect,
+  SegmentedSelectOption,
+} from '@/shared/components'
+import { productCategoriesOptions, products, sortMap } from './constants'
 import { useState } from 'react'
 import { ProductCard } from '@/entities/product'
 import styles from './index.module.scss'
+import { Sort } from './types'
 
 export const Catalog = () => {
   const [activeCategory, setActiveCategory] = useState<SegmentedSelectOption>(
     productCategoriesOptions[0]
   )
+  const [sort, setSort] = useState<Sort>('no')
 
   const filteredPopularProducts = products.filter(
     (product) => product.category === activeCategory.value
   )
+
+  const handleSortClick = () => {
+    setSort((prev) =>
+      prev === 'no' ? 'bottom' : prev === 'bottom' ? 'top' : 'no'
+    )
+  }
 
   return (
     <section className={styles.section}>
@@ -24,9 +36,15 @@ export const Catalog = () => {
           setActiveOption={setActiveCategory}
         />
         <div className={styles.filters}>
-          <div className={styles.sort}>
+          <div className={styles.sort} onClick={handleSortClick}>
             <span className={styles.sort__label}>Сортировать: </span>
-            <span className={styles.sort__value}>сначала дешевле</span>
+            <span className={styles.sort__value}>{sortMap[sort]}</span>
+            <BottomArrowSVG
+              className={[
+                styles.sort__arrow,
+                styles[`sort__arrow_${sort}`],
+              ].join(' ')}
+            />
           </div>
         </div>
       </header>
