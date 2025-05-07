@@ -1,6 +1,7 @@
 import { MainContentContainer } from '@/shared/components'
 import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
+import { Catalog } from './_components'
 
 function ProductsPage() {
   return (
@@ -11,7 +12,9 @@ function ProductsPage() {
         className={styles.pageHeader}
       />
 
-      <MainContentContainer></MainContentContainer>
+      <MainContentContainer>
+        <Catalog />
+      </MainContentContainer>
     </main>
   )
 }
