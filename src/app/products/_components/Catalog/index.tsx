@@ -17,9 +17,17 @@ export const Catalog = () => {
   )
   const [sort, setSort] = useState<Sort>('no')
 
-  const filteredPopularProducts = products.filter(
+  const filteredProducts = products.filter(
     (product) => product.category === activeCategory.value
   )
+  if (sort !== 'no') {
+    filteredProducts.sort((p1, p2) => {
+      const p1price = p1.minPrice || 0
+      const p2price = p2.minPrice || 0
+      if (sort === 'bottom') return p1price - p2price
+      return p2price - p1price
+    })
+  }
 
   const handleSortClick = () => {
     setSort((prev) =>
@@ -49,7 +57,7 @@ export const Catalog = () => {
         </div>
       </header>
       <div className={styles.main}>
-        {filteredPopularProducts.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             {...product}
             key={product.id}

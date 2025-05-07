@@ -35,6 +35,8 @@ export const products: ProductCardProps[] = [
     rating: 4,
     imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
     category: 'rest and leisure',
+    minPrice: 750,
+    maxPrice: 1200,
   },
   {
     id: 'playstation5',
@@ -43,6 +45,8 @@ export const products: ProductCardProps[] = [
     rating: 5,
     imageURL: `${PRODUCT_IMAGE_ROUTE.playstation5}playstation5screen1.jpg`,
     category: 'rest and leisure',
+    minPrice: 700,
+    maxPrice: 950,
   },
   {
     id: 'vroculusquest3s',
@@ -51,6 +55,8 @@ export const products: ProductCardProps[] = [
     rating: 2,
     imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
     category: 'rest and leisure',
+    minPrice: 800,
+    maxPrice: 1300,
   },
   {
     id: 'vroculusquest4s',
@@ -59,5 +65,7 @@ export const products: ProductCardProps[] = [
     rating: 2,
     imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
     category: 'tourism',
+    minPrice: 1000,
+    maxPrice: 1600,
   },
 ]
