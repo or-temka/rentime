@@ -4,6 +4,7 @@ import {
   BottomArrowSVG,
   SegmentedSelect,
   SegmentedSelectOption,
+  ShelvesArrowSVG,
 } from '@/shared/components'
 import { productCategoriesOptions, products, sortMap } from './constants'
 import { useState } from 'react'
@@ -45,6 +46,7 @@ export const Catalog = () => {
         />
         <div className={styles.filters}>
           <div className={styles.sort} onClick={handleSortClick}>
+            <ShelvesArrowSVG className={styles.sort__shelves} />
             <span className={styles.sort__label}>Сортировать: </span>
             <span className={styles.sort__value}>{sortMap[sort]}</span>
             <BottomArrowSVG
