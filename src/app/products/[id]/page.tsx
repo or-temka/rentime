@@ -1,14 +1,24 @@
 import { MainContentContainer, RentButton } from '@/shared/components'
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
+import { ProductPageProps } from './types'
+import { PRODUCTS } from '@/entities/product'
+import NotFound from '@/app/not-found'
 
-function ProductPage() {
+function ProductPage({ params }: ProductPageProps) {
+  const queryProductId = params.id
+  const product = PRODUCTS[queryProductId]
+
+  if (!product) {
+    return <NotFound />
+  }
+
   return (
     <main>
       <PageHeader
-        title="PlayStation 5"
+        title={product.name}
         info={{
-          text: 'Мощная игровая консоль нового поколения с невероятной графикой, быстрой загрузкой и полным погружением в игровой процесс',
+          text: product.description || '',
           button: <RentButton />,
         }}
         className={styles.pageHeader}

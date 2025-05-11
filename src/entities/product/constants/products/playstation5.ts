@@ -2,7 +2,7 @@ import { Product } from '../../types'
 import { PRODUCT_IMAGE_ROOT_ROUTE } from '../imagesRoute'
 
 export const PLAYSTATION5: Product = {
-  id: 'playstation 5',
+  id: 'playstation5',
   name: 'PlayStation 5',
   feedbackCount: 1050,
   rating: 5,
