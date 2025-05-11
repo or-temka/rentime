@@ -3,7 +3,10 @@ export type Product = {
   name: string
   feedbackCount: number
   rating: number
-  imageURL: string
+  imagesURL: {
+    thumbnail: string
+    full: string
+  }
   description?: string
   category?: ProductCategory
 }

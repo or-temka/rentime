@@ -1,8 +1,7 @@
-import { ProductCategory } from '../../types'
+import { Product, ProductCategory } from '../../types'
 
-export type ProductCardProps = {
+export type ProductCardProps = Product & {
   id: string
-  imageURL: string
   name: string
   rating: number
   feedbackCount: number

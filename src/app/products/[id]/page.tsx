@@ -22,6 +22,7 @@ function ProductPage({ params }: ProductPageProps) {
           button: <RentButton />,
         }}
         className={styles.pageHeader}
+        style={{ backgroundImage: `url(${product.imagesURL.full})` }}
       />
 
       <MainContentContainer></MainContentContainer>

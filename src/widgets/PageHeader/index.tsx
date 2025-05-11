@@ -7,9 +7,14 @@ export const PageHeader = ({
   info,
   className,
   shadowClassName,
+  style,
 }: PageHeaderProps) => {
   return (
-    <ContentHeader className={className} shadowClassName={shadowClassName}>
+    <ContentHeader
+      className={className}
+      style={style}
+      shadowClassName={shadowClassName}
+    >
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>
         {info && (
