@@ -1,8 +1,6 @@
-import {
-  PRODUCT_IMAGE_ROUTE,
-  ProductCardProps,
-  productCattegoryMap,
-} from '@/entities/product'
+import { ProductCardProps, productCattegoryMap } from '@/entities/product'
+import { PICO4 } from '@/entities/product/constants/products/pico4'
+import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
 import { SegmentedSelectOption } from '@/shared/components'
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
@@ -20,37 +18,4 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
   },
 ]
 
-export const popularProducts: ProductCardProps[] = [
-  {
-    id: 'vrpico4',
-    name: 'VR очки Pico 4',
-    feedbackCount: 30,
-    rating: 4,
-    imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
-    category: 'rest and leisure',
-  },
-  {
-    id: 'playstation5',
-    name: 'Play station 5',
-    feedbackCount: 1050,
-    rating: 5,
-    imageURL: `${PRODUCT_IMAGE_ROUTE.playstation5}playstation5screen1.jpg`,
-    category: 'rest and leisure',
-  },
-  {
-    id: 'vroculusquest3s',
-    name: 'VR-очки Oculus Quest 3S',
-    feedbackCount: 2,
-    rating: 2,
-    imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
-    category: 'rest and leisure',
-  },
-  {
-    id: 'vroculusquest4s',
-    name: 'VR-очки Oculus Quest 4S',
-    feedbackCount: 2,
-    rating: 2,
-    imageURL: `${PRODUCT_IMAGE_ROUTE.pico4}pico4screen1.jpg`,
-    category: 'tourism',
-  },
-]
+export const popularProducts: ProductCardProps[] = [PICO4, PLAYSTATION5]

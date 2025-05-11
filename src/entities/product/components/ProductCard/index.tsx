@@ -13,7 +13,7 @@ export const ProductCard = ({
   feedbackCount,
   classNames,
 }: ProductCardProps) => {
-  const productRoute = ROUTES.HOME
+  const productRoute = ROUTES.PRODUCTS.PRODUCT(id)
 
   return (
     <div className={[styles.container, classNames?.container].join(' ')}>

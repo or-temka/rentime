@@ -1,5 +1,5 @@
 import { ROUTES } from '@/config/routes'
-import { PRODUCT_IMAGE_ROUTE } from '@/entities/product'
+import { PRODUCT_IMAGE_ROOT_ROUTE } from '@/entities/product'
 import { RentButton } from '@/shared/components'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -31,7 +31,7 @@ export const ProductStand = () => {
         <div className={styles.imageContainer}>
           <Image
             alt="playstation 5"
-            src={`${PRODUCT_IMAGE_ROUTE.playstation5}playstation5_transparent_background.png`}
+            src={`${PRODUCT_IMAGE_ROOT_ROUTE}playstation5/playstation5_transparent_background.png`}
             width={882}
             height={661}
             className={styles.image}
