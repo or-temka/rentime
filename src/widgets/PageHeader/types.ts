@@ -8,4 +8,5 @@ export type PageHeaderProps = {
   }
   className?: string
   shadowClassName?: string
+  style?: React.CSSProperties
 }

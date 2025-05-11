@@ -8,7 +8,7 @@ import { ROUTES } from '@/config/routes'
 export const ProductCard = ({
   id,
   name,
-  imageURL,
+  imagesURL,
   rating,
   feedbackCount,
   classNames,
@@ -19,7 +19,7 @@ export const ProductCard = ({
     <div className={[styles.container, classNames?.container].join(' ')}>
       <Link href={productRoute} className={styles.imageContainer}>
         <Image
-          src={imageURL}
+          src={imagesURL.thumbnail}
           alt={name}
           width={527}
           height={302}
