@@ -12,6 +12,16 @@ export const PICO4: Product = {
     thumbnail: getProductImageRoute(PICO4_ID, 'thumbnail'),
     full: getProductImageRoute(PICO4_ID, 'thumbnail'),
   },
+  price: {
+    perDay: {
+      one: 1200,
+      two: 1100,
+      three: 1000,
+      four: 900,
+      oneWeek: 800,
+      overWeek: 750,
+    },
+  },
   category: 'rest and leisure',
   description: 'Описание для pico 4',
 }
