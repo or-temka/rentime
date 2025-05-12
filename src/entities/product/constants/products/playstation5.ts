@@ -12,6 +12,16 @@ export const PLAYSTATION5: Product = {
     thumbnail: getProductImageRoute(PLAYSTATION5_ID, 'thumbnail'),
     full: getProductImageRoute(PLAYSTATION5_ID, 'full'),
   },
+  price: {
+    perDay: {
+      one: 950,
+      two: 900,
+      three: 850,
+      four: 800,
+      oneWeek: 750,
+      overWeek: 700,
+    },
+  },
   category: 'rest and leisure',
   description: 'Описание для play station 5',
 }
