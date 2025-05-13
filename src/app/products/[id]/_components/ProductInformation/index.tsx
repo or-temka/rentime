@@ -17,6 +17,9 @@ export const ProductInformation = () => {
         activeOption={activeSection}
         setActiveOption={setActiveSection}
         options={informationSelectOptions}
+        classNames={{
+          desktop: { buttons: styles.desktopSelectButtons },
+        }}
       />
 
       {activeSection.value === 'price' && <Price />}
