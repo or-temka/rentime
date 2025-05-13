@@ -5,8 +5,9 @@ import { SegmentedSelect, SegmentedSelectOption } from '@/shared/components'
 import styles from './index.module.scss'
 import { useState } from 'react'
 import { Price } from '../Price'
+import { ProductInformationProps } from './types'
 
-export const ProductInformation = () => {
+export const ProductInformation = ({ product }: ProductInformationProps) => {
   const [activeSection, setActiveSection] = useState<SegmentedSelectOption>(
     informationSelectOptions[0]
   )
@@ -17,9 +18,12 @@ export const ProductInformation = () => {
         activeOption={activeSection}
         setActiveOption={setActiveSection}
         options={informationSelectOptions}
+        classNames={{
+          desktop: { buttons: styles.desktopSelectButtons },
+        }}
       />
 
-      {activeSection.value === 'price' && <Price />}
+      {activeSection.value === 'price' && <Price product={product} />}
     </div>
   )
 }

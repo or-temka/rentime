@@ -27,7 +27,7 @@ function ProductPage({ params }: ProductPageProps) {
       />
 
       <MainContentContainer>
-        <ProductInformation />
+        <ProductInformation product={product} />
       </MainContentContainer>
     </main>
   )

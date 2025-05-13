@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  gap: 4px;
+
+  --vertical-padding: 12px;
+  --border-radius: 3px;
+}
+
+.day {
+  padding: var(--vertical-padding) 29px;
+  background-color: var(--lightBackground);
+  min-width: 135px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  background-color: var(--lightBackground);
+  flex: 1;
+  padding: 4px;
+  justify-content: space-between;
+}
+
+.perDay {
+  padding: var(--vertical-padding) 50px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    font-size: 16px;
+  }
+}
+
+.total {
+  padding: 12px 22px;
+  background-color: var(--dark);
+  border-radius: var(--border-radius);
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--light);
+  }
+}
