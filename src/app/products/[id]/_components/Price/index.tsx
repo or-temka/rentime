@@ -40,7 +40,7 @@ export const Price = ({ product }: PriceProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.information}>
-        <H2>Стоимость</H2>
+        <H2 className={styles.title}>Стоимость</H2>
         <div className={styles.infoContent}>
           <p className={styles.paragraph}>
             Стоимость аренды рассчитывается в зависимости от количества дней,
