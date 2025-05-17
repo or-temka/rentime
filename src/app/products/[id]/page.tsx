@@ -2,9 +2,9 @@ import { MainContentContainer, RentButton } from '@/shared/components'
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { ProductPageProps } from './types'
-import { PRODUCTS } from '@/entities/product'
 import NotFound from '@/app/not-found'
 import { InstanceOfGames, ProductInformation } from './_components'
+import { PRODUCTS } from '@/entities/product'
 
 function ProductPage({ params }: ProductPageProps) {
   const queryProductId = params.id
