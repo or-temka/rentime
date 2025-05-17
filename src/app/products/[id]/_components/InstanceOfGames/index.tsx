@@ -14,7 +14,7 @@ export const InstanceOfGames = () => {
       </div>
 
       <div className={styles.carouselContainer}>
-        <Slider />
+        <Slider visibleSlidesCount={4} scrollSlidesCount={3}/>
       </div>
     </section>
   )

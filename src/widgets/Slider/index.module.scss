@@ -1,16 +1,52 @@
+.sliderWrapper {
+  position: relative;
+  padding-top: 32px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--light);
+  opacity: 0.3;
+  border: none;
+  cursor: pointer;
+}
+
+.dotActive {
+  opacity: 1;
+}
+
 .embla {
   overflow: hidden;
 }
 
 .embla__container {
   display: flex;
+  padding-right: 80px;
+  padding-left: 80px;
 }
 
 .embla__slide {
-  flex: 0 0 80%;
-  margin-right: 16px;
   background: #eee;
   border-radius: 8px;
-  padding: 20px;
   text-align: center;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.embla__peek {
+  flex-shrink: 0;
+  pointer-events: none;
 }

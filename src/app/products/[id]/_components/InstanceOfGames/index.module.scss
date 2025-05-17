@@ -1,10 +1,10 @@
 .section {
   background: url('/images/backgrounds/instance-of-games-background-1.jpg');
-  padding: 100px 70px;
   background-position: top center;
   display: flex;
   flex-direction: column;
   gap: 122px;
+  padding: 100px 0px;
 }
 
 .header {
@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding: 0px 70px;
 }
 
 .title {
