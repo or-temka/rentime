@@ -1,5 +1,6 @@
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
+import { Slider } from '@/widgets'
 
 export const InstanceOfGames = () => {
   return (
@@ -12,7 +13,9 @@ export const InstanceOfGames = () => {
         </p>
       </div>
 
-      <div className={styles.carouselContainer}>Carousel</div>
+      <div className={styles.carouselContainer}>
+        <Slider />
+      </div>
     </section>
   )
 }
