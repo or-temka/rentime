@@ -4,7 +4,7 @@ import styles from './page.module.scss'
 import { ProductPageProps } from './types'
 import { PRODUCTS } from '@/entities/product'
 import NotFound from '@/app/not-found'
-import { ProductInformation } from './_components'
+import { InstanceOfGames, ProductInformation } from './_components'
 
 function ProductPage({ params }: ProductPageProps) {
   const queryProductId = params.id
@@ -28,6 +28,7 @@ function ProductPage({ params }: ProductPageProps) {
 
       <MainContentContainer>
         <ProductInformation product={product} />
+        <InstanceOfGames />
       </MainContentContainer>
     </main>
   )

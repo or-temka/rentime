@@ -1,0 +1,28 @@
+.section {
+  background: url('/images/backgrounds/instance-of-games-background-1.jpg');
+  padding: 100px 70px;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  gap: 122px;
+}
+
+.header {
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: 300;
+  max-width: 55%;
+}
+
+.carouselContainer {
+}
