@@ -13,7 +13,7 @@ export const ProductInformation = ({ product }: ProductInformationProps) => {
   )
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <SegmentedSelect
         activeOption={activeSection}
         setActiveOption={setActiveSection}
@@ -24,6 +24,6 @@ export const ProductInformation = ({ product }: ProductInformationProps) => {
       />
 
       {activeSection.value === 'price' && <Price product={product} />}
-    </div>
+    </section>
   )
 }
