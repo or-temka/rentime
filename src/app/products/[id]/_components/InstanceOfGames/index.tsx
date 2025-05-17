@@ -43,7 +43,12 @@ export const InstanceOfGames = () => {
           visibleSlidesCount={5}
           scrollSlidesCount={3}
           slides={slides}
-          classNames={{ emblaSlide: styles.slide }}
+          classNames={{
+            emblaSlide: styles.slide,
+            dots: styles.dots,
+            emblaContainer: styles.emblaContainer,
+            sliderWrapper: styles.sliderWrapper,
+          }}
         />
       </div>
     </section>

@@ -30,12 +30,11 @@
 
 .embla {
   overflow: hidden;
+  cursor: grab;
 }
 
 .embla__container {
   display: flex;
-  padding-right: 80px;
-  padding-left: 80px;
 }
 
 .embla__slide {
