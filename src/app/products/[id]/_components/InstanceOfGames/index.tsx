@@ -2,6 +2,31 @@ import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { Slider } from '@/widgets'
 
+const GameSlide = ({ imageUrlName }: { imageUrlName: string }) => {
+  return (
+    <img
+      alt="image"
+      src={`/images/games/${imageUrlName}`}
+      className={styles.image}
+    />
+  )
+}
+
+const slides = [
+  <GameSlide key={1} imageUrlName="uncharted-4.jpg" />,
+  <GameSlide key={1} imageUrlName="god-of-war.webp" />,
+  <GameSlide key={1} imageUrlName="resident-evil-village.jpg" />,
+  <GameSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
+  <GameSlide key={1} imageUrlName="uncharted-4.jpg" />,
+  <GameSlide key={1} imageUrlName="god-of-war-ragnarok.jpg" />,
+  <GameSlide key={1} imageUrlName="uncharted-4.jpg" />,
+  <GameSlide key={1} imageUrlName="god-of-war-ragnarok.jpg" />,
+  <GameSlide key={1} imageUrlName="resident-evil-village.jpg" />,
+  <GameSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
+  <GameSlide key={1} imageUrlName="resident-evil-village.jpg" />,
+  <GameSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
+]
+
 export const InstanceOfGames = () => {
   return (
     <section className={styles.section}>
@@ -14,7 +39,12 @@ export const InstanceOfGames = () => {
       </div>
 
       <div className={styles.carouselContainer}>
-        <Slider visibleSlidesCount={4} scrollSlidesCount={3}/>
+        <Slider
+          visibleSlidesCount={5}
+          scrollSlidesCount={3}
+          slides={slides}
+          classNames={{ emblaSlide: styles.slide }}
+        />
       </div>
     </section>
   )

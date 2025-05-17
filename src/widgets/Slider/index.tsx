@@ -3,22 +3,19 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import styles from './index.module.scss'
-
-interface SliderProps {
-  visibleSlidesCount?: number // сколько видно
-  scrollSlidesCount?: number // сколько листается
-}
+import { SliderProps } from './types'
 
 export const Slider = ({
   visibleSlidesCount = 4,
   scrollSlidesCount = 1,
+  slides,
+  classNames,
 }: SliderProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     slidesToScroll: scrollSlidesCount,
     containScroll: 'trimSnaps',
     align: 'start',
   })
-
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
   const [selectedIndex, setSelectedIndex] = useState(0)
 
@@ -40,39 +37,48 @@ export const Slider = ({
   const peekSlideWidth = `calc(${slideWidth} * 0.5)`
 
   return (
-    <div className={styles.sliderWrapper}>
-      <div className={styles.dots}>
+    <div
+      className={[styles.sliderWrapper, classNames?.sliderWrapper].join(' ')}
+    >
+      <div className={[styles.dots, classNames?.dots].join(' ')}>
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
             className={`${styles.dot} ${
               index === selectedIndex ? styles.dotActive : ''
-            }`}
+            } ${classNames?.dot}`}
             onClick={() => emblaApi?.scrollTo(index)}
           />
         ))}
       </div>
 
-      <div className={styles.embla} ref={emblaRef}>
-        <div className={styles.embla__container}>
-          {Array.from({ length: 12 }).map((_, i) => (
+      <div
+        className={[styles.embla, classNames?.embla].join(' ')}
+        ref={emblaRef}
+      >
+        <div
+          className={[styles.embla__container, classNames?.emblaContainer].join(
+            ' '
+          )}
+        >
+          {slides.map((slide, i) => (
             <div
-              className={styles.embla__slide}
+              className={[styles.embla__slide, classNames?.emblaSlide].join(
+                ' '
+              )}
               key={i}
               style={{
                 flex: `0 0 ${slideWidth}`,
-                marginRight: i === 11 ? '0px' : '16px',
+                marginRight: i === slides.length - 1 ? '0px' : '16px',
               }}
             >
-              Slide {i + 1}
+              {slide}
             </div>
           ))}
 
           <div
-            className={styles.embla__peek}
-            style={{
-              flex: `0 0 ${peekSlideWidth}`,
-            }}
+            className={[styles.embla__peek, classNames?.emblaPeek].join(' ')}
+            style={{ flex: `0 0 ${peekSlideWidth}` }}
           />
         </div>
       </div>
