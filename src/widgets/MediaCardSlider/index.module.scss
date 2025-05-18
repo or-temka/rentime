@@ -1,0 +1,19 @@
+.sliderWrapper {
+  padding-top: 45px;
+}
+
+.dots {
+  justify-content: flex-start;
+  padding-left: var(--horizontal-offset);
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.emblaContainer {
+  padding-left: var(--horizontal-offset);
+  padding-right: var(--horizontal-offset);
+}

@@ -1,5 +1,12 @@
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
+import { MediaCardSlider, MediaCardSliderProps } from '@/widgets'
+
+const BASE_GAME_CARD_IMAGE_PREFIX = '/images/games/'
+const items: MediaCardSliderProps['items'] = [
+  { imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg` },
+  { imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg` },
+]
 
 export const InstanceOfGames = () => {
   return (
@@ -12,7 +19,9 @@ export const InstanceOfGames = () => {
         </p>
       </div>
 
-      <div className={styles.carouselContainer}>Carousel</div>
+      <div className={styles.sliderContainer}>
+        <MediaCardSlider items={items} />
+      </div>
     </section>
   )
 }
