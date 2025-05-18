@@ -1,3 +1,5 @@
+import { MediaCardItem } from '../../types'
+
 export interface MediaCardSlideProps {
-  imageUrl: string
+  item: MediaCardItem
 }

@@ -4,7 +4,10 @@ import { MediaCardSlider, MediaCardSliderProps } from '@/widgets'
 
 const BASE_GAME_CARD_IMAGE_PREFIX = '/images/games/'
 const items: MediaCardSliderProps['items'] = [
-  { imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg` },
+  {
+    imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg`,
+    title: 'God of war: ragnarok',
+  },
   { imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg` },
 ]
 
