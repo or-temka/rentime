@@ -1,34 +1,36 @@
 import { Slider } from '../Slider'
 import { MediaCardSlide } from './components'
 import styles from './index.module.scss'
+import { MediaCardSliderProps } from './types'
 
-const slides = [
-  <MediaCardSlide key={1} imageUrlName="uncharted-4.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="god-of-war.webp" />,
-  <MediaCardSlide key={1} imageUrlName="resident-evil-village.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="uncharted-4.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="god-of-war-ragnarok.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="uncharted-4.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="god-of-war-ragnarok.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="resident-evil-village.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="resident-evil-village.jpg" />,
-  <MediaCardSlide key={1} imageUrlName="spider-man-miles-morales.jpg" />,
-]
+export const MediaCardSlider = ({
+  classNames,
+  items,
+}: MediaCardSliderProps) => {
+  const slides = items.map((item) => (
+    <MediaCardSlide key={1} imageUrl={item.imageUrl} />
+  ))
 
-export const MediaCardSlider = () => {
   return (
     <Slider
       visibleSlidesCount={5}
       scrollSlidesCount={3}
       slides={slides}
       classNames={{
-        emblaSlide: styles.slide,
-        dots: styles.dots,
-        emblaContainer: styles.emblaContainer,
-        sliderWrapper: styles.sliderWrapper,
+        ...classNames?.slider,
+        emblaSlide: [styles.slide, classNames?.slider?.emblaSlide].join(' '),
+        dots: [styles.dots, classNames?.slider?.dots].join(' '),
+        emblaContainer: [
+          styles.emblaContainer,
+          classNames?.slider?.emblaContainer,
+        ].join(' '),
+        sliderWrapper: [
+          styles.sliderWrapper,
+          classNames?.slider?.sliderWrapper,
+        ].join(' '),
       }}
     />
   )
 }
+
+export type * from './types'

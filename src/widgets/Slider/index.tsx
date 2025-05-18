@@ -85,3 +85,5 @@ export const Slider = ({
     </div>
   )
 }
+
+export type * from './types'
