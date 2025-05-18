@@ -7,9 +7,7 @@ export const MediaCardSlider = ({
   classNames,
   items,
 }: MediaCardSliderProps) => {
-  const slides = items.map((item) => (
-    <MediaCardSlide key={1} imageUrl={item.imageUrl} />
-  ))
+  const slides = items.map((item) => <MediaCardSlide key={1} item={item} />)
 
   return (
     <Slider
