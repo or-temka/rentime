@@ -1,5 +1,6 @@
-import { Product } from '../../types'
-import { getProductImageRoute } from '../../utils'
+import { PICO_4_GAMES } from '@/entities/game'
+import { getProductImageRoute, Product } from '@/entities/product'
+import { AVAILABLE_PICO_4_GAMES } from './availableGames'
 
 export const PICO4_ID: Product['id'] = 'pico4'
 
@@ -24,4 +25,8 @@ export const PICO4: Product = {
   },
   category: 'rest and leisure',
   description: 'Описание для pico 4',
+  games: {
+    all: PICO_4_GAMES,
+    available: AVAILABLE_PICO_4_GAMES,
+  },
 }
