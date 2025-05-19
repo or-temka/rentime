@@ -1,5 +1,9 @@
 .sliderWrapper {
   padding-top: 45px;
+
+  @media (max-width: 800px) {
+    padding-top: 28px;
+  }
 }
 
 .dots {

@@ -10,6 +10,7 @@ export const Slider = ({
   scrollSlidesCount = 1,
   slides,
   classNames,
+  fixedSlideWidth,
 }: SliderProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     slidesToScroll: scrollSlidesCount,
@@ -31,9 +32,11 @@ export const Slider = ({
     onSelect()
   }, [emblaApi, onSelect])
 
-  const slideWidth = `calc((100% - ${
-    visibleSlidesCount - 1
-  } * 16px) / ${visibleSlidesCount})`
+  const slideWidth = fixedSlideWidth
+    ? typeof fixedSlideWidth === 'number'
+      ? `${fixedSlideWidth}px`
+      : fixedSlideWidth
+    : `calc((100% - ${visibleSlidesCount - 1} * 16px) / ${visibleSlidesCount})`
   const peekSlideWidth = `calc(${slideWidth} * 0.5)`
 
   return (
