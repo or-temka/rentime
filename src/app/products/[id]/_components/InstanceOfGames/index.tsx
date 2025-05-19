@@ -1,17 +1,14 @@
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { MediaCardSlider, MediaCardSliderProps } from '@/widgets'
+import { InstanceOfGamesProps } from './types'
 
-const BASE_GAME_CARD_IMAGE_PREFIX = '/images/games/'
-const items: MediaCardSliderProps['items'] = [
-  {
-    imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg`,
-    title: 'God of war: ragnarok',
-  },
-  { imageUrl: `${BASE_GAME_CARD_IMAGE_PREFIX}god-of-war-ragnarok.jpg` },
-]
+export const InstanceOfGames = ({ games }: InstanceOfGamesProps) => {
+  const items: MediaCardSliderProps['items'] = games.map((game) => ({
+    title: game.name,
+    imageUrl: `/images/games/${game.imageName}`,
+  }))
 
-export const InstanceOfGames = () => {
   return (
     <section className={styles.section}>
       <div className={styles.header}>

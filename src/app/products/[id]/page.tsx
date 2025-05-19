@@ -28,7 +28,9 @@ function ProductPage({ params }: ProductPageProps) {
 
       <MainContentContainer>
         <ProductInformation product={product} />
-        <InstanceOfGames />
+        {product.games?.available && (
+          <InstanceOfGames games={product.games.available} />
+        )}
       </MainContentContainer>
     </main>
   )

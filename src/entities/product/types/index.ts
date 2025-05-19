@@ -1,3 +1,5 @@
+import { GameRecord, Games } from '@/entities/game'
+
 export type ProductPriceForDays = number
 
 export type Product = {
@@ -21,6 +23,10 @@ export type Product = {
   }
   description?: string
   category?: ProductCategory
+  games?: {
+    all?: GameRecord
+    available?: Games
+  }
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'
