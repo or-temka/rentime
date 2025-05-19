@@ -1,12 +1,28 @@
 .section {
-  background: url('/images/backgrounds/instance-of-games-background-1.jpg');
   background-position: top center;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 122px;
   padding: 100px 0px;
 
   --horizontal-offset: 70px;
+
+  @media (max-width: 1200px) {
+    padding: 70px 0px;
+    gap: 70px;
+    --horizontal-offset: 40px;
+  }
+  @media (max-width: 900px) {
+    padding: 60px 0px;
+    gap: 60px;
+    --horizontal-offset: 30px;
+  }
+  @media (max-width: 700px) {
+    padding: 50px 0px;
+    gap: 50px;
+    --horizontal-offset: 20px;
+  }
 }
 
 .header {
@@ -15,17 +31,47 @@
   flex-direction: column;
   gap: 30px;
   padding: 0px var(--horizontal-offset);
+  z-index: 1;
 }
 
 .title {
   font-size: 60px;
+
+  @media (max-width: 1200px) {
+    font-size: 52px;
+  }
+  @media (max-width: 900px) {
+    font-size: 45px;
+  }
+  @media (max-width: 800px) {
+    font-size: 40px;
+  }
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
 }
 
 .paragraph {
   font-size: 20px;
   font-weight: 300;
   max-width: 55%;
+
+  @media (max-width: 1200px) {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
 }
 
 .sliderContainer {
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
