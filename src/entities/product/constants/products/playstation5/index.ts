@@ -1,5 +1,6 @@
-import { Product } from '../../types'
-import { getProductImageRoute } from '../../utils'
+import { PLAYSTATION_5_GAMES } from '@/entities/game'
+import { getProductImageRoute, Product } from '@/entities/product'
+import { AVAILABLE_PLAYSTATION_5_GAMES } from './availableGames'
 
 export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
 
@@ -24,4 +25,8 @@ export const PLAYSTATION5: Product = {
   },
   category: 'rest and leisure',
   description: 'Описание для play station 5',
+  games: {
+    all: PLAYSTATION_5_GAMES,
+    available: AVAILABLE_PLAYSTATION_5_GAMES,
+  },
 }
