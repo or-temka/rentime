@@ -2,40 +2,6 @@
   position: relative;
 }
 
-.background {
-  position: absolute;
-  left: calc(-1 * var(--side-content-margin) - 30px);
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  z-index: -1;
-
-  @media (max-width: 1200px) {
-    left: calc(-1 * var(--side-content-margin) - 15px);
-    margin-top: 70px;
-  }
-  @media (max-width: 700px) {
-    left: calc(-1 * var(--side-content-margin) - 5px);
-    margin-top: 270px;
-  }
-  @media (max-width: 500px) {
-    margin-top: 300px;
-  }
-}
-
-.backgroundText {
-  font-family: var(--font-bounded);
-  font-size: calc(21vw);
-  line-height: calc(16vw);
-  color: #e7e7e7;
-  opacity: 0.4;
-
-  @media (max-width: 700px) {
-    font-size: calc(20vw);
-  }
-}
-
 .content {
   display: grid;
   grid-template-columns: 45% 55%;

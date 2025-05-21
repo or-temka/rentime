@@ -3,7 +3,11 @@ import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { ProductPageProps } from './types'
 import NotFound from '@/app/not-found'
-import { InstanceOfGames, ProductInformation } from './_components'
+import {
+  Advertisement,
+  InstanceOfGames,
+  ProductInformation,
+} from './_components'
 import { PRODUCTS } from '@/entities/product'
 
 function ProductPage({ params }: ProductPageProps) {
@@ -28,9 +32,12 @@ function ProductPage({ params }: ProductPageProps) {
 
       <MainContentContainer>
         <ProductInformation product={product} />
+
         {product.games?.available && (
           <InstanceOfGames games={product.games.available} />
         )}
+
+        <Advertisement />
       </MainContentContainer>
     </main>
   )
