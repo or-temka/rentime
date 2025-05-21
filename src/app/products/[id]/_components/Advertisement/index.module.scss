@@ -1,13 +1,25 @@
 .section {
+  position: relative;
+  padding: 190px 0px;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .slogan {
+  font-size: 64px;
+  font-family: var(--font-bounded);
+  font-weight: 500;
+  max-width: 60%;
 }
 
 .rent {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .paymentAndDeliveryLink {

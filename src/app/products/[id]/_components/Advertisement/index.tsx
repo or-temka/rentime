@@ -7,7 +7,7 @@ import styles from './index.module.scss'
 export const Advertisement = () => {
   return (
     <section className={styles.section}>
-      <TextsBackgound />
+      <TextsBackgound text="rentime" />
 
       <div className={styles.content}>
         <span className={styles.slogan}>
