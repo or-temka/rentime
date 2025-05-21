@@ -4,14 +4,12 @@ import { RentButton } from '@/shared/components'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './index.module.scss'
+import { TextsBackgound } from '@/widgets'
 
 export const ProductStand = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.background}>
-        <span className={styles.backgroundText}>Rentime</span>
-        <span className={styles.backgroundText}>Rentime</span>
-      </div>
+      <TextsBackgound />
 
       <div className={styles.content}>
         <div className={styles.header}>
