@@ -7,7 +7,10 @@ import styles from './index.module.scss'
 export const Advertisement = () => {
   return (
     <section className={styles.section}>
-      <TextsBackgound text="rentime" />
+      <TextsBackgound
+        text="rentime"
+        classNames={{ container: styles.background }}
+      />
 
       <div className={styles.content}>
         <span className={styles.slogan}>
