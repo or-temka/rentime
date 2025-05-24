@@ -24,7 +24,11 @@ function ProductPage({ params }: ProductPageProps) {
         title={product.name}
         info={{
           text: product.description || '',
-          button: <RentButton />,
+          button: (
+            <a href={product.links?.avito} target="_blank">
+              <RentButton href="" />
+            </a>
+          ),
         }}
         className={styles.pageHeader}
         style={{ backgroundImage: `url(${product.imagesURL.full})` }}
@@ -37,7 +41,7 @@ function ProductPage({ params }: ProductPageProps) {
           <InstanceOfGames games={product.games.available} />
         )}
 
-        <Advertisement />
+        <Advertisement product={product} />
       </MainContentContainer>
     </main>
   )

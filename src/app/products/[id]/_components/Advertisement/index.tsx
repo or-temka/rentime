@@ -3,8 +3,9 @@ import { RentButton, UnderlineSpan } from '@/shared/components'
 import { TextsBackgound } from '@/widgets'
 import Link from 'next/link'
 import styles from './index.module.scss'
+import { AdvertisementProps } from './types'
 
-export const Advertisement = () => {
+export const Advertisement = ({ product }: AdvertisementProps) => {
   return (
     <section className={styles.section}>
       <TextsBackgound
@@ -17,7 +18,9 @@ export const Advertisement = () => {
           Арендуй. Пользуйся. Возвращай. Легко!
         </span>
         <div className={styles.rent}>
-          <RentButton theme="dark" />
+          <a href={product.links?.avito} target="_blank">
+            <RentButton theme="dark" href="" />
+          </a>
           <Link
             href={ROUTES.PAYMENT_AND_DELIVERY}
             className={styles.paymentAndDeliveryLink}

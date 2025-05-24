@@ -27,6 +27,9 @@ export type Product = {
     all?: GameRecord
     available?: Games
   }
+  links?: {
+    avito?: string
+  }
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'
