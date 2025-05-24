@@ -7,6 +7,7 @@ import { ROUTES } from '@/config/routes'
 import { Button } from '../Button'
 import { Logo } from '../svgs'
 import { useEffect, useState } from 'react'
+import { AVITO_COMPANY_PROFILE_LINK } from '@/config/siteInfo'
 
 export const Header = () => {
   const [showMenuModal, setShowMenuModal] = useState(false)
@@ -45,14 +46,20 @@ export const Header = () => {
             </Link>
           ))}
         </ul>
-        <Button
-          theme="light"
-          variant="outlined"
-          hoverAnimation
-          className={styles.writeButton}
+        <a
+          href={AVITO_COMPANY_PROFILE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Написать
-        </Button>
+          <Button
+            theme="light"
+            variant="outlined"
+            hoverAnimation
+            className={styles.writeButton}
+          >
+            Написать
+          </Button>
+        </a>
         <div
           className={styles.mobileMenuBtn}
           onClick={() => setShowMenuModal(true)}
@@ -89,14 +96,20 @@ export const Header = () => {
               </ul>
             </nav>
             <div className={styles.bottomNav}>
-              <Button
-                theme="light"
-                variant="outlined"
-                hoverAnimation
-                className={styles.writeButton_mobile}
+              <a
+                href={AVITO_COMPANY_PROFILE_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Написать
-              </Button>
+                <Button
+                  theme="light"
+                  variant="outlined"
+                  hoverAnimation
+                  className={styles.writeButton_mobile}
+                >
+                  Написать
+                </Button>
+              </a>
               <div
                 className={styles.aside__closeBtnContainer}
                 onClick={() => setShowMenuModal(false)}
