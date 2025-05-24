@@ -41,7 +41,7 @@ function ProductPage({ params }: ProductPageProps) {
           <InstanceOfGames games={product.games.available} />
         )}
 
-        <Advertisement />
+        <Advertisement product={product} />
       </MainContentContainer>
     </main>
   )
