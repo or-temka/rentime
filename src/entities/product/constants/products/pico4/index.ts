@@ -29,4 +29,8 @@ export const PICO4: Product = {
     all: PICO_4_GAMES,
     available: AVAILABLE_PICO_4_GAMES,
   },
+  links: {
+    avito:
+      'https://www.avito.ru/yaroslavl/predlozheniya_uslug/viar_ochki_pico_4_arenda_prokat_7326125846?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
+  },
 }

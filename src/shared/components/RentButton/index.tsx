@@ -10,16 +10,18 @@ export const RentButton = ({
   href = ROUTES.HOME,
   theme = 'light',
 }: RentButtonProps) => {
-  return (
-    <Link href={href}>
-      <Button theme={theme} className={styles.rentButton}>
-        <span className={styles.rentButton__text}>Арендовать</span>
-        <RightArrowSVG
-          theme={theme === 'light' ? 'dark' : 'light'}
-          className={styles.rentButton__arrow}
-          width={20}
-        />
-      </Button>
-    </Link>
+  const ButtonComponent = (
+    <Button theme={theme} className={styles.rentButton}>
+      <span className={styles.rentButton__text}>Арендовать</span>
+      <RightArrowSVG
+        theme={theme === 'light' ? 'dark' : 'light'}
+        className={styles.rentButton__arrow}
+        width={20}
+      />
+    </Button>
   )
+
+  if (!href) return ButtonComponent
+
+  return <Link href={href}>{ButtonComponent}</Link>
 }

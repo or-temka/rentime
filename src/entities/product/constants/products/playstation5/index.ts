@@ -29,4 +29,8 @@ export const PLAYSTATION5: Product = {
     all: PLAYSTATION_5_GAMES,
     available: AVAILABLE_PLAYSTATION_5_GAMES,
   },
+  links: {
+    avito:
+      'https://www.avito.ru/yaroslavl/predlozheniya_uslug/sony_playstation_5_arenda_prokat_7326172571?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
+  },
 }
