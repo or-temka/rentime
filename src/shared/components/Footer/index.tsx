@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { menuSections } from './constants'
 import { AvitoLogoSVG, Logo, TelegramLogoSVG, VkLogoSVG } from '../svgs'
+import { AVITO_COMPANY_PROFILE_LINK } from '@/config/siteInfo'
 
 export const Logos = () => {
   return (
@@ -10,10 +11,7 @@ export const Logos = () => {
       <a target="_blank" href="https://google.com">
         <VkLogoSVG width={32} className={styles.serviceLogo} />
       </a>
-      <a
-        href="https://www.avito.ru/brands/i129619118/all/predlozheniya_uslug?sellerId=d0d533118a52a1afd3ab10b835d16aca"
-        target="_blank"
-      >
+      <a href={AVITO_COMPANY_PROFILE_LINK} target="_blank">
         <AvitoLogoSVG width={66} className={styles.serviceLogo} />
       </a>
       <a target="_blank" href="https://google.com">
