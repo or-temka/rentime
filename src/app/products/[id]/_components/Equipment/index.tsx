@@ -1,22 +1,27 @@
 import { H2 } from '@/shared/components'
 import { EquipmentProps } from './types'
+import styles from './index.module.scss'
 
 export const Equipment = ({ product }: EquipmentProps) => {
   if (!product.equipment) {
     return (
-      <div>
-        <span>В комплекте с данным товаром ничего не идёт.</span>
+      <div className={styles.empty}>
+        <span className={styles.empty__text}>
+          В комплекте с данным товаром ничего не идёт.
+        </span>
       </div>
     )
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <H2>В комплекте</H2>
 
-      <ul>
+      <ul className={styles.list}>
         {product.equipment.map((equipItem, index) => (
-          <li key={index}>{equipItem}</li>
+          <li key={index} className={styles.list__item}>
+            {equipItem}
+          </li>
         ))}
       </ul>
     </div>
