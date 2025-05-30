@@ -30,6 +30,7 @@ export type Product = {
   links?: {
     avito?: string
   }
+  equipment?: string[]
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'
