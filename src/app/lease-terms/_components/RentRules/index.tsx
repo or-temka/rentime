@@ -2,15 +2,7 @@ import Link from 'next/link'
 import { Rule } from './Rule'
 import { ROUTES } from '@/config/routes'
 import styles from './index.module.scss'
-import { UlLiProps } from './types'
-
-const UlLi = ({ children, className, ...rest }: UlLiProps) => {
-  return (
-    <li {...rest} className={[styles.li, styles.ul__li, className].join(' ')}>
-      {children}
-    </li>
-  )
-}
+import { UlLi } from '@/shared/components'
 
 export const RentRules = () => {
   return (

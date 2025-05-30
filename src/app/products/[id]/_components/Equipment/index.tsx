@@ -1,4 +1,4 @@
-import { H2 } from '@/shared/components'
+import { H2, UlLi } from '@/shared/components'
 import { EquipmentProps } from './types'
 import styles from './index.module.scss'
 
@@ -19,9 +19,9 @@ export const Equipment = ({ product }: EquipmentProps) => {
 
       <ul className={styles.list}>
         {product.equipment.map((equipItem, index) => (
-          <li key={index} className={styles.list__item}>
+          <UlLi key={index} className={styles.list__item}>
             {equipItem}
-          </li>
+          </UlLi>
         ))}
       </ul>
     </div>
