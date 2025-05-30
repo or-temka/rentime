@@ -6,6 +6,7 @@ import styles from './index.module.scss'
 import { useState } from 'react'
 import { Price } from '../Price'
 import { ProductInformationProps } from './types'
+import { Equipment } from '../Equipment'
 
 export const ProductInformation = ({ product }: ProductInformationProps) => {
   const [activeSection, setActiveSection] = useState<SegmentedSelectOption>(
@@ -24,6 +25,7 @@ export const ProductInformation = ({ product }: ProductInformationProps) => {
       />
 
       {activeSection.value === 'price' && <Price product={product} />}
+      {activeSection.value === 'bundling' && <Equipment product={product} />}
     </section>
   )
 }

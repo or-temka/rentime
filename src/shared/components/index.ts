@@ -5,6 +5,7 @@ export * from './RentButton'
 export * from './UnderlineSpan'
 export * from './SegmentedSelect'
 export * from './Collapse'
+export * from './UlLi'
 
 export * from './H2'
 
