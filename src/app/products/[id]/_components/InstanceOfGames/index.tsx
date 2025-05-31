@@ -3,8 +3,12 @@ import styles from './index.module.scss'
 import { MediaCardSlider, MediaCardSliderProps } from '@/widgets'
 import { InstanceOfGamesProps } from './types'
 import Image from 'next/image'
+import { DownloadedGames } from '../DownloadedGames'
 
-export const InstanceOfGames = ({ games }: InstanceOfGamesProps) => {
+export const InstanceOfGames = ({
+  games,
+  downloaded,
+}: InstanceOfGamesProps) => {
   const items: MediaCardSliderProps['items'] = games.map((game) => ({
     title: game.name,
     imageUrl: `/images/games/${game.imageName}`,
@@ -32,6 +36,12 @@ export const InstanceOfGames = ({ games }: InstanceOfGamesProps) => {
       <div className={styles.sliderContainer}>
         <MediaCardSlider items={items} />
       </div>
+
+      {downloaded && (
+        <div className={styles.downloaded}>
+          <DownloadedGames games={downloaded} />
+        </div>
+      )}
     </section>
   )
 }
