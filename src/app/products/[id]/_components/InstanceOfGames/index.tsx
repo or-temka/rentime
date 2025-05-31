@@ -3,8 +3,12 @@ import styles from './index.module.scss'
 import { MediaCardSlider, MediaCardSliderProps } from '@/widgets'
 import { InstanceOfGamesProps } from './types'
 import Image from 'next/image'
+import { DownloadedGames } from '../DownloadedGames'
 
-export const InstanceOfGames = ({ games }: InstanceOfGamesProps) => {
+export const InstanceOfGames = ({
+  games,
+  downloaded,
+}: InstanceOfGamesProps) => {
   const items: MediaCardSliderProps['items'] = games.map((game) => ({
     title: game.name,
     imageUrl: `/images/games/${game.imageName}`,
@@ -27,6 +31,7 @@ export const InstanceOfGames = ({ games }: InstanceOfGamesProps) => {
           Всего игр более 500. Если вам нужна определенная игра и вы не увидели
           ее в этом списке, напишите нам для уточнения наличия игры в подписке.
         </p>
+        {downloaded && <DownloadedGames games={downloaded} />}
       </div>
 
       <div className={styles.sliderContainer}>

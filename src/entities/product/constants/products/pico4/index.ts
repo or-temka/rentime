@@ -1,6 +1,7 @@
 import { PICO_4_GAMES } from '@/entities/game'
 import { getProductImageRoute, Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_GAMES } from './availableGames'
+import { DOWNLOADED_PICO_4_GAMES } from './downloadedGames'
 
 export const PICO4_ID: Product['id'] = 'pico4'
 
@@ -28,6 +29,7 @@ export const PICO4: Product = {
   games: {
     all: PICO_4_GAMES,
     available: AVAILABLE_PICO_4_GAMES,
+    downloaded: DOWNLOADED_PICO_4_GAMES,
   },
   links: {
     avito:

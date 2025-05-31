@@ -38,7 +38,10 @@ function ProductPage({ params }: ProductPageProps) {
         <ProductInformation product={product} />
 
         {product.games?.available && (
-          <InstanceOfGames games={product.games.available} />
+          <InstanceOfGames
+            games={product.games.available}
+            downloaded={product.games.downloaded}
+          />
         )}
 
         <Advertisement product={product} />

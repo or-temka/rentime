@@ -26,6 +26,7 @@ export type Product = {
   games?: {
     all?: GameRecord
     available?: Games
+    downloaded?: Games
   }
   links?: {
     avito?: string
