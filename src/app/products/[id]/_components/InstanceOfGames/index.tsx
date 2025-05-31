@@ -31,12 +31,17 @@ export const InstanceOfGames = ({
           Всего игр более 500. Если вам нужна определенная игра и вы не увидели
           ее в этом списке, напишите нам для уточнения наличия игры в подписке.
         </p>
-        {downloaded && <DownloadedGames games={downloaded} />}
       </div>
 
       <div className={styles.sliderContainer}>
         <MediaCardSlider items={items} />
       </div>
+
+      {downloaded && (
+        <div className={styles.downloaded}>
+          <DownloadedGames games={downloaded} />
+        </div>
+      )}
     </section>
   )
 }
