@@ -22,12 +22,14 @@ export const metadata = {
     title: 'Аренда товаров в Ярославле — Rentime',
     description:
       'Арендуйте игровые приставки, инструменты и другие вещи в Ярославле с Rentime. Удобно, быстро и выгодно!',
+    url: 'https://rentime.ru',
+    siteName: 'Rentime',
     images: [
       {
         url: 'https://rentime.ru/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Аренда товаров с Rentime',
+        alt: 'Rentime — Аренда вещей в Ярославле',
       },
     ],
     locale: 'ru_RU',
