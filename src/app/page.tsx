@@ -4,7 +4,7 @@ import styles from './page.module.scss'
 import { MainContentContainer, RentButton } from '@/shared/components'
 
 export const metadata = {
-  title: 'аренда вещей в Ярославле | Rentime',
+  title: 'Аренда вещей в Ярославле | Rentime',
   description:
     'Арендуйте игровые приставки, инструменты и другие вещи в Ярославле с Rentime. Удобно, быстро и выгодно!',
   keywords: [
