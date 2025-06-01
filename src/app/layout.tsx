@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Rentime',
     images: [
       {
-        url: 'https://rentime.ru/og-image.jpg', // TODO: замнить на реальное изображение
+        url: 'https://rentime.ru/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Rentime — Аренда вещей в Ярославле',

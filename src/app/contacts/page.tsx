@@ -3,6 +3,39 @@ import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
 import { ContactButtons, OnMap } from './_components'
 
+export const metadata = {
+  title: 'Контакты | Rentime — аренда в Ярославле',
+  description:
+    'Свяжитесь с командой Rentime для аренды товаров в Ярославле. Телефон, адрес, соцсети — мы всегда на связи!',
+  keywords: [
+    'контакты Rentime',
+    'связаться Rentime',
+    'аренда Ярославль телефон',
+    'прокат Ярославль контакты',
+    'аренда техники Ярославль',
+    'саппорт Rentime',
+    'аренда Ярославль адрес',
+    'аренда вещей Ярославль',
+  ],
+  openGraph: {
+    title: 'Контакты Rentime — аренда товаров в Ярославле',
+    description:
+      'Телефон, адрес и способы связи с сервисом аренды Rentime в Ярославле. Ответим на все вопросы!',
+    url: 'https://rentime.ru/contacts',
+    siteName: 'Rentime',
+    images: [
+      {
+        url: 'https://rentime.ru/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Контакты Rentime — Аренда вещей в Ярославле',
+      },
+    ],
+    locale: 'ru_RU',
+    type: 'website',
+  },
+}
+
 function ContactsPage() {
   return (
     <main>

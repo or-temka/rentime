@@ -8,11 +8,63 @@ import {
   InstanceOfGames,
   ProductInformation,
 } from './_components'
+import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
 
-function ProductPage({ params }: ProductPageProps) {
-  const queryProductId = params.id
-  const product = PRODUCTS[queryProductId]
+async function getProduct(id: string) {
+  return PRODUCTS[id] ?? null
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string }
+}): Promise<Metadata> {
+  const product = await getProduct(params.id)
+
+  if (!product) {
+    return {
+      title: 'Товар не найден | Rentime',
+    }
+  }
+
+  return {
+    title: `${product.name} — аренда в Ярославле | Rentime`,
+    description:
+      product.description ||
+      `Арендуйте ${product.name} в Ярославле на выгодных условиях. Rentime — удобно и быстро!`,
+    keywords: [
+      product.name,
+      `аренда ${product.name}`,
+      `${product.name} Ярославль`,
+      'прокат Ярославль',
+      'аренда Rentime',
+      `арендовать ${product.name}`,
+    ],
+    openGraph: {
+      title: `${product.name} — аренда в Ярославле | Rentime`,
+      description:
+        product.description ||
+        `Выгодная аренда ${product.name} в Ярославле. Rentime — сервис проката нужных вещей.`,
+      url: `https://rentime.ru/products/${product.id}`,
+      siteName: 'Rentime',
+      images: [
+        {
+          url: product.imagesURL.thumbnail || 'https://rentime.ru/',
+          width: 1200,
+          height: 630,
+          alt: `${product.name} — аренда в Ярославле | Rentime`,
+        },
+      ],
+      locale: 'ru_RU',
+      type: 'website',
+    },
+    metadataBase: new URL('https://rentime.ru'),
+  }
+}
+
+async function ProductPage({ params }: ProductPageProps) {
+  const product = await getProduct(params.id)
 
   if (!product) {
     return <NotFound />
