@@ -2,6 +2,7 @@ import { MainContentContainer } from '@/shared/components'
 import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { Catalog } from './_components'
+import { ProductsPageProps } from './types'
 
 export const metadata = {
   title: 'Каталог товаров | Rentime — аренда в Ярославле',
@@ -45,7 +46,9 @@ export const metadata = {
   },
 }
 
-function ProductsPage() {
+async function ProductsPage({ searchParams }: ProductsPageProps) {
+  const { productCategory } = await searchParams
+
   return (
     <main>
       <ThinPageHeader
@@ -55,7 +58,7 @@ function ProductsPage() {
       />
 
       <MainContentContainer>
-        <Catalog />
+        <Catalog activeCategory={productCategory} />
       </MainContentContainer>
     </main>
   )

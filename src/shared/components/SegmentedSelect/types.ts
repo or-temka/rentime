@@ -6,7 +6,9 @@ export type SegmentedSelectOption = {
 export type SegmentedSelectProps = {
   options: SegmentedSelectOption[]
   activeOption: SegmentedSelectOption
-  setActiveOption: React.Dispatch<React.SetStateAction<SegmentedSelectOption>>
+  setActiveOption:
+    | React.Dispatch<React.SetStateAction<SegmentedSelectOption>>
+    | ((option: SegmentedSelectOption) => void)
   classNames?: {
     desktop?: {
       buttons?: string

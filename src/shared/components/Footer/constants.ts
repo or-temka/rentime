@@ -4,13 +4,29 @@ import { MenuSection } from './types'
 export const menuSections: MenuSection[] = [
   {
     name: 'Каталог товаров',
-    link: ROUTES.HOME,
+    link: ROUTES.PRODUCTS.BASE,
     items: [
-      { label: 'Отдых и досуг', link: ROUTES.HOME },
-      { label: 'Для дома', link: ROUTES.HOME },
-      { label: 'Туризм', link: ROUTES.HOME },
+      {
+        label: 'Отдых и досуг',
+        link: ROUTES.PRODUCTS.WITH_QUERY({
+          productCategory: 'rest and leisure',
+        }),
+      },
+      {
+        label: 'Для дома',
+        link: ROUTES.PRODUCTS.WITH_QUERY({
+          productCategory: 'for home',
+        }),
+      },
+      {
+        label: 'Туризм',
+        link: ROUTES.PRODUCTS.WITH_QUERY({
+          productCategory: 'tourism',
+        }),
+      },
     ],
   },
+
   {
     name: 'Условия аренды',
     link: ROUTES.LEASE_TERMS,
@@ -33,6 +49,7 @@ export const menuSections: MenuSection[] = [
       },
     ],
   },
+
   {
     name: 'Оплата и доставка',
     link: ROUTES.PAYMENT_AND_DELIVERY,
@@ -51,6 +68,7 @@ export const menuSections: MenuSection[] = [
       },
     ],
   },
+
   {
     name: 'Контакты',
     link: ROUTES.CONTACTS,

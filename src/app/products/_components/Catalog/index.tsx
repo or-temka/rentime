@@ -8,13 +8,22 @@ import {
 } from '@/shared/components'
 import { productCategoriesOptions, products, sortMap } from './constants'
 import { useState } from 'react'
-import { ProductCard } from '@/entities/product'
+import { ProductCard, ProductCategory } from '@/entities/product'
 import styles from './index.module.scss'
-import { Sort } from './types'
+import { CatalogProps, Sort } from './types'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { withQuery } from '@/shared/utils'
+import { ProductsRouteQueryRecord } from '@/config/routeTypes'
 
-export const Catalog = () => {
+export const Catalog = ({
+  activeCategory: userActiveCategory,
+}: CatalogProps) => {
+  const router = useRouter()
+  const searchParams = useSearchParams()
   const [activeCategory, setActiveCategory] = useState<SegmentedSelectOption>(
-    productCategoriesOptions[0]
+    productCategoriesOptions.find(
+      (category) => category.value === userActiveCategory
+    ) || productCategoriesOptions[0]
   )
   const [sort, setSort] = useState<Sort>('no')
 
@@ -36,13 +45,24 @@ export const Catalog = () => {
     )
   }
 
+  const setActiveCategoryHandler = (option: SegmentedSelectOption) => {
+    const params = new URLSearchParams(searchParams)
+    params.set('productCategory', option.value)
+    router.push(
+      withQuery<ProductsRouteQueryRecord>('/products', {
+        productCategory: option.value as ProductCategory,
+      })
+    )
+    setActiveCategory(option)
+  }
+
   return (
     <section className={styles.section}>
       <header className={styles.header}>
         <SegmentedSelect
           options={productCategoriesOptions}
           activeOption={activeCategory}
-          setActiveOption={setActiveCategory}
+          setActiveOption={setActiveCategoryHandler}
         />
         <div className={styles.filters}>
           <div className={styles.sort} onClick={handleSortClick}>
