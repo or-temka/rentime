@@ -12,7 +12,7 @@ export const navigationElements: NavigationElement[] = [
   },
   {
     label: 'Оплата и доставка',
-    link: ROUTES.PAYMENT_AND_DELIVERY,
+    link: ROUTES.PAYMENT_AND_DELIVERY.BASE,
   },
   {
     label: 'Контакты',

@@ -49,7 +49,10 @@ export const RentRules = () => {
           <UlLi>
             <p>
               Доставка: Стоимость доставки можно уточнить на странице{' '}
-              <Link href={ROUTES.PAYMENT_AND_DELIVERY} className={styles.link}>
+              <Link
+                href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
+                className={styles.link}
+              >
                 Доставка и оплата
               </Link>
               .
@@ -59,7 +62,10 @@ export const RentRules = () => {
             <p>
               Возврат с доставкой: Платный. Стоимость зависит от района. Можно
               уточнить на странице{' '}
-              <Link href={ROUTES.PAYMENT_AND_DELIVERY} className={styles.link}>
+              <Link
+                href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
+                className={styles.link}
+              >
                 Доставка и оплата
               </Link>
               .

@@ -1,5 +1,8 @@
 import { withQuery } from '@/shared/utils'
-import { ProductsRouteQueryRecord } from './routeTypes'
+import {
+  PaymentAndDeliveryRouteQueryRecord,
+  ProductsRouteQueryRecord,
+} from './routeTypes'
 
 export const ROUTES = {
   HOME: '/',
@@ -12,6 +15,14 @@ export const ROUTES = {
   LEASE_TERMS: {
     BASE: '/lease-terms',
   },
-  PAYMENT_AND_DELIVERY: '/payment-and-delivery',
+  PAYMENT_AND_DELIVERY: {
+    BASE: '/payment-and-delivery',
+    WITH_QUERY: (query?: PaymentAndDeliveryRouteQueryRecord, hash?: string) =>
+      withQuery<PaymentAndDeliveryRouteQueryRecord>(
+        '/payment-and-delivery',
+        query,
+        hash
+      ),
+  },
   CONTACTS: '/contacts',
 }

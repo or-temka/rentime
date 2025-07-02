@@ -22,7 +22,7 @@ export const Advertisement = ({ product }: AdvertisementProps) => {
             <RentButton theme="dark" href="" />
           </a>
           <Link
-            href={ROUTES.PAYMENT_AND_DELIVERY}
+            href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
             className={styles.paymentAndDeliveryLink}
           >
             <UnderlineSpan>Оплата и доставка</UnderlineSpan>
