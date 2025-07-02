@@ -8,7 +8,7 @@ export const navigationElements: NavigationElement[] = [
   },
   {
     label: 'Условия аренды',
-    link: ROUTES.LEASE_TERMS,
+    link: ROUTES.LEASE_TERMS.BASE,
   },
   {
     label: 'Оплата и доставка',

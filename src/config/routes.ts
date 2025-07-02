@@ -9,7 +9,9 @@ export const ROUTES = {
     WITH_QUERY: (query?: ProductsRouteQueryRecord) =>
       withQuery<ProductsRouteQueryRecord>('/products', query),
   },
-  LEASE_TERMS: '/lease-terms',
+  LEASE_TERMS: {
+    BASE: '/lease-terms',
+  },
   PAYMENT_AND_DELIVERY: '/payment-and-delivery',
   CONTACTS: '/contacts',
 }
