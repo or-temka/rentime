@@ -16,6 +16,6 @@ export const navigationElements: NavigationElement[] = [
   },
   {
     label: 'Контакты',
-    link: ROUTES.CONTACTS,
+    link: ROUTES.CONTACTS.BASE,
   },
 ]

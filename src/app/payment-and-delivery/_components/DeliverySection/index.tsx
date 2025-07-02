@@ -23,7 +23,7 @@ export const DeliverySection = () => {
             <h3 className={styles.infoBlock__title}>За городом</h3>
             <span className={styles.infoBlock__text}>
               Цена доставки за город обсуждается индивидуально. Для уточнения{' '}
-              <a target="_blank" href={ROUTES.CONTACTS}>
+              <a target="_blank" href={ROUTES.CONTACTS.BASE}>
                 напишите нам.
               </a>
             </span>

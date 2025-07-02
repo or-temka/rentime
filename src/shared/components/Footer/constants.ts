@@ -2,6 +2,7 @@ import { ROUTES } from '@/config/routes'
 import { MenuSection } from './types'
 import { BLOCKS_IDS as LEASE_TERM_BLOCKS_IDS } from '@/app/lease-terms/constants'
 import { BLOCKS_IDS as PAYMENT_AND_DELIVERY_BLOCKS_IDS } from '@/app/payment-and-delivery/constants'
+import { BLOCKS_IDS as CONTACTS_BLOCKS_IDS } from '@/app/contacts/constants'
 import { PaymentAndDeliveryTabs } from '@/app/payment-and-delivery/_components/PaymentAndDelivery/types'
 
 export const menuSections: MenuSection[] = [
@@ -95,11 +96,11 @@ export const menuSections: MenuSection[] = [
 
   {
     name: 'Контакты',
-    link: ROUTES.CONTACTS,
+    link: ROUTES.CONTACTS.BASE,
     items: [
       {
-        label: 'Контакты',
-        link: ROUTES.CONTACTS,
+        label: 'Мы на карте',
+        link: ROUTES.CONTACTS.BASE + `#${CONTACTS_BLOCKS_IDS.onMap}`,
       },
     ],
   },

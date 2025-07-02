@@ -2,6 +2,7 @@ import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
 import { ContactButtons, OnMap } from './_components'
+import { BLOCKS_IDS } from './constants'
 
 export const metadata = {
   title: 'Контакты | Rentime — аренда в Ярославле',
@@ -41,7 +42,7 @@ function ContactsPage() {
     <main>
       <ThinPageHeader title="Контакты" className={styles.pageHeader} />
 
-      <MainContentContainer>
+      <MainContentContainer id={BLOCKS_IDS.main}>
         <ContactButtons />
         <OnMap />
       </MainContentContainer>
