@@ -1,10 +1,13 @@
 import { ROUTES } from '@/config/routes'
-import { PRODUCT_IMAGE_ROOT_ROUTE } from '@/entities/product'
+import { PRODUCT_IMAGE_ROOT_ROUTE, PRODUCTS } from '@/entities/product'
 import { RentButton } from '@/shared/components'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './index.module.scss'
 import { TextsBackgound } from '@/widgets'
+
+const SHOW_DETAILS_LINK = ROUTES.PRODUCTS.PRODUCT('playstation5')
+const SHOW_DETAILS_TEXT = 'Посмотреть детали'
 
 export const ProductStand = () => {
   return (
@@ -19,10 +22,10 @@ export const ProductStand = () => {
             быстрой загрузкой и полным погружением в игровой процесс
           </p>
           <Link
-            href={ROUTES.HOME}
+            href={SHOW_DETAILS_LINK}
             className={[styles.link, styles.link__header].join(' ')}
           >
-            Посмотреть детали
+            {SHOW_DETAILS_TEXT}
           </Link>
         </div>
 
@@ -38,13 +41,17 @@ export const ProductStand = () => {
 
         <div className={styles.interaction}>
           <Link
-            href={ROUTES.HOME}
+            href={SHOW_DETAILS_LINK}
             className={[styles.link, styles.link__interaction].join(' ')}
           >
-            Посмотреть детали
+            {SHOW_DETAILS_TEXT}
           </Link>
           <strong className={styles.price}>от 1100 руб</strong>
-          <RentButton theme="dark" />
+          <RentButton
+            theme="dark"
+            href={PRODUCTS.playstation5.links?.avito}
+            target="_blank"
+          />
         </div>
       </div>
     </section>

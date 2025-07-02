@@ -1,6 +1,8 @@
 import { Theme } from '@/shared/types'
+import { ButtonProps } from '../Button/types'
 
-export interface RentButtonProps {
+export type RentButtonProps = {
   href?: string
   theme?: Theme
-}
+  target?: React.HTMLAttributeAnchorTarget
+} & ButtonProps
