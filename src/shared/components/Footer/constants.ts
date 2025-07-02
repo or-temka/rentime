@@ -1,5 +1,6 @@
 import { ROUTES } from '@/config/routes'
 import { MenuSection } from './types'
+import { BLOCKS_IDS as LEASE_TERM_BLOCKS_IDS } from '@/app/lease-terms/constants'
 
 export const menuSections: MenuSection[] = [
   {
@@ -29,23 +30,29 @@ export const menuSections: MenuSection[] = [
 
   {
     name: 'Условия аренды',
-    link: ROUTES.LEASE_TERMS,
+    link: ROUTES.LEASE_TERMS.BASE,
     items: [
       {
-        label: 'Кому доступна аренда',
-        link: ROUTES.LEASE_TERMS,
+        label: 'Требования к арендатору',
+        link:
+          ROUTES.LEASE_TERMS.BASE +
+          `#${LEASE_TERM_BLOCKS_IDS.tenantRequirements}`,
       },
       {
-        label: 'Условия самовывоза',
-        link: ROUTES.LEASE_TERMS,
-      },
-      {
-        label: 'Условия доставки',
-        link: ROUTES.LEASE_TERMS,
+        label: 'Условия доставки и самовывоза',
+        link:
+          ROUTES.LEASE_TERMS.BASE +
+          `#${LEASE_TERM_BLOCKS_IDS.deliveryTermsAndConditions}`,
       },
       {
         label: 'Как оформить заказ',
-        link: ROUTES.LEASE_TERMS,
+        link:
+          ROUTES.LEASE_TERMS.BASE + `#${LEASE_TERM_BLOCKS_IDS.howPlaceOrder}`,
+      },
+      {
+        label: 'Пример договора',
+        link:
+          ROUTES.LEASE_TERMS.BASE + `#${LEASE_TERM_BLOCKS_IDS.leaseAgreement}`,
       },
     ],
   },

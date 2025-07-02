@@ -3,11 +3,12 @@ import { Rule } from './Rule'
 import { ROUTES } from '@/config/routes'
 import styles from './index.module.scss'
 import { UlLi } from '@/shared/components'
+import { BLOCKS_IDS } from '../../constants'
 
 export const RentRules = () => {
   return (
     <section className={styles.section}>
-      <Rule title="Требования к арендатору">
+      <Rule title="Требования к арендатору" id={BLOCKS_IDS.tenantRequirements}>
         <ul className={styles.ul}>
           <UlLi>Арендатор должен быть старше 18 лет.</UlLi>
           <UlLi>
@@ -39,7 +40,10 @@ export const RentRules = () => {
         </ul>
       </Rule>
 
-      <Rule title="Условия доставки и самовывоза">
+      <Rule
+        title="Условия доставки и самовывоза"
+        id={BLOCKS_IDS.deliveryTermsAndConditions}
+      >
         <ul className={styles.ul}>
           <UlLi>Самовывоз и самостоятельный возврат: бесплатно</UlLi>
           <UlLi>
@@ -64,7 +68,7 @@ export const RentRules = () => {
         </ul>
       </Rule>
 
-      <Rule title="Как оформить заказ?">
+      <Rule title="Как оформить заказ?" id={BLOCKS_IDS.howPlaceOrder}>
         <ul className={styles.ul}>
           <UlLi>Выберите подходящий товар</UlLi>
           <UlLi>

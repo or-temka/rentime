@@ -15,7 +15,7 @@ export const howItWorkItems: HowItWorkItem[] = [
     paragraph: 'Уточните у менеджера доступную дату аренды',
     link: {
       text: 'Условия аренды',
-      url: ROUTES.LEASE_TERMS,
+      url: ROUTES.LEASE_TERMS.BASE,
     },
   },
   {
