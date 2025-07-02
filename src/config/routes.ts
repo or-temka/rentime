@@ -24,5 +24,5 @@ export const ROUTES = {
         hash
       ),
   },
-  CONTACTS: '/contacts',
+  CONTACTS: { BASE: '/contacts' },
 }

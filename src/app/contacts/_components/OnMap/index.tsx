@@ -1,9 +1,10 @@
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
+import { BLOCKS_IDS } from '../../constants'
 
 export const OnMap = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id={BLOCKS_IDS.onMap}>
       <H2>На карте</H2>
       <iframe
         className={styles.map}
