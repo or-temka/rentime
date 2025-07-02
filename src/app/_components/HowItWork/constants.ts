@@ -24,7 +24,7 @@ export const howItWorkItems: HowItWorkItem[] = [
       'Вы можете забрать и вернуть товар самостоятельно или заказать доставку',
     link: {
       text: 'Оплата и доставка',
-      url: ROUTES.PAYMENT_AND_DELIVERY,
+      url: ROUTES.PAYMENT_AND_DELIVERY.BASE,
     },
   },
 ]

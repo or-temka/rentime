@@ -1,6 +1,8 @@
 import { ROUTES } from '@/config/routes'
 import { MenuSection } from './types'
 import { BLOCKS_IDS as LEASE_TERM_BLOCKS_IDS } from '@/app/lease-terms/constants'
+import { BLOCKS_IDS as PAYMENT_AND_DELIVERY_BLOCKS_IDS } from '@/app/payment-and-delivery/constants'
+import { PaymentAndDeliveryTabs } from '@/app/payment-and-delivery/_components/PaymentAndDelivery/types'
 
 export const menuSections: MenuSection[] = [
   {
@@ -59,19 +61,34 @@ export const menuSections: MenuSection[] = [
 
   {
     name: 'Оплата и доставка',
-    link: ROUTES.PAYMENT_AND_DELIVERY,
+    link: ROUTES.PAYMENT_AND_DELIVERY.BASE,
     items: [
       {
-        label: 'Оплата',
-        link: ROUTES.PAYMENT_AND_DELIVERY,
-      },
-      {
         label: 'Доставка',
-        link: ROUTES.PAYMENT_AND_DELIVERY,
+        link: ROUTES.PAYMENT_AND_DELIVERY.WITH_QUERY(
+          {
+            activeTab: PaymentAndDeliveryTabs.delivery,
+          },
+          PAYMENT_AND_DELIVERY_BLOCKS_IDS.main
+        ),
       },
       {
-        label: 'Вопросы',
-        link: ROUTES.PAYMENT_AND_DELIVERY,
+        label: 'Оплата',
+        link: ROUTES.PAYMENT_AND_DELIVERY.WITH_QUERY(
+          {
+            activeTab: PaymentAndDeliveryTabs.payment,
+          },
+          PAYMENT_AND_DELIVERY_BLOCKS_IDS.main
+        ),
+      },
+      {
+        label: 'Карта цены доставки',
+        link: ROUTES.PAYMENT_AND_DELIVERY.WITH_QUERY(
+          {
+            activeTab: PaymentAndDeliveryTabs.delivery,
+          },
+          PAYMENT_AND_DELIVERY_BLOCKS_IDS.deliveryPriceMap
+        ),
       },
     ],
   },

@@ -55,7 +55,7 @@ export const Price = ({ product }: PriceProps) => {
               ** Доставка по всему городу: 100-600 рублей в зависимости от
               района (
               <a
-                href={ROUTES.PAYMENT_AND_DELIVERY}
+                href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
                 className={styles.deliveryLink}
               >
                 узнать цену доставки

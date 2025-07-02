@@ -2,17 +2,22 @@ export type QueryRecords = Record<string, string | number | boolean | undefined>
 
 export const withQuery = <T extends QueryRecords>(
   path: string,
-  query?: T
+  query?: T,
+  hash?: string
 ): string => {
-  if (!query) return path
-
   const searchParams = new URLSearchParams()
-  for (const key in query) {
-    const value = query[key]
-    if (value !== undefined) {
-      searchParams.append(key, String(value))
+
+  if (query) {
+    for (const key in query) {
+      const value = query[key]
+      if (value !== undefined) {
+        searchParams.append(key, String(value))
+      }
     }
   }
 
-  return `${path}?${searchParams.toString()}`
+  const queryString = searchParams.toString()
+  const hashString = hash ? `#${hash}` : ''
+
+  return `${path}${queryString ? `?${queryString}` : ''}${hashString}`
 }

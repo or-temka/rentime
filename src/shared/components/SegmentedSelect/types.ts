@@ -1,5 +1,5 @@
-export type SegmentedSelectOption = {
-  value: string
+export type SegmentedSelectOption<Value extends string = string> = {
+  value: Value
   label: string
 }
 

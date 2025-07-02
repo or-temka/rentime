@@ -3,6 +3,7 @@ import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { questionsAnswers } from './constants'
 import { Questions } from '@/widgets'
+import { BLOCKS_IDS } from '../../constants'
 
 export const DeliverySection = () => {
   return (
@@ -37,7 +38,7 @@ export const DeliverySection = () => {
           </p>
         </div>
 
-        <div className={styles.mapSection}>
+        <div className={styles.mapSection} id={BLOCKS_IDS.deliveryPriceMap}>
           <H2>Карта с ценой доставки</H2>
 
           <p>
