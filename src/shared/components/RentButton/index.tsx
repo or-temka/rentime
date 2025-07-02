@@ -9,9 +9,11 @@ import { RightArrowSVG } from '../svgs'
 export const RentButton = ({
   href = ROUTES.HOME,
   theme = 'light',
+  target = '_self',
+  ...rest
 }: RentButtonProps) => {
   const ButtonComponent = (
-    <Button theme={theme} className={styles.rentButton}>
+    <Button theme={theme} className={styles.rentButton} {...rest}>
       <span className={styles.rentButton__text}>Арендовать</span>
       <RightArrowSVG
         theme={theme === 'light' ? 'dark' : 'light'}
@@ -23,5 +25,9 @@ export const RentButton = ({
 
   if (!href) return ButtonComponent
 
-  return <Link href={href}>{ButtonComponent}</Link>
+  return (
+    <Link href={href} target={target}>
+      {ButtonComponent}
+    </Link>
+  )
 }

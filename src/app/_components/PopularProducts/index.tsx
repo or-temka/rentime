@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styles from './index.module.scss'
 import { ROUTES } from '@/config/routes'
 import { H2, SegmentedSelect, SegmentedSelectOption } from '@/shared/components'
-import { ProductCard } from '@/entities/product'
+import { ProductCard, ProductCategory } from '@/entities/product'
 import { popularProducts, productCategoriesOptions } from './constants'
 import { useState } from 'react'
 
@@ -29,7 +29,12 @@ export const PopularProducts = () => {
             setActiveOption={setActiveCategory}
           />
 
-          <Link href={ROUTES.HOME} className={styles.showAllLink}>
+          <Link
+            href={ROUTES.PRODUCTS.WITH_QUERY({
+              productCategory: activeCategory.value as ProductCategory,
+            })}
+            className={styles.showAllLink}
+          >
             Посмотреть все
           </Link>
         </div>

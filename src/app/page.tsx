@@ -2,6 +2,7 @@ import { PageHeader } from '@/widgets'
 import { HowItWork, PopularProducts, ProductStand } from './_components'
 import styles from './page.module.scss'
 import { MainContentContainer, RentButton } from '@/shared/components'
+import { ROUTES } from '@/config/routes'
 
 export const metadata = {
   title: 'Аренда вещей в Ярославле | Rentime',
@@ -48,7 +49,7 @@ function Home() {
         }
         info={{
           text: 'Зачем покупать, если можно арендовать?',
-          button: <RentButton />,
+          button: <RentButton href={ROUTES.PRODUCTS.BASE} />,
         }}
         className={styles.pageHeader}
       />
