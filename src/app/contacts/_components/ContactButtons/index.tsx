@@ -7,7 +7,11 @@ import {
   TelegramLogoSVG,
   VkLogoSVG,
 } from '@/shared/components'
-import { ADDRESS, PHONE_NUMBER } from '@/config/siteInfo'
+import {
+  ADDRESS,
+  AVITO_COMPANY_PROFILE_LINK,
+  PHONE_NUMBER,
+} from '@/config/siteInfo'
 import styles from './index.module.scss'
 
 export const ContactButtons = () => {
@@ -65,7 +69,7 @@ export const ContactButtons = () => {
           </a>
           <a
             target="_blank"
-            href="https://google.com"
+            href={AVITO_COMPANY_PROFILE_LINK}
             className={[
               styles.contactMailBtnContent__icon,
               styles.contactMailBtnContent__icon__avito,
