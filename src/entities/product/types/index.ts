@@ -16,9 +16,10 @@ export type Product = {
       one: ProductPriceForDays
       two: ProductPriceForDays
       three: ProductPriceForDays
-      four: ProductPriceForDays
-      oneWeek: ProductPriceForDays
-      overWeek: ProductPriceForDays
+      overFour: ProductPriceForDays
+      overTwoWeeks: ProductPriceForDays
+      oneMonth: ProductPriceForDays
+      twoMonths: ProductPriceForDays
     }
   }
   description?: string

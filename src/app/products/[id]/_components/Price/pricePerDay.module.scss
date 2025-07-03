@@ -2,19 +2,22 @@
   display: flex;
   gap: 4px;
 
-  --vertical-padding: 12px;
+  --vertical-padding: 10px;
   --border-radius: 3px;
 
   @media (max-width: 700px) {
     --vertical-padding: 7px;
     gap: 2px;
   }
+  @media (max-width: 400px) {
+    --vertical-padding: 4px;
+  }
 }
 
 .day {
   padding: var(--vertical-padding) 29px;
   background-color: var(--lightBackground);
-  min-width: 135px;
+  min-width: 145px;
   border-radius: var(--border-radius);
   display: flex;
   align-items: center;
@@ -23,12 +26,16 @@
   &__text {
     font-size: 16px;
     font-weight: 600;
+    text-align: center;
 
     @media (max-width: 700px) {
       font-size: 14px;
     }
     @media (max-width: 500px) {
       font-size: 13px;
+    }
+    @media (max-width: 400px) {
+      font-size: 12px;
     }
   }
 
@@ -37,8 +44,13 @@
     padding: var(--vertical-padding) 17px;
   }
   @media (max-width: 500px) {
-    min-width: 85px;
+    min-width: 105px;
     padding: var(--vertical-padding) 15px;
+  }
+  @media (max-width: 400px) {
+    min-width: 70px;
+    padding: var(--vertical-padding) 12px;
+    max-width: 60px;
   }
 }
 
@@ -60,7 +72,7 @@
 }
 
 .perDay {
-  padding: var(--vertical-padding) 50px;
+  padding: var(--vertical-padding) 30px;
   border-radius: var(--border-radius);
   display: flex;
   align-items: center;
@@ -75,10 +87,16 @@
     @media (max-width: 500px) {
       font-size: 13px;
     }
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
   }
 
   @media (max-width: 700px) {
     padding: var(--vertical-padding) 16px;
+  }
+  @media (max-width: 500px) {
+    padding: var(--vertical-padding) 10px;
   }
 }
 
@@ -86,7 +104,7 @@
   padding: 12px 22px;
   background-color: var(--dark);
   border-radius: var(--border-radius);
-  min-width: 140px;
+  min-width: 175px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,15 +120,23 @@
     @media (max-width: 500px) {
       font-size: 13px;
     }
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
   }
 
   @media (max-width: 700px) {
     padding: 8px 19px;
-    min-width: 105px;
+    min-width: 130px;
   }
   @media (max-width: 500px) {
     padding: 7px 17px;
-    min-width: 95px;
+    min-width: 120px;
+    white-space: nowrap;
+  }
+  @media (max-width: 400px) {
+    padding: 4px 12px;
+    min-width: 103px;
     white-space: nowrap;
   }
 }
