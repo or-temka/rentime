@@ -54,4 +54,28 @@ export const PICO_4_GAMES: GameRecord = {
     name: 'Superhot',
     imageName: 'superhot.jpg',
   },
+
+  'metro-awakening-vr': {
+    id: 'metro-awakening-vr',
+    name: 'Metro Awakening',
+    imageName: 'metro-awakening-vr.webp',
+  },
+
+  bonelab: {
+    id: 'bonelab',
+    name: 'Bonelab',
+    imageName: 'bonelab.jpg',
+  },
+
+  'hello-neighbour-search-and-rescue-vr': {
+    id: 'hello-neighbour-search-and-rescue-vr',
+    name: 'Hello neighbour: search and rescue',
+    imageName: 'hello-neighbour-search-and-rescue-vr.jpeg',
+  },
+
+  'kill-it-with-fire-vr': {
+    id: 'kill-it-with-fire-vr',
+    name: 'Kill it with fire VR',
+    imageName: 'kill-it-with-fire-vr.jpg',
+  },
 }
