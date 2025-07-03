@@ -4,6 +4,23 @@ import pricePerDayStyles from './pricePerDay.module.scss'
 import { ROUTES } from '@/config/routes'
 import { PriceProps } from './types'
 
+const getDayName = (day: number) => {
+  switch (day) {
+    case 1:
+      return '1 день'
+    case 4:
+      return 'от 4 дней'
+    case 5:
+      return 'от 14 дней'
+    case 6:
+      return '1 месяц'
+    case 7:
+      return '2 месяца'
+    default:
+      return `${day} дня`
+  }
+}
+
 const PricePerDay = ({
   day,
   pricePerDay,
@@ -11,14 +28,21 @@ const PricePerDay = ({
   day: number
   pricePerDay: number
 }) => {
-  const dayName = day === 1 ? '1 день' : day === 5 ? 'неделя' : `${day} дня`
+  if (day > 7) return <></>
 
-  if (day > 5) return <></>
+  const totalPrice =
+    day < 5
+      ? pricePerDay * day
+      : day === 6
+      ? pricePerDay * 30
+      : day === 5
+      ? pricePerDay * 14
+      : pricePerDay * 60
 
   return (
     <div className={pricePerDayStyles.container}>
       <div className={pricePerDayStyles.day}>
-        <span className={pricePerDayStyles.day__text}>{dayName}</span>
+        <span className={pricePerDayStyles.day__text}>{getDayName(day)}</span>
       </div>
       <div className={pricePerDayStyles.content}>
         <div className={pricePerDayStyles.perDay}>
@@ -28,7 +52,8 @@ const PricePerDay = ({
         </div>
         <div className={pricePerDayStyles.total}>
           <span className={pricePerDayStyles.total__text}>
-            {pricePerDay * day} руб
+            {day > 3 ? 'от ' : ''}
+            {totalPrice} руб
           </span>
         </div>
       </div>
@@ -49,16 +74,13 @@ export const Price = ({ product }: PriceProps) => {
           </p>
           <div className={styles.additional}>
             <span className={styles.additional__text}>
-              * Арендовать можно на любой срок (+1 день свыше недели /800 руб.)
-            </span>
-            <span className={styles.additional__text}>
-              ** Доставка по всему городу: 100-600 рублей в зависимости от
-              района (
+              * Доставка по всему городу: 100-600 рублей в зависимости от района
+              (
               <a
                 href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
                 className={styles.deliveryLink}
               >
-                узнать цену доставки
+                узнать цену доставки на карте
               </a>
               )
             </span>
