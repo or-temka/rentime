@@ -8,8 +8,8 @@ export const PICO4_ID: Product['id'] = 'pico4'
 export const PICO4: Product = {
   id: PICO4_ID,
   name: 'Pico 4',
-  feedbackCount: 30,
-  rating: 4,
+  feedbackCount: 1,
+  rating: 5,
   imagesURL: {
     thumbnail: getProductImageRoute(PICO4_ID, 'thumbnail'),
     full: getProductImageRoute(PICO4_ID, 'thumbnail'),
@@ -26,7 +26,8 @@ export const PICO4: Product = {
     },
   },
   category: 'rest and leisure',
-  description: 'Описание для pico 4',
+  description:
+    'VR oчки Pico 4 Pico 4 – это продвинутая VR-гарнитура, обеспечивающая превосходную производительность и комфорт без проводов.',
   games: {
     all: PICO_4_GAMES,
     available: AVAILABLE_PICO_4_GAMES,
