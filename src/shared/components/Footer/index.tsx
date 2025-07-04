@@ -68,9 +68,7 @@ export const Footer = () => {
           {Logos()}
         </div>
         <div className={styles.additionalRight}>
-          <Link href={ROUTES.HOME} className={styles.licenseLink}>
-            Лицензионное соглашение
-          </Link>
+          <p>г. Ярославль, ул. 2 Мельничная 35</p>
           <div className={styles.splitTextCircle} />
           <p>© 2025 Rentime. Все права защищены.</p>
         </div>
