@@ -36,9 +36,11 @@ export const PLAYSTATION5: Product = {
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/sony_playstation_5_arenda_prokat_7326172571?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
   },
   equipment: [
+    'Приставка PlayStation 5',
     '2 геймпада Dualsense',
     'Провод питания PlayStation 5',
     'Кабель HDMI - HDMI для подключения к телевизору или монитору',
     'Зарядный кабель для геймпадов Dualsense',
+    'Защитный кейс для переноски приставки',
   ],
 }

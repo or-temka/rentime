@@ -37,4 +37,14 @@ export const PICO4: Product = {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/viar_ochki_pico_4_arenda_prokat_7326125846?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
   },
+  equipment: [
+    'Очки виртуальной реальности Pico 4',
+    '2 геймпада для Pico 4',
+    '2 Силиконовых накладки на геймпады Pico 4',
+    'Аккумуляторные батарейки (4 штуки)',
+    'Батарейки (4 штуки)',
+    'Кабель type-c и блок питания для зарядки',
+    'Кабель type-c - type-c для подключения к компьютеру',
+    'Защитный кейс, защитная накладка для линз и тряпочка для протирки линз',
+  ],
 }
