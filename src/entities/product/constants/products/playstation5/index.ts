@@ -7,7 +7,7 @@ export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
 export const PLAYSTATION5: Product = {
   id: PLAYSTATION5_ID,
   name: 'PlayStation 5',
-  feedbackCount: 1050,
+  feedbackCount: 2,
   rating: 5,
   imagesURL: {
     thumbnail: getProductImageRoute(PLAYSTATION5_ID, 'thumbnail'),
@@ -25,7 +25,8 @@ export const PLAYSTATION5: Product = {
     },
   },
   category: 'rest and leisure',
-  description: 'Описание для play station 5',
+  description:
+    'PlayStation 5 – это мощная игровая консоль нового поколения с невероятной графикой, быстрой загрузкой и полным погружением в игровой процесс. ',
   games: {
     all: PLAYSTATION_5_GAMES,
     available: AVAILABLE_PLAYSTATION_5_GAMES,
