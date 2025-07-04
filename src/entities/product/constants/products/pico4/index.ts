@@ -27,7 +27,7 @@ export const PICO4: Product = {
   },
   category: 'rest and leisure',
   description:
-    'VR oчки Pico 4 Pico 4 – это продвинутая VR-гарнитура, обеспечивающая превосходную производительность и комфорт без проводов.',
+    'VR oчки Pico 4 – это продвинутая VR-гарнитура, обеспечивающая превосходную производительность и комфорт без проводов.',
   games: {
     all: PICO_4_GAMES,
     available: AVAILABLE_PICO_4_GAMES,
