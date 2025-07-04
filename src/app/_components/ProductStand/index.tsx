@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './index.module.scss'
 import { TextsBackgound } from '@/widgets'
+import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
 
 const SHOW_DETAILS_LINK = ROUTES.PRODUCTS.PRODUCT('playstation5')
 const SHOW_DETAILS_TEXT = 'Посмотреть детали'
@@ -46,7 +47,9 @@ export const ProductStand = () => {
           >
             {SHOW_DETAILS_TEXT}
           </Link>
-          <strong className={styles.price}>от 1100 руб</strong>
+          <strong className={styles.price}>
+            от {PLAYSTATION5.price.perDay.twoMonths} руб. за день
+          </strong>
           <RentButton
             theme="dark"
             href={PRODUCTS.playstation5.links?.avito}
