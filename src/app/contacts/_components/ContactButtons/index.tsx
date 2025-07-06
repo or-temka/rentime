@@ -7,11 +7,6 @@ import {
   TelegramLogoSVG,
   VkLogoSVG,
 } from '@/shared/components'
-import {
-  ADDRESS,
-  AVITO_COMPANY_PROFILE_LINK,
-  PHONE_NUMBER,
-} from '@/config/siteInfo'
 import styles from './index.module.scss'
 
 export const ContactButtons = () => {
@@ -26,9 +21,9 @@ export const ContactButtons = () => {
             ].join(' ')}
           />
         }
-        href="https://google.com"
+        href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
       >
-        {PHONE_NUMBER}
+        {process.env.NEXT_PUBLIC_PHONE_NUMBER_STRING}
       </ContactButton>
 
       <ContactButton
@@ -39,9 +34,9 @@ export const ContactButtons = () => {
             )}
           />
         }
-        href="https://google.com"
+        href={process.env.NEXT_PUBLIC_YANDEX_MAP_ADDRESS_LINK}
       >
-        {ADDRESS}
+        {process.env.NEXT_PUBLIC_ADDRESS}
       </ContactButton>
 
       <ContactButton
@@ -57,7 +52,7 @@ export const ContactButtons = () => {
         <div className={styles.contactMailBtnContent}>
           <a
             target="_blank"
-            href="https://google.com"
+            href={process.env.NEXT_PUBLIC_VK_COMPANY_PROFILE_LINK}
             className={styles.contactMailBtnContent__link}
           >
             <VkLogoSVG
@@ -69,7 +64,7 @@ export const ContactButtons = () => {
           </a>
           <a
             target="_blank"
-            href={AVITO_COMPANY_PROFILE_LINK}
+            href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
             className={[
               styles.contactMailBtnContent__icon,
               styles.contactMailBtnContent__icon__avito,
@@ -79,7 +74,7 @@ export const ContactButtons = () => {
           </a>
           <a
             target="_blank"
-            href="https://google.com"
+            href={process.env.NEXT_PUBLIC_TELEGRAM_COMPANY_PROFILE_LINK}
             className={[
               styles.contactMailBtnContent__icon,
               styles.contactMailBtnContent__icon__telegram,

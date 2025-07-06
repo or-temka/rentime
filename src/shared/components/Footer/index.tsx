@@ -3,18 +3,23 @@ import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { menuSections } from './constants'
 import { AvitoLogoSVG, Logo, TelegramLogoSVG, VkLogoSVG } from '../svgs'
-import { AVITO_COMPANY_PROFILE_LINK } from '@/config/siteInfo'
 
 export const Logos = () => {
   return (
     <>
-      <a target="_blank" href="https://google.com">
+      <a target="_blank" href={process.env.NEXT_PUBLIC_VK_COMPANY_PROFILE_LINK}>
         <VkLogoSVG width={32} className={styles.serviceLogo} />
       </a>
-      <a href={AVITO_COMPANY_PROFILE_LINK} target="_blank">
+      <a
+        href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
+        target="_blank"
+      >
         <AvitoLogoSVG width={66} className={styles.serviceLogo} />
       </a>
-      <a target="_blank" href="https://google.com">
+      <a
+        target="_blank"
+        href={process.env.NEXT_PUBLIC_TELEGRAM_COMPANY_PROFILE_LINK}
+      >
         <TelegramLogoSVG width={25} className={styles.serviceLogo} />
       </a>
     </>
