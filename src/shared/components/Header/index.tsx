@@ -7,7 +7,6 @@ import { ROUTES } from '@/config/routes'
 import { Button } from '../Button'
 import { Logo } from '../svgs'
 import { useEffect, useState } from 'react'
-import { AVITO_COMPANY_PROFILE_LINK } from '@/config/siteInfo'
 
 export const Header = () => {
   const [showMenuModal, setShowMenuModal] = useState(false)
@@ -47,7 +46,7 @@ export const Header = () => {
           ))}
         </ul>
         <a
-          href={AVITO_COMPANY_PROFILE_LINK}
+          href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -97,7 +96,7 @@ export const Header = () => {
             </nav>
             <div className={styles.bottomNav}>
               <a
-                href={AVITO_COMPANY_PROFILE_LINK}
+                href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
