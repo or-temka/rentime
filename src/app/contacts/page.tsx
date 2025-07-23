@@ -1,4 +1,4 @@
-import { ThinPageHeader } from '@/widgets'
+import { AttentionBlock, ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
 import { ContactButtons, OnMap } from './_components'
@@ -47,6 +47,7 @@ function ContactsPage() {
 
       <MainContentContainer id={BLOCKS_IDS.main}>
         <ContactButtons />
+        <AttentionBlock text="Обязательно уточняйте наличие оборудования перед арендой!" />
         <OnMap />
       </MainContentContainer>
     </main>
