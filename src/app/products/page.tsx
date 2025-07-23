@@ -52,7 +52,7 @@ async function ProductsPage({ searchParams }: ProductsPageProps) {
   return (
     <main>
       <ThinPageHeader
-        title="Каталог товаров"
+        title={{ content: 'Каталог товаров' }}
         info={{ text: 'Арендуйте — пользуйтесь — возвращайте!' }}
         className={styles.pageHeader}
       />

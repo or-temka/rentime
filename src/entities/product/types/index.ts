@@ -4,7 +4,18 @@ export type ProductPriceForDays = number
 
 export type Product = {
   id: string
-  name: string
+  name: {
+    base: string
+    short: string
+    cases: {
+      nominative: string
+      genitive: string
+      dative: string
+      accusative: string
+      instrumental: string
+      prepositional: string
+    }
+  }
   feedbackCount: number
   rating: number
   imagesURL: {
@@ -33,6 +44,7 @@ export type Product = {
     avito?: string
   }
   equipment?: string[]
+  keywords?: string[]
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'

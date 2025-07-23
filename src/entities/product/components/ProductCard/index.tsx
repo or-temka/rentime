@@ -20,7 +20,7 @@ export const ProductCard = ({
       <Link href={productRoute} className={styles.imageContainer}>
         <Image
           src={imagesURL.thumbnail}
-          alt={name}
+          alt={name.base}
           width={527}
           height={302}
           className={styles.image}
@@ -32,7 +32,7 @@ export const ProductCard = ({
         <div className={styles.info}>
           <h4 className={styles.name}>
             <Link href={productRoute} className={styles.name__link}>
-              {name}
+              {name.base}
             </Link>
           </h4>
           <div className={styles.reviews}>

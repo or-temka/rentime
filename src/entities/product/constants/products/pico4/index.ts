@@ -7,8 +7,19 @@ export const PICO4_ID: Product['id'] = 'pico4'
 
 export const PICO4: Product = {
   id: PICO4_ID,
-  name: 'Pico 4',
-  feedbackCount: 1,
+  name: {
+    base: 'VR-очки Pico 4',
+    short: 'Pico 4',
+    cases: {
+      accusative: 'VR-очки Pico 4',
+      dative: 'VR-очков Pico 4',
+      genitive: 'VR-очкам Pico 4',
+      instrumental: 'VR-очки Pico 4',
+      nominative: 'VR-очками Pico 4',
+      prepositional: 'VR-очках Pico 4',
+    },
+  },
+  feedbackCount: 4,
   rating: 5,
   imagesURL: {
     thumbnail: getProductImageRoute(PICO4_ID, 'thumbnail'),

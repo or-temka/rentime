@@ -39,7 +39,10 @@ export const metadata = {
 function LeaseTermsPage() {
   return (
     <main>
-      <ThinPageHeader title="Условия аренды" className={styles.pageHeader} />
+      <ThinPageHeader
+        title={{ content: 'Условия аренды' }}
+        className={styles.pageHeader}
+      />
 
       <MainContentContainer>
         <RentRules />

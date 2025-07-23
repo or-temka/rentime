@@ -42,11 +42,13 @@ function Home() {
   return (
     <main>
       <PageHeader
-        title={
-          <>
-            Аренда товаров <br /> в Ярославле
-          </>
-        }
+        title={{
+          content: (
+            <>
+              Аренда товаров <br /> в Ярославле
+            </>
+          ),
+        }}
         info={{
           text: 'Зачем покупать, если можно арендовать?',
           button: <RentButton href={ROUTES.PRODUCTS.BASE} />,
