@@ -16,7 +16,15 @@ export const PageHeader = ({
       shadowClassName={shadowClassName}
     >
       <div className={styles.content}>
-        <h1 className={styles.title}>{title}</h1>
+        {title?.metaText ? (
+          <>
+            <h1 className={styles.titleMetaText}>{title?.metaText}</h1>
+            <span className={styles.title}>{title?.content}</span>
+          </>
+        ) : (
+          <h1 className={styles.title}>{title?.content}</h1>
+        )}
+
         {info && (
           <>
             <div className={styles.splitLine} />

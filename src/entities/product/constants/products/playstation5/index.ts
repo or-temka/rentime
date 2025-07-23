@@ -6,8 +6,19 @@ export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
 
 export const PLAYSTATION5: Product = {
   id: PLAYSTATION5_ID,
-  name: 'PlayStation 5',
-  feedbackCount: 2,
+  name: {
+    base: 'Игровая консоль PlayStation 5',
+    short: 'PlayStation 5',
+    cases: {
+      accusative: 'Игровая консоль PlayStation 5',
+      dative: 'Игровой консоли PlayStation 5',
+      genitive: 'Игровой консоли PlayStation 5',
+      instrumental: 'Игровую консоль PlayStation 5',
+      nominative: 'Игровой консолью PlayStation 5',
+      prepositional: 'Игровой консоли PlayStation 5',
+    },
+  },
+  feedbackCount: 1,
   rating: 5,
   imagesURL: {
     thumbnail: getProductImageRoute(PLAYSTATION5_ID, 'thumbnail'),

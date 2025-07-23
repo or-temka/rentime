@@ -40,7 +40,10 @@ export const metadata = {
 function ContactsPage() {
   return (
     <main>
-      <ThinPageHeader title="Контакты" className={styles.pageHeader} />
+      <ThinPageHeader
+        title={{ content: 'Контакты' }}
+        className={styles.pageHeader}
+      />
 
       <MainContentContainer id={BLOCKS_IDS.main}>
         <ContactButtons />

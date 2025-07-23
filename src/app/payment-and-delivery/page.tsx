@@ -39,7 +39,10 @@ export const metadata = {
 function PaymentAndDeliveryPage() {
   return (
     <main>
-      <ThinPageHeader title="Оплата и доставка" className={styles.pageHeader} />
+      <ThinPageHeader
+        title={{ content: 'Оплата и доставка' }}
+        className={styles.pageHeader}
+      />
 
       <MainContentContainer>
         <PaymentAndDelivery />

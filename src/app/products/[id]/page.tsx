@@ -29,23 +29,24 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${product.name} — аренда в Ярославле | Rentime`,
+    title: `${product.name.base} — аренда в Ярославле | Rentime`,
     description:
       product.description ||
-      `Арендуйте ${product.name} в Ярославле на выгодных условиях. Rentime — удобно и быстро!`,
+      `Арендуйте ${product.name.cases.instrumental} в Ярославле на выгодных условиях. Rentime — удобно и быстро!`,
     keywords: [
-      product.name,
-      `аренда ${product.name}`,
-      `${product.name} Ярославль`,
+      product.name.base,
+      `аренда ${product.name.cases.dative}`,
+      `${product.name.base} Ярославль`,
       'прокат Ярославль',
       'аренда Rentime',
-      `арендовать ${product.name}`,
+      `арендовать ${product.name.cases.instrumental}`,
+      ...(product.keywords || []),
     ],
     openGraph: {
-      title: `${product.name} — аренда в Ярославле | Rentime`,
+      title: `${product.name.base} — аренда в Ярославле | Rentime`,
       description:
         product.description ||
-        `Выгодная аренда ${product.name} в Ярославле. Rentime — сервис проката нужных вещей.`,
+        `Выгодная аренда ${product.name.cases.dative} в Ярославле. Rentime — сервис проката нужных вещей.`,
       url: `https://rentime.ru/products/${product.id}`,
       siteName: 'Rentime',
       images: [
@@ -53,7 +54,7 @@ export async function generateMetadata({
           url: product.imagesURL.thumbnail || 'https://rentime.ru/',
           width: 1200,
           height: 630,
-          alt: `${product.name} — аренда в Ярославле | Rentime`,
+          alt: `${product.name.base} — аренда в Ярославле | Rentime`,
         },
       ],
       locale: 'ru_RU',
@@ -73,7 +74,7 @@ async function ProductPage({ params }: ProductPageProps) {
   return (
     <main>
       <PageHeader
-        title={product.name}
+        title={{ content: product.name.short, metaText: product.name.base }}
         info={{
           text: product.description || '',
           button: (
