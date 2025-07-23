@@ -2,7 +2,7 @@ import { ROUTES } from '@/config/routes'
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { questionsAnswers } from './constants'
-import { Questions } from '@/widgets'
+import { AttentionBlock, Questions } from '@/widgets'
 import { BLOCKS_IDS } from '../../constants'
 
 export const DeliverySection = () => {
@@ -37,6 +37,8 @@ export const DeliverySection = () => {
             &quot;Индивидуальная цена доставки&quot;
           </p>
         </div>
+
+        <AttentionBlock text="Обязательно уточняйте наличие оборудования перед арендой!" />
 
         <div className={styles.mapSection} id={BLOCKS_IDS.deliveryPriceMap}>
           <H2>Карта с ценой доставки</H2>
