@@ -51,7 +51,7 @@ export async function generateMetadata({
       siteName: 'Rentime',
       images: [
         {
-          url: product.imagesURL.thumbnail || 'https://rentime.ru/',
+          url: product.imagesURL.thumbnail || 'https://rentime.ru/og-image.jpg',
           width: 1200,
           height: 630,
           alt: `${product.name.base} — аренда в Ярославле | Rentime`,
