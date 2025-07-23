@@ -1,0 +1,53 @@
+.sliderWrapper {
+  position: relative;
+  padding-top: 32px;
+
+  @media (max-width: 800px) {
+    padding-top: 27px;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--light);
+  opacity: 0.3;
+  border: none;
+  cursor: pointer;
+}
+
+.dotActive {
+  opacity: 1;
+}
+
+.embla {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  border-radius: 8px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.embla__peek {
+  flex-shrink: 0;
+  pointer-events: none;
+}

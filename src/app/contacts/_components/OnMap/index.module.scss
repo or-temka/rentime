@@ -1,0 +1,31 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (max-width: 1000px) {
+    gap: 40px;
+  }
+  @media (max-width: 850px) {
+    gap: 35px;
+  }
+  @media (max-width: 700px) {
+    gap: 30px;
+  }
+  @media (max-width: 600px) {
+    gap: 25px;
+  }
+}
+
+.map {
+  width: 100%;
+  min-height: 200px;
+  aspect-ratio: 2.5;
+
+  @media (max-width: 1000px) {
+    aspect-ratio: 2;
+  }
+  @media (max-width: 700px) {
+    aspect-ratio: 1.2;
+  }
+}

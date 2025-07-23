@@ -1,0 +1,26 @@
+.pageHeader {
+  height: 561px !important;
+  background-position: center;
+
+  @media (max-width: 1000px) {
+    height: 659px;
+  }
+  @media (max-width: 600px) {
+    height: 375px;
+  }
+
+  &__shadow {
+    background: none;
+    padding-bottom: 100px;
+
+    @media (max-width: 1000px) {
+      padding-bottom: 70px;
+    }
+    @media (max-width: 800px) {
+      padding-bottom: 60px;
+    }
+    @media (max-width: 600px) {
+      padding-bottom: 50px;
+    }
+  }
+}

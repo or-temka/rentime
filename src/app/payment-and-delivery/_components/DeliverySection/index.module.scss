@@ -1,0 +1,83 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @media (max-width: 1200px) {
+    gap: 70px;
+  }
+  @media (max-width: 700px) {
+    gap: 50px;
+  }
+  @media (max-width: 500px) {
+    gap: 40px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  @media (max-width: 1000px) {
+    gap: 35px;
+  }
+  @media (max-width: 700px) {
+    gap: 25px;
+  }
+}
+
+.deliveryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__text {
+  }
+}
+
+.additional {
+  &__paragraph {
+    color: var(--grey);
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.mapSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 850px) {
+    gap: 25px;
+  }
+  @media (max-width: 600px) {
+    gap: 20px;
+  }
+}
+
+.map {
+  width: 100%;
+  min-height: 200px;
+  aspect-ratio: 2.5;
+
+  @media (max-width: 1000px) {
+    aspect-ratio: 2;
+  }
+  @media (max-width: 700px) {
+    aspect-ratio: 1.2;
+  }
+}

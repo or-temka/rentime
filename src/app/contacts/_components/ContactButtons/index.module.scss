@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @media (max-width: 1000px) {
+    gap: 15px;
+  }
+  @media (max-width: 700px) {
+    gap: 14px;
+  }
+}
+
+.contactBtnIcon {
+  &__phone {
+    width: 25px;
+
+    @media (max-width: 1200px) {
+      width: 18px;
+    }
+  }
+
+  &__pin {
+    width: 25px;
+
+    @media (max-width: 1200px) {
+      width: 15px;
+    }
+  }
+
+  &__mail {
+    width: 26px;
+
+    @media (max-width: 1200px) {
+      width: 19px;
+    }
+  }
+}
+
+.contactMailBtnContent {
+  display: flex;
+  gap: 23px;
+
+  &__link {
+  }
+
+  &__icon {
+    & path {
+      fill-opacity: 1;
+      fill: var(--dark);
+    }
+
+    &__vk {
+      width: 25px;
+
+      @media (max-width: 1200px) {
+        width: 18px;
+      }
+    }
+
+    &__avito {
+      width: 60px;
+
+      @media (max-width: 1200px) {
+        width: 45px;
+      }
+    }
+
+    &__telegram {
+      width: 22px;
+
+      @media (max-width: 1200px) {
+        width: 16px;
+      }
+    }
+  }
+}

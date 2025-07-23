@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  --title-line-height: 22px;
+
+  &:hover {
+    & .hover {
+      opacity: 1;
+      padding-bottom: calc(var(--title-line-height) + 20px);
+
+      @media (max-width: 700px) {
+        padding-bottom: calc(var(--title-line-height) + 15px);
+      }
+    }
+
+    & .image__withTitle {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 700px) {
+    --title-line-height: 18px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-height: 387px;
+  max-width: 309px;
+  object-fit: cover;
+  transition: 0.4s transform;
+}
+
+.hover {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0px 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  transition: 0.2s;
+  height: calc(100% + var(--title-line-height));
+
+  @media (max-width: 700px) {
+    padding: 0px 20px;
+  }
+}
+
+.title {
+  font-size: 16px;
+  color: var(--light);
+  line-height: var(--title-line-height);
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
+}

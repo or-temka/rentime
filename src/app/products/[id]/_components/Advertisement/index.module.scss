@@ -1,0 +1,90 @@
+.section {
+  position: relative;
+  padding: 190px 0px;
+
+  @media (max-width: 1800px) {
+    padding: 170px 0px;
+  }
+  @media (max-width: 1600px) {
+    padding: 100px 0px;
+  }
+  @media (max-width: 1250px) {
+    padding: 70px 0px;
+  }
+  @media (max-width: 1200px) {
+    padding: 150px 0px;
+  }
+  @media (max-width: 1050px) {
+    padding: 130px 0px;
+  }
+  @media (max-width: 900px) {
+    padding: 110px 0px;
+  }
+  @media (max-width: 800px) {
+    padding: 50px 0px;
+  }
+  @media (max-width: 750px) {
+    padding: 10px 0px;
+  }
+  @media (max-width: 550px) {
+    padding: 0px;
+  }
+}
+
+.background {
+  @media (max-width: 700px) {
+    margin-top: 0px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (max-width: 700px) {
+    gap: 40px;
+  }
+}
+
+.slogan {
+  font-size: 64px;
+  font-family: var(--font-bounded);
+  font-weight: 500;
+  max-width: 60%;
+
+  @media (max-width: 1600px) {
+    max-width: 80%;
+  }
+  @media (max-width: 1250px) {
+    max-width: 100%;
+  }
+  @media (max-width: 1100px) {
+    font-size: 53px;
+  }
+  @media (max-width: 700px) {
+    font-size: 24px;
+    max-width: 80%;
+  }
+  @media (max-width: 500px) {
+    max-width: 100%;
+  }
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
+}
+
+.rent {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+  }
+}
+
+.paymentAndDeliveryLink {
+}
