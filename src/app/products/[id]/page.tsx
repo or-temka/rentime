@@ -1,7 +1,6 @@
 import { MainContentContainer, RentButton } from '@/shared/components'
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
-import { ProductPageProps } from './types'
 import NotFound from '@/app/not-found'
 import {
   Advertisement,
@@ -11,15 +10,17 @@ import {
 import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
 
+interface ProductPageProps {
+  params: { id: string }
+}
+
 async function getProduct(id: string) {
   return PRODUCTS[id] ?? null
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: { id: string }
-}): Promise<Metadata> {
+}: ProductPageProps): Promise<Metadata> {
   const product = await getProduct(params.id)
 
   if (!product) {
@@ -64,7 +65,7 @@ export async function generateMetadata({
   }
 }
 
-async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.id)
 
   if (!product) {
@@ -102,5 +103,3 @@ async function ProductPage({ params }: ProductPageProps) {
     </main>
   )
 }
-
-export default ProductPage
