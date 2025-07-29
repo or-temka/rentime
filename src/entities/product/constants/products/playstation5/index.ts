@@ -1,5 +1,5 @@
 import { PLAYSTATION_5_GAMES } from '@/entities/game'
-import { getProductImageRoute, Product } from '@/entities/product'
+import { Product } from '@/entities/product'
 import { AVAILABLE_PLAYSTATION_5_GAMES } from './availableGames'
 
 export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
@@ -21,8 +21,8 @@ export const PLAYSTATION5: Product = {
   feedbackCount: 1,
   rating: 5,
   imagesURL: {
-    thumbnail: getProductImageRoute(PLAYSTATION5_ID, 'thumbnail'),
-    full: getProductImageRoute(PLAYSTATION5_ID, 'full'),
+    thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.jpg`,
+    full: `/images/products/${PLAYSTATION5_ID}/full.jpg`,
   },
   price: {
     perDay: {

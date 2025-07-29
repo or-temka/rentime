@@ -1,5 +1,5 @@
 import { PICO_4_GAMES } from '@/entities/game'
-import { getProductImageRoute, Product } from '@/entities/product'
+import { Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_GAMES } from './availableGames'
 import { DOWNLOADED_PICO_4_GAMES } from './downloadedGames'
 
@@ -22,8 +22,8 @@ export const PICO4: Product = {
   feedbackCount: 4,
   rating: 5,
   imagesURL: {
-    thumbnail: getProductImageRoute(PICO4_ID, 'thumbnail'),
-    full: getProductImageRoute(PICO4_ID, 'thumbnail'),
+    thumbnail: `/images/products/${PICO4_ID}/thumbnail.jpg`,
+    full: `/images/products/${PICO4_ID}/thumbnail.jpg`,
   },
   price: {
     perDay: {
