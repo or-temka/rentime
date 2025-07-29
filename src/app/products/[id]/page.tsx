@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
 
 interface ProductPageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 async function getProduct(id: string) {
@@ -21,7 +21,8 @@ async function getProduct(id: string) {
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const product = await getProduct(params.id)
+  const { id } = await params
+  const product = await getProduct(id)
 
   if (!product) {
     return {
@@ -66,7 +67,8 @@ export async function generateMetadata({
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id)
+  const { id } = await params
+  const product = await getProduct(id)
 
   if (!product) {
     return <NotFound />
