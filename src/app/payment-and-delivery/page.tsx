@@ -2,6 +2,7 @@ import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { MainContentContainer } from '@/shared/components'
 import { PaymentAndDelivery } from './_components'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Оплата и доставка | Rentime — аренда в Ярославле',
@@ -45,7 +46,9 @@ function PaymentAndDeliveryPage() {
       />
 
       <MainContentContainer>
-        <PaymentAndDelivery />
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <PaymentAndDelivery />
+        </Suspense>
       </MainContentContainer>
     </main>
   )
