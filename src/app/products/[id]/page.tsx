@@ -39,8 +39,9 @@ export async function generateMetadata({
       product.name.base,
       `аренда ${product.name.cases.dative}`,
       `${product.name.base} Ярославль`,
-      'прокат Ярославль',
-      'аренда Rentime',
+      `аренда ${product.name.base} Ярославль`,
+      `взять ${product.name.cases.instrumental} в аренду`,
+      `взять ${product.name.cases.instrumental} в прокат`,
       `арендовать ${product.name.cases.instrumental}`,
       ...(product.keywords || []),
     ],
@@ -53,7 +54,7 @@ export async function generateMetadata({
       siteName: 'Rentime',
       images: [
         {
-          url: product.imagesURL.thumbnail || 'https://rentime.ru/og-image.jpg',
+          url: product.imagesURL.thumbnail || '/opengraph-image.png',
           width: 1200,
           height: 630,
           alt: `${product.name.base} — аренда в Ярославле | Rentime`,
