@@ -1,0 +1,4 @@
+[
+  { "id": "playstation5", "priority": 0.85, "changefreq": "monthly" },
+  { "id": "pico4", "priority": 0.8, "changefreq": "monthly" }
+]

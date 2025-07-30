@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rentime.ru
+
+# Sitemaps
+Sitemap: https://rentime.ru/sitemap.xml
