@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'Rentime',
     images: [
       {
-        url: 'https://rentime.ru/og-image.jpg',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Оплата и доставка — Rentime Ярославль',
