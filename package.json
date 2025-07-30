@@ -6,11 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "lint": "next lint",
-    "start": "NODE_ENV=production node server.js"
+    "start": "node server.js",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
     "next": "^15.4.3",
+    "next-sitemap": "^4.2.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
