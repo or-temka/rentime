@@ -2,7 +2,6 @@ import { MainContentContainer } from '@/shared/components'
 import { ThinPageHeader } from '@/widgets'
 import styles from './page.module.scss'
 import { Catalog } from './_components'
-import { ProductsPageProps } from './types'
 
 export const metadata = {
   title: 'Каталог товаров | Rentime — аренда в Ярославле',
@@ -35,7 +34,7 @@ export const metadata = {
     siteName: 'Rentime',
     images: [
       {
-        url: 'https://rentime.ru/og-image.jpg',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Каталог товаров — Rentime Ярославль',
@@ -46,8 +45,9 @@ export const metadata = {
   },
 }
 
-async function ProductsPage({ searchParams }: ProductsPageProps) {
-  const { productCategory } = await searchParams
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function ProductsPage({ searchParams }: any) {
+  const { productCategory } = searchParams
 
   return (
     <main>

@@ -1,5 +1,5 @@
 import { PICO_4_GAMES } from '@/entities/game'
-import { getProductImageRoute, Product } from '@/entities/product'
+import { Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_GAMES } from './availableGames'
 import { DOWNLOADED_PICO_4_GAMES } from './downloadedGames'
 
@@ -22,8 +22,8 @@ export const PICO4: Product = {
   feedbackCount: 4,
   rating: 5,
   imagesURL: {
-    thumbnail: getProductImageRoute(PICO4_ID, 'thumbnail'),
-    full: getProductImageRoute(PICO4_ID, 'thumbnail'),
+    thumbnail: `/images/products/${PICO4_ID}/thumbnail.jpg`,
+    full: `/images/products/${PICO4_ID}/thumbnail.jpg`,
   },
   price: {
     perDay: {
@@ -57,5 +57,19 @@ export const PICO4: Product = {
     'Кабель type-c и блок питания для зарядки',
     'Кабель type-c - type-c для подключения к компьютеру',
     'Защитный кейс, защитная накладка для линз и тряпочка для протирки линз',
+  ],
+  keywords: [
+    'аренда виар Ярославль',
+    'прокат виар Ярославль',
+    'аренда вр Ярославль',
+    'прокат вр Ярославль',
+    'аренда вр очков Ярославль',
+    'прокат вр очков Ярославль',
+    'аренда pico4',
+    'прокат pico4',
+    'аренда pico4 Ярославль',
+    'прокат pico4 Ярославль',
+    'аренда пико 4 Ярославль',
+    'аренда пико4 Ярославль',
   ],
 }

@@ -1,5 +1,5 @@
 import { PLAYSTATION_5_GAMES } from '@/entities/game'
-import { getProductImageRoute, Product } from '@/entities/product'
+import { Product } from '@/entities/product'
 import { AVAILABLE_PLAYSTATION_5_GAMES } from './availableGames'
 
 export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
@@ -7,22 +7,22 @@ export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
 export const PLAYSTATION5: Product = {
   id: PLAYSTATION5_ID,
   name: {
-    base: 'Игровая консоль PlayStation 5',
+    base: 'игровая консоль PlayStation 5',
     short: 'PlayStation 5',
     cases: {
-      accusative: 'Игровая консоль PlayStation 5',
-      dative: 'Игровой консоли PlayStation 5',
-      genitive: 'Игровой консоли PlayStation 5',
-      instrumental: 'Игровую консоль PlayStation 5',
-      nominative: 'Игровой консолью PlayStation 5',
-      prepositional: 'Игровой консоли PlayStation 5',
+      accusative: 'игровая консоль PlayStation 5',
+      dative: 'игровой консоли PlayStation 5',
+      genitive: 'игровой консоли PlayStation 5',
+      instrumental: 'игровую консоль PlayStation 5',
+      nominative: 'игровой консолью PlayStation 5',
+      prepositional: 'игровой консоли PlayStation 5',
     },
   },
   feedbackCount: 1,
   rating: 5,
   imagesURL: {
-    thumbnail: getProductImageRoute(PLAYSTATION5_ID, 'thumbnail'),
-    full: getProductImageRoute(PLAYSTATION5_ID, 'full'),
+    thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.jpg`,
+    full: `/images/products/${PLAYSTATION5_ID}/full.jpg`,
   },
   price: {
     perDay: {
@@ -53,5 +53,22 @@ export const PLAYSTATION5: Product = {
     'Кабель HDMI - HDMI для подключения к телевизору или монитору',
     'Зарядный кабель для геймпадов Dualsense',
     'Защитный кейс для переноски приставки',
+  ],
+  keywords: [
+    'аренда ps5',
+    'прокат ps5',
+    'арендовать ps5',
+    'аренда ps5 Ярославль',
+    'прокат ps5 Ярославль',
+    'аренда пс5',
+    'прокат пс5',
+    'арендовать пс5',
+    'аренда пс5 Ярославль',
+    'прокат пс5 Ярославль',
+    'аренда плейстейшен 5',
+    'аренда плейстейшен 5 Ярославль',
+    'прокат плейстейшен 5',
+    'прокат плейстейшен 5 Ярославль',
+    'арендовать плейстейшен 5',
   ],
 }

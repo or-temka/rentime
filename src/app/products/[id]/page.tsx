@@ -1,7 +1,6 @@
 import { MainContentContainer, RentButton } from '@/shared/components'
 import { PageHeader } from '@/widgets'
 import styles from './page.module.scss'
-import { ProductPageProps } from './types'
 import NotFound from '@/app/not-found'
 import {
   Advertisement,
@@ -11,16 +10,19 @@ import {
 import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
 
+interface ProductPageProps {
+  params: Promise<{ id: string }>
+}
+
 async function getProduct(id: string) {
   return PRODUCTS[id] ?? null
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: { id: string }
-}): Promise<Metadata> {
-  const product = await getProduct(params.id)
+}: ProductPageProps): Promise<Metadata> {
+  const { id } = await params
+  const product = await getProduct(id)
 
   if (!product) {
     return {
@@ -37,8 +39,9 @@ export async function generateMetadata({
       product.name.base,
       `аренда ${product.name.cases.dative}`,
       `${product.name.base} Ярославль`,
-      'прокат Ярославль',
-      'аренда Rentime',
+      `аренда ${product.name.base} Ярославль`,
+      `взять ${product.name.cases.instrumental} в аренду`,
+      `взять ${product.name.cases.instrumental} в прокат`,
       `арендовать ${product.name.cases.instrumental}`,
       ...(product.keywords || []),
     ],
@@ -51,7 +54,7 @@ export async function generateMetadata({
       siteName: 'Rentime',
       images: [
         {
-          url: product.imagesURL.thumbnail || 'https://rentime.ru/og-image.jpg',
+          url: product.imagesURL.thumbnail || '/opengraph-image.png',
           width: 1200,
           height: 630,
           alt: `${product.name.base} — аренда в Ярославле | Rentime`,
@@ -64,8 +67,9 @@ export async function generateMetadata({
   }
 }
 
-async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id)
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params
+  const product = await getProduct(id)
 
   if (!product) {
     return <NotFound />
@@ -102,5 +106,3 @@ async function ProductPage({ params }: ProductPageProps) {
     </main>
   )
 }
-
-export default ProductPage
