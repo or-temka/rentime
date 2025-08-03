@@ -27,16 +27,81 @@
   }
 }
 
+.pricesContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+
 .prices {
+  --col-gap: 5px;
+  --border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: var(--col-gap);
   flex: 1;
-  min-width: 540px;
+}
 
-  @media (max-width: 700px) {
-    gap: 3px;
-    min-width: 250px;
+.pricesLabel {
+  width: 100%;
+  background-color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px;
+  border-radius: var(--border-radius);
+
+  &__text {
+    font-family: var(--font-bounded);
+    color: var(--accent-color);
+    font-size: 20px;
+  }
+}
+
+.pricesTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-family: var(--font-monserat);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  font-size: 16px;
+
+  & th,
+  & td {
+    text-align: center;
+  }
+  & th:not(:last-child),
+  & td:not(:last-child) {
+    border-right: var(--col-gap) solid var(--background);
+  }
+  & th {
+    padding: 11px;
+    font-weight: 600;
+  }
+  & td {
+    padding: 9px;
+  }
+
+  & thead {
+    & tr {
+      background-color: #d8d8d8;
+      font-weight: bold;
+    }
+  }
+
+  & tbody {
+    & tr:nth-child(odd) {
+      background-color: rgba(231, 231, 231, 0.5);
+    }
+    & tr:nth-child(even) {
+      background-color: rgba(231, 231, 231, 1);
+    }
+  }
+
+  &__fromPriceText {
+    color: var(--grey);
   }
 }
 
