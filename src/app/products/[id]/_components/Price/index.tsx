@@ -130,7 +130,7 @@ export const Price = ({ product }: PriceProps) => {
           </h3>
           <div className={styles.pricesLabel}>
             <span className={styles.pricesLabel__text}>
-              Выходные и праздничные дни
+              Выходные и праздничные
             </span>
           </div>
           <table className={styles.pricesTable}>

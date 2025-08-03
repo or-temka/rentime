@@ -32,6 +32,10 @@
   flex-direction: row;
   width: 100%;
   gap: 30px;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+  }
 }
 
 .prices {
@@ -56,6 +60,18 @@
     font-family: var(--font-bounded);
     color: var(--accent-color);
     font-size: 20px;
+    text-align: center;
+
+    @media (max-width: 800px) {
+      font-size: 18px;
+    }
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding: 13px;
   }
 }
 
@@ -68,6 +84,13 @@
   overflow: hidden;
   font-size: 16px;
 
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+
   & th,
   & td {
     text-align: center;
@@ -79,6 +102,10 @@
   & th {
     padding: 11px;
     font-weight: 600;
+
+    @media (max-width: 400px) {
+      max-width: 100px;
+    }
   }
   & td {
     padding: 9px;
@@ -138,6 +165,12 @@
     font-size: 20px;
     line-height: 25px;
 
+    @media (max-width: 1600px) {
+      font-size: 18px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
     @media (max-width: 700px) {
       font-size: 15px;
     }
