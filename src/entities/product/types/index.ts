@@ -23,7 +23,14 @@ export type Product = {
     full: string
   }
   price: {
-    perDay: {
+    weekdays: {
+      one: ProductPriceForDays
+      two: ProductPriceForDays
+      three: ProductPriceForDays
+      four: ProductPriceForDays
+      five: ProductPriceForDays
+    }
+    weekends: {
       one: ProductPriceForDays
       two: ProductPriceForDays
       three: ProductPriceForDays

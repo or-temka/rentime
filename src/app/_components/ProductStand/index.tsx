@@ -48,7 +48,7 @@ export const ProductStand = () => {
             {SHOW_DETAILS_TEXT}
           </Link>
           <strong className={styles.price}>
-            от {PLAYSTATION5.price.perDay.twoMonths} руб. за день
+            от {PLAYSTATION5.price.weekends.twoMonths} руб. за день
           </strong>
           <RentButton
             theme="dark"

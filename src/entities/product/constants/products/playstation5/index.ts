@@ -25,7 +25,14 @@ export const PLAYSTATION5: Product = {
     full: `/images/products/${PLAYSTATION5_ID}/full.jpg`,
   },
   price: {
-    perDay: {
+    weekdays: {
+      one: 600,
+      two: 500,
+      three: 450,
+      four: 400,
+      five: 370,
+    },
+    weekends: {
       one: 800,
       two: 700,
       three: 600,

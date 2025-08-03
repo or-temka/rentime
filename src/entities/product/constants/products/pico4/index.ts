@@ -26,7 +26,14 @@ export const PICO4: Product = {
     full: `/images/products/${PICO4_ID}/thumbnail.jpg`,
   },
   price: {
-    perDay: {
+    weekdays: {
+      one: 900,
+      two: 700,
+      three: 600,
+      four: 525,
+      five: 480,
+    },
+    weekends: {
       one: 1100,
       two: 900,
       three: 800,

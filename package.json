@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:not-turbo": "next dev",
     "build": "next build",
     "lint": "next lint",
     "start": "node server.js",
