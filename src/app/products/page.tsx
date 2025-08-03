@@ -47,7 +47,7 @@ export const metadata = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function ProductsPage({ searchParams }: any) {
-  const { productCategory } = searchParams
+  const { productCategory } = await searchParams
 
   return (
     <main>

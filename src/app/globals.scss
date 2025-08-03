@@ -1,5 +1,5 @@
-@import './fonts.scss';
-@import './_styles/side-content-margin.scss';
+@use './fonts.scss';
+@use './_styles/side-content-margin.scss';
 
 :root {
   --accent-color: #d0ff00;
