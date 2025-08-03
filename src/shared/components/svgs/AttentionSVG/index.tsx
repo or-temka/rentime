@@ -14,7 +14,7 @@ export const AttentionSVG = ({ ...rest }: AttentionSVGProps) => {
       <g
         id="🔍-Product-Icons"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
         fill-rule="evenodd"
       >
