@@ -65,7 +65,7 @@ export const Price = ({ product }: PriceProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.information}>
-        <H2 className={styles.title}>Стоимость</H2>
+        <H2 className="visually-hidden">Стоимость</H2>
         <div className={styles.infoContent}>
           <p className={styles.paragraph}>
             Стоимость аренды рассчитывается в зависимости от количества дней,
@@ -74,11 +74,11 @@ export const Price = ({ product }: PriceProps) => {
           </p>
           <div className={styles.additional}>
             <span className={styles.additional__text}>
-              * Доставка по всему городу: 100-600 рублей в зависимости от района
-              (
+              Доставка по всему городу: 100-600 рублей в зависимости от района (
               <a
                 href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
                 className={styles.deliveryLink}
+                target="_blank"
               >
                 узнать цену доставки на карте
               </a>
