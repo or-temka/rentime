@@ -15,7 +15,7 @@ export const Equipment = ({ product }: EquipmentProps) => {
 
   return (
     <div className={styles.container}>
-      <H2 className="visually-hidden">В комплекте</H2>
+      <H2 className={styles.title}>В комплекте</H2>
 
       <ul className={styles.list}>
         {product.equipment.map((equipItem, index) => (

@@ -28,7 +28,7 @@ export const metadata = {
     siteName: 'Rentime',
     images: [
       {
-        url: '/opengraph-image.webp',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Контакты Rentime — Аренда вещей в Ярославле',

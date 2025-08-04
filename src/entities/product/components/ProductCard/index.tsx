@@ -21,8 +21,8 @@ export const ProductCard = ({
         <Image
           src={imagesURL.thumbnail}
           alt={name.base}
-          width={626}
-          height={363}
+          width={527}
+          height={302}
           className={styles.image}
         />
       </Link>

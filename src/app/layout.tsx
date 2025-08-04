@@ -12,7 +12,6 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rentime.ru'),
   title: 'Rentime | аренда вещей в Ярославле',
   description:
     'Арендуйте игровые приставки, инструменты и другие вещи в Ярославле с Rentime. Удобно, быстро и выгодно!',
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Rentime',
     images: [
       {
-        url: '/opengraph-image.webp',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Rentime — Аренда вещей в Ярославле',

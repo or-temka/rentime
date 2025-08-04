@@ -12,9 +12,9 @@ export const BottomArrowSVG = ({ ...rest }: BottomArrowSVGProps) => {
       <path
         d="M5.21745 13.8242L5.21745 1.17578M5.21745 13.8242L9.43359 9.60807M5.21745 13.8242L1.0013 9.60807"
         stroke="black"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   )
