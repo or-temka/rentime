@@ -7,7 +7,7 @@ export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
 export const PLAYSTATION5: Product = {
   id: PLAYSTATION5_ID,
   name: {
-    base: 'игровая консоль PlayStation 5',
+    base: 'Игровая консоль PlayStation 5',
     short: 'PlayStation 5',
     cases: {
       accusative: 'игровая консоль PlayStation 5',
@@ -18,14 +18,21 @@ export const PLAYSTATION5: Product = {
       prepositional: 'игровой консоли PlayStation 5',
     },
   },
-  feedbackCount: 1,
+  feedbackCount: 3,
   rating: 5,
   imagesURL: {
-    thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.jpg`,
-    full: `/images/products/${PLAYSTATION5_ID}/full.jpg`,
+    thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.webp`,
+    full: `/images/products/${PLAYSTATION5_ID}/full.webp`,
   },
   price: {
-    perDay: {
+    weekdays: {
+      one: 600,
+      two: 500,
+      three: 450,
+      four: 400,
+      five: 370,
+    },
+    weekends: {
       one: 800,
       two: 700,
       three: 600,

@@ -36,6 +36,7 @@ export const ProductStand = () => {
             src={`${PRODUCT_IMAGE_ROOT_ROUTE}playstation5/playstation5_transparent_background.png`}
             width={882}
             height={661}
+            quality={100}
             className={styles.image}
           />
         </div>
@@ -48,7 +49,7 @@ export const ProductStand = () => {
             {SHOW_DETAILS_TEXT}
           </Link>
           <strong className={styles.price}>
-            от {PLAYSTATION5.price.perDay.twoMonths} руб. за день
+            от {PLAYSTATION5.price.weekends.twoMonths} руб. за день
           </strong>
           <RentButton
             theme="dark"
