@@ -22,8 +22,8 @@ export const PICO4: Product = {
   feedbackCount: 4,
   rating: 5,
   imagesURL: {
-    thumbnail: `/images/products/${PICO4_ID}/thumbnail.jpg`,
-    full: `/images/products/${PICO4_ID}/thumbnail.jpg`,
+    thumbnail: `/images/products/${PICO4_ID}/thumbnail.webp`,
+    full: `/images/products/${PICO4_ID}/full.webp`,
   },
   price: {
     weekdays: {
