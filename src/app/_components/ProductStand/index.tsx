@@ -36,6 +36,7 @@ export const ProductStand = () => {
             src={`${PRODUCT_IMAGE_ROOT_ROUTE}playstation5/playstation5_transparent_background.png`}
             width={882}
             height={661}
+            quality={100}
             className={styles.image}
           />
         </div>
