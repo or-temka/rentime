@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.scss'
 import { Footer, Header } from '@/shared/components'
 import styles from './layout.module.scss'
+import Analytics from './_analytics/Analytics'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -54,15 +55,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
       <head>
         <meta name="apple-mobile-web-app-title" content="Rentime" />
       </head>
       <body className={`${montserrat.variable}`}>
+        <Analytics />
+
         <Header />
         <main className={styles.main}>{children}</main>
         <Footer />
