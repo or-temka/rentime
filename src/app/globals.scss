@@ -18,6 +18,12 @@
 
   --font-bounded: 'Bounded', 'Montserrat', 'Montserrat Fallback', Arial,
     Helvetica, sans-serif;
+
+  --header-background-gradient: linear-gradient(
+    135deg,
+    #000000 0%,
+    #000000d0 100%
+  );
 }
 
 html,

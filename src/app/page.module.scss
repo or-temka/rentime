@@ -1,3 +1,4 @@
 .pageHeader {
-  background-image: url('/images/backgrounds/main-page-background-image.webp');
+  background-image: url('/images/backgrounds/main-page-background-image.webp?v=2'),
+    var(--header-background-gradient);
 }
