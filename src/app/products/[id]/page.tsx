@@ -88,7 +88,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ),
         }}
         className={styles.pageHeader}
-        style={{ backgroundImage: `url(${product.imagesURL.full})` }}
+        style={{
+          backgroundImage: `url(${product.imagesURL.full}), linear-gradient(135deg, #000000 0%, #000000d0 100%)`,
+        }}
       />
 
       <MainContentContainer>
