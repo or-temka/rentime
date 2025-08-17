@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .button {
   padding: 12px 30px;
   outline: none;
@@ -12,7 +14,7 @@
   height: fit-content;
   position: relative;
 
-  &:hover {
+  @include hover-smart(desktop) {
     &::before {
       animation: bubbleButton 0.4s ease-out forwards;
     }
@@ -36,7 +38,7 @@
     background-color: var(--light);
     border: 1px solid var(--light);
     color: var(--dark);
-    &:hover {
+    @include hover-smart(desktop) {
       opacity: 0.97;
     }
     &::before {
@@ -47,7 +49,7 @@
       border: 1px solid var(--light);
       color: var(--light);
 
-      &:hover {
+      @include hover-smart(desktop) {
         background-color: var(--light);
         color: var(--dark);
       }
@@ -58,7 +60,7 @@
     background-color: var(--dark);
     border: 1px solid var(--dark);
     color: var(--light);
-    &:hover {
+    @include hover-smart(desktop) {
       opacity: 0.9;
     }
     &::before {
@@ -69,7 +71,7 @@
       border: 1px solid var(--dark);
       color: var(--dark);
 
-      &:hover {
+      @include hover-smart(desktop) {
         background-color: var(--dark);
         color: var(--light);
       }
@@ -85,7 +87,7 @@
     color: #acacac;
     border: 1px solid var(--light-grey);
     transition: 200ms;
-    &:hover {
+    @include hover-smart(desktop) {
       color: var(--grey);
       border: 1px solid var(--grey);
     }

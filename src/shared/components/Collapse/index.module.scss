@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   border-radius: 3px;
   overflow: hidden;
@@ -36,7 +38,7 @@
   align-items: center;
   gap: 20px;
 
-  &:hover {
+  @include hover-smart(desktop) {
     background-color: var(--dark);
     color: var(--light);
 

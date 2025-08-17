@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   flex: 1;
   display: flex;
@@ -13,7 +15,7 @@
   border-radius: 3px;
   overflow: hidden;
 
-  &:hover {
+  @include hover-smart {
     .image {
       transform: scale(1.2);
     }
@@ -72,7 +74,7 @@
   font-size: 16px;
 
   &__link {
-    &:hover {
+    @include hover-smart(desktop) {
       text-decoration: underline;
     }
   }
@@ -146,7 +148,7 @@
   z-index: 1;
   order: 1;
 
-  &:hover {
+  @include hover-smart(desktop) {
     & + .hoverCircle {
       transform: scale(30);
       & + .info {

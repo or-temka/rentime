@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   position: relative;
 }
@@ -83,7 +85,7 @@
   font-weight: 500;
   text-decoration: underline;
 
-  &:hover {
+  @include hover-smart(desktop) {
     text-decoration: none;
   }
 
@@ -114,10 +116,6 @@
   }
   @media (max-width: 700px) {
     font-weight: 600;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
   }
   @media (max-width: 500px) {
     font-size: 15px;

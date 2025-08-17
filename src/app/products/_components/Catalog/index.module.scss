@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .section {
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@
   font-size: 16px;
   font-weight: 500;
 
-  &:hover {
+  @include hover-smart(desktop) {
     text-decoration: underline;
   }
 
