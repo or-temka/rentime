@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -181,7 +183,11 @@
   color: var(--link-color);
   font-weight: 500;
 
-  &:hover {
+  @include hover-smart(desktop) {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
     text-decoration: underline;
   }
 }

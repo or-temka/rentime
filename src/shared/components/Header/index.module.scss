@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .header {
   display: flex;
   align-items: center;
@@ -48,7 +50,7 @@
       padding: 10px 15px;
     }
 
-    &:hover {
+    @include hover-smart(desktop) {
       text-decoration: underline;
       cursor: pointer;
     }
@@ -81,7 +83,7 @@
     background-color: var(--light);
   }
 
-  &:hover {
+  @include hover-smart {
     background-color: #ffffff23;
   }
 
@@ -144,7 +146,7 @@
     cursor: pointer;
     width: 100%;
 
-    &:hover {
+    @include hover-smart {
       background-color: #ffffff17;
     }
   }
@@ -172,7 +174,7 @@
   &__li {
     font-size: 16px;
 
-    &:hover {
+    @include hover-smart {
       text-decoration: underline;
     }
   }
