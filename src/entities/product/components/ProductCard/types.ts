@@ -9,6 +9,4 @@ export type ProductCardProps = Product & {
     container?: string
     content?: string
   }
-  minPrice?: number
-  maxPrice?: number
 }
