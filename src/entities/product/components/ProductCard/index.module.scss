@@ -62,11 +62,13 @@
 }
 
 .info {
+  --gap: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap);
   z-index: 1;
   transition: color 0.3s ease 0.1s;
+  max-width: calc(100% - var(--go-arrow-diameter) - var(--gap));
 }
 
 .name {
@@ -74,6 +76,10 @@
   font-size: 16px;
 
   &__link {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
     @include hover-smart(desktop) {
       text-decoration: underline;
     }
