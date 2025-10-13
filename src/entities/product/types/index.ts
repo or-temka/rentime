@@ -52,6 +52,11 @@ export type Product = {
   }
   equipment?: string[]
   keywords?: string[]
+  markup?: {
+    listOfGames?: {
+      desc?: string
+    }
+  }
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'

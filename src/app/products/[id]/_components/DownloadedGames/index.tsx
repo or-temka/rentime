@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/shared/components'
+import { Button, Modal } from '@/shared/components'
 import { DownloadedGamesProps } from './types'
 import { useState } from 'react'
 import styles from './index.module.scss'
@@ -14,9 +14,14 @@ export const DownloadedGames = ({ games }: DownloadedGamesProps) => {
         onClick={() => setShow((show) => !show)}
         className={styles.button}
       >
-        {show ? 'Скрыть' : 'Показать'} полный список установленных игр
+        Показать полный список установленных игр
       </Button>
-      {show && (
+      <Modal
+        isOpen={show}
+        onClose={() => setShow(false)}
+        size="lg"
+        title="Полный список установленных игр"
+      >
         <div className={styles.games}>
           {games.map((game, index) => (
             <span className={styles.game} key={game + index}>
@@ -24,7 +29,7 @@ export const DownloadedGames = ({ games }: DownloadedGamesProps) => {
             </span>
           ))}
         </div>
-      )}
+      </Modal>
     </div>
   )
 }

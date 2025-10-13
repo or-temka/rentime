@@ -95,14 +95,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <MainContentContainer>
         <ProductInformation product={product} />
-
-        {product.games?.available && (
-          <InstanceOfGames
-            games={product.games.available}
-            downloaded={product.games.downloaded}
-          />
-        )}
-
+        <InstanceOfGames product={product} />
         <Advertisement product={product} />
       </MainContentContainer>
     </main>
