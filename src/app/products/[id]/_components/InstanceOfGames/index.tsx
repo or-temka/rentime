@@ -5,14 +5,19 @@ import { InstanceOfGamesProps } from './types'
 import Image from 'next/image'
 import { DownloadedGames } from '../DownloadedGames'
 
-export const InstanceOfGames = ({
-  games,
-  downloaded,
-}: InstanceOfGamesProps) => {
-  const items: MediaCardSliderProps['items'] = games.map((game) => ({
+export const InstanceOfGames = ({ product }: InstanceOfGamesProps) => {
+  const games = product.games
+
+  if (!games || !games.available) {
+    return <></>
+  }
+
+  const items: MediaCardSliderProps['items'] = games.available.map((game) => ({
     title: game.name,
     imageUrl: `/images/games/${game.imageName}`,
   }))
+
+  const productMarkup = product.markup
 
   return (
     <section className={styles.section}>
@@ -27,19 +32,18 @@ export const InstanceOfGames = ({
 
       <div className={styles.header}>
         <H2 className={styles.title}>Пример доступных игр</H2>
-        <p className={styles.paragraph}>
-          Всего игр более 500. Если вам нужна определенная игра и вы не увидели
-          ее в этом списке, напишите нам для уточнения наличия игры в подписке.
-        </p>
+        {productMarkup?.listOfGames?.desc && (
+          <p className={styles.paragraph}>{productMarkup?.listOfGames?.desc}</p>
+        )}
       </div>
 
       <div className={styles.sliderContainer}>
         <MediaCardSlider items={items} />
       </div>
 
-      {downloaded && (
+      {games.downloaded && (
         <div className={styles.downloaded}>
-          <DownloadedGames games={downloaded} />
+          <DownloadedGames games={games.downloaded} />
         </div>
       )}
     </section>

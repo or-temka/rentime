@@ -1,6 +1,7 @@
 export const BLOCKS_IDS = {
   tenantRequirements: 'tenant_requirements',
   deliveryTermsAndConditions: 'delivery_terms_and_conditions',
+  reservation: 'reservation_of_goods',
   howPlaceOrder: 'how_place_order',
   leaseAgreement: 'lease_agreement',
 }

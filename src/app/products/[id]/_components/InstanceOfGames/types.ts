@@ -1,6 +1,5 @@
-import { Games } from '@/entities/game'
+import { Product } from '@/entities/product'
 
 export interface InstanceOfGamesProps {
-  games: Games
-  downloaded?: string[]
+  product: Product
 }

@@ -6,6 +6,7 @@ export * from './UnderlineSpan'
 export * from './SegmentedSelect'
 export * from './Collapse'
 export * from './UlLi'
+export * from './Modal'
 
 export * from './H2'
 

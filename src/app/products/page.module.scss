@@ -1,8 +1,10 @@
 .pageHeader {
-  background-image: url('/images/backgrounds/grey-green-gradient-1.webp');
+  background-image: url('/images/backgrounds/grey-green-gradient-1.webp?v=2'),
+    var(--header-background-gradient);
 
   @media (max-width: 1000px) {
-    background-image: url('/images/backgrounds/grey-green-gradient-2.webp');
+    background-image: url('/images/backgrounds/grey-green-gradient-2.webp?v=2'),
+      var(--header-background-gradient);
   }
 
   // background: radial-gradient(

@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -103,7 +105,7 @@
 .serviceLogo {
   cursor: pointer;
 
-  &:hover {
+  @include hover-smart(desktop) {
     & path {
       fill-opacity: 0.8;
     }
@@ -143,7 +145,7 @@
     font-weight: 400;
     font-family: var(--font-bounded);
 
-    &:hover {
+    @include hover-smart(desktop) {
       text-decoration: underline;
       cursor: pointer;
     }
@@ -167,7 +169,7 @@
   &_li {
     opacity: 0.5;
 
-    &:hover {
+    @include hover-smart(desktop) {
       text-decoration: underline;
       cursor: pointer;
     }
@@ -208,7 +210,7 @@
 }
 
 .licenseLink {
-  &:hover {
+  @include hover-smart(desktop) {
     text-decoration: underline;
   }
 }

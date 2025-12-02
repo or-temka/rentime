@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .rentButton {
   align-items: center;
   overflow: hidden;
@@ -16,13 +18,20 @@
     animation: rentButtonArrowIn 0.25s ease-in-out forwards;
   }
 
-  &:hover {
+  @include hover-smart(desktop) {
     & .rentButton__text {
       opacity: 0;
     }
 
     & .rentButton__arrow {
       animation: rentButtonArrowOut 0.35s ease-out forwards;
+    }
+  }
+
+  @include hover-smart(mobile) {
+    & .rentButton__text,
+    & .rentButton__arrow {
+      opacity: 0.5;
     }
   }
 

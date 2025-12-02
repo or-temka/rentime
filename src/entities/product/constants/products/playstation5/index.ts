@@ -18,7 +18,7 @@ export const PLAYSTATION5: Product = {
       prepositional: 'игровой консоли PlayStation 5',
     },
   },
-  feedbackCount: 3,
+  feedbackCount: 11,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.webp`,
@@ -26,18 +26,18 @@ export const PLAYSTATION5: Product = {
   },
   price: {
     weekdays: {
-      one: 600,
-      two: 500,
-      three: 450,
-      four: 400,
-      five: 370,
+      one: 650,
+      two: 550,
+      three: 500,
+      four: 450,
+      five: 400,
     },
     weekends: {
-      one: 800,
-      two: 700,
-      three: 600,
-      overFour: 500,
-      overTwoWeeks: 450,
+      one: 850,
+      two: 750,
+      three: 650,
+      overFour: 550,
+      overTwoWeeks: 470,
       oneMonth: 330,
       twoMonths: 250,
     },
@@ -72,10 +72,19 @@ export const PLAYSTATION5: Product = {
     'арендовать пс5',
     'аренда пс5 Ярославль',
     'прокат пс5 Ярославль',
+    'аренда плейстейшон',
+    'аренда play station',
+    'аренда плейстейшен',
     'аренда плейстейшен 5',
     'аренда плейстейшен 5 Ярославль',
     'прокат плейстейшен 5',
     'прокат плейстейшен 5 Ярославль',
     'арендовать плейстейшен 5',
   ],
+  markup: {
+    listOfGames: {
+      desc: `Всего игр более 500 - здесь представлена только меньшая из них часть. 
+      Если вам нужна определенная игра и вы не увидели ее в этом списке, напишите нам для уточнения наличия игры в подписке.`,
+    },
+  },
 }

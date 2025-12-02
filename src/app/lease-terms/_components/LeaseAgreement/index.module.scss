@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   display: flex;
   gap: 17px;
@@ -7,7 +9,7 @@
   border-radius: 3px;
   align-items: center;
 
-  &:hover {
+  @include hover-smart(desktop) {
     background-color: var(--lightBackground);
   }
 

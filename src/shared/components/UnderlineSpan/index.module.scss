@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .container {
   position: relative;
   overflow: hidden;

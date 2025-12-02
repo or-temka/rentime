@@ -88,19 +88,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ),
         }}
         className={styles.pageHeader}
-        style={{ backgroundImage: `url(${product.imagesURL.full})` }}
+        style={{
+          backgroundImage: `url(${product.imagesURL.full}), linear-gradient(135deg, #000000 0%, #000000d0 100%)`,
+        }}
       />
 
       <MainContentContainer>
         <ProductInformation product={product} />
-
-        {product.games?.available && (
-          <InstanceOfGames
-            games={product.games.available}
-            downloaded={product.games.downloaded}
-          />
-        )}
-
+        <InstanceOfGames product={product} />
         <Advertisement product={product} />
       </MainContentContainer>
     </main>

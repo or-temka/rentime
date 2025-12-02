@@ -30,7 +30,7 @@ export const ProductCard = ({
         <Link href={productRoute} className={styles.goArrow}></Link>
         <div className={styles.hoverCircle} />
         <div className={styles.info}>
-          <h4 className={styles.name}>
+          <h4 className={styles.name} title={name.base}>
             <Link href={productRoute} className={styles.name__link}>
               {name.base}
             </Link>
