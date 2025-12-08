@@ -1,16 +1,8 @@
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
 import './globals.scss'
 import { Footer, Header } from '@/shared/components'
 import styles from './layout.module.scss'
 import Analytics from './_analytics/Analytics'
-
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rentime.ru'),
@@ -61,7 +53,7 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="Rentime" />
       </head>
-      <body className={`${montserrat.variable}`}>
+      <body>
         <Analytics />
 
         <Header />
