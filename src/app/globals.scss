@@ -18,6 +18,8 @@
 
   --font-bounded: 'Bounded', 'Montserrat', 'Montserrat Fallback', Arial,
     Helvetica, sans-serif;
+  --font-montserrat: 'Montserrat', 'Montserrat Fallback', Arial,
+    Helvetica, sans-serif;
 
   --header-background-gradient: linear-gradient(
     135deg,
@@ -36,6 +38,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
