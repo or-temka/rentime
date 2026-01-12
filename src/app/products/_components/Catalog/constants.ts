@@ -3,6 +3,7 @@ import { SegmentedSelectOption } from '@/shared/components'
 import { Sort } from './types'
 import { PICO4 } from '@/entities/product/constants/products/pico4'
 import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
+import { LOGITECH_G29 } from '@/entities/product/constants/products/logitech-g29'
 
 export const sortMap: Record<Sort, string> = {
   no: 'по умолчанию',
@@ -25,4 +26,4 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
   },
 ]
 
-export const products: ProductCardProps[] = [PICO4, PLAYSTATION5]
+export const products: ProductCardProps[] = [PICO4, PLAYSTATION5, LOGITECH_G29]

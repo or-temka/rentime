@@ -1,4 +1,5 @@
 import { ProductCardProps, productCattegoryMap } from '@/entities/product'
+import { LOGITECH_G29 } from '@/entities/product/constants/products/logitech-g29'
 import { PICO4 } from '@/entities/product/constants/products/pico4'
 import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
 import { SegmentedSelectOption } from '@/shared/components'
@@ -18,4 +19,4 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
   },
 ]
 
-export const popularProducts: ProductCardProps[] = [PICO4, PLAYSTATION5]
+export const popularProducts: ProductCardProps[] = [PICO4, PLAYSTATION5, LOGITECH_G29]
