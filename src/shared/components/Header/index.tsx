@@ -46,7 +46,7 @@ export const Header = () => {
           ))}
         </ul>
         <a
-          href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
+          href={process.env.NEXT_PUBLIC_VK_COMPANY_MESSANGER_LINK}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -96,7 +96,7 @@ export const Header = () => {
             </nav>
             <div className={styles.bottomNav}>
               <a
-                href={process.env.NEXT_PUBLIC_AVITO_COMPANY_PROFILE_LINK}
+                href={process.env.NEXT_PUBLIC_VK_COMPANY_MESSANGER_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
