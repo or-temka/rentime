@@ -16,8 +16,8 @@ export const LOGITECH_G29: Product = {
       prepositional: 'игрового руля Logitech G29',
     },
   },
-  feedbackCount: 0,
-  rating: 0,
+  feedbackCount: 1,
+  rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${LOGITECH_G29_ID}/thumbnail.webp`,
     full: `/images/products/${LOGITECH_G29_ID}/full.webp`,
@@ -46,6 +46,7 @@ export const LOGITECH_G29: Product = {
   links: {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/igrovoy_rul_logitech_g29_s_kpp_arenda_prokat_7774617447',
+    vk: 'https://vk.com/market/product/igrovoy-rul-logitech-g29-s-kpp-arenda-prokat-231455623-12478651'
   },
   equipment: [
     'Игровой руль Logitech G29',

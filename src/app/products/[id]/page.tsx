@@ -82,7 +82,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         info={{
           text: product.description || '',
           button: (
-            <a href={product.links?.avito} target="_blank">
+            <a href={product.links?.vk} target="_blank">
               <RentButton href="" />
             </a>
           ),

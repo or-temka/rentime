@@ -53,7 +53,7 @@ export const ProductStand = () => {
           </strong>
           <RentButton
             theme="dark"
-            href={PRODUCTS.playstation5.links?.avito}
+            href={PRODUCTS.playstation5.links?.vk}
             target="_blank"
           />
         </div>
