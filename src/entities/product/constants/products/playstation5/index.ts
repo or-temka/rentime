@@ -18,7 +18,7 @@ export const PLAYSTATION5: Product = {
       prepositional: 'игровой консоли PlayStation 5',
     },
   },
-  feedbackCount: 11,
+  feedbackCount: 15,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.webp`,
@@ -52,6 +52,7 @@ export const PLAYSTATION5: Product = {
   links: {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/sony_playstation_5_arenda_prokat_7326172571?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
+    vk: 'https://vk.com/market/product/sony-playstation-5-arenda-prokat-231455623-12397024'
   },
   equipment: [
     'Приставка PlayStation 5',

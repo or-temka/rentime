@@ -49,6 +49,7 @@ export type Product = {
   }
   links?: {
     avito?: string
+    vk?: string
   }
   equipment?: string[]
   keywords?: string[]
