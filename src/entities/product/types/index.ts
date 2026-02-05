@@ -36,7 +36,13 @@ export type Product = {
     full: string
   }
   price: {
+    /**
+     * Рабочие дни
+     */
     weekdays: Record<dayKey, ProductPriceForDays>
+    /**
+     * Выходные и праздничные дни
+     */
     weekends: Record<dayKey, ProductPriceForDays>
   }
   description?: string
