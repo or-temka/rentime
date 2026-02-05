@@ -1,3 +1,5 @@
 export * from './categories'
 export * from './products'
 export * from './imagesRoute'
+export * from './dayName'
+export * from './dailyPriceMultipliers'

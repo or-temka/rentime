@@ -32,11 +32,13 @@ export const Catalog = ({
   )
   if (sort !== 'no') {
     filteredProducts.sort((p1, p2) => {
-      const p1price = p1.price.weekends.one || p1.price.weekdays.one || 0
-      const p2price = p2.price.weekends.one || p1.price.weekdays.one || 0
+      const p1price = p1.price.weekends?.one || p1.price.weekdays?.one || p1.price.any?.one || 0
+      const p2price = p2.price.weekends?.one || p1.price.weekdays?.one || p1.price.any?.one || 0
       if (sort === 'bottom') return p1price - p2price
       return p2price - p1price
     })
+  } else {
+    filteredProducts.sort((p1, p2) => p2.feedbackCount - p1.feedbackCount)
   }
 
   const handleSortClick = () => {

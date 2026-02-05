@@ -24,20 +24,30 @@ export const LOGITECH_G29: Product = {
   },
   price: {
     weekdays: {
-      one: 450,
-      two: 420,
-      three: 370,
-      four: 340,
-      five: 300,
+      '1': 450,
+      '2': 420,
+      '3': 370,
+      '4': 340,
+      '5': 300,
+      '6': 300,
+      '7': 300,
+      '10': 300,
+      '14': 270,
+      '30': 250,
+      '60': 200,
     },
     weekends: {
-      one: 500,
-      two: 450,
-      three: 400,
-      overFour: 350,
-      overTwoWeeks: 300,
-      oneMonth: 250,
-      twoMonths: 200,
+      '1': 500,
+      '2': 450,
+      '3': 400,
+      '4': 350,
+      '5': 350,
+      '6': 350,
+      '7': 350,
+      '10': 350,
+      '14': 270,
+      '30': 250,
+      '60': 200,
     },
   },
   category: 'rest and leisure',
@@ -46,7 +56,7 @@ export const LOGITECH_G29: Product = {
   links: {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/igrovoy_rul_logitech_g29_s_kpp_arenda_prokat_7774617447',
-    vk: 'https://vk.com/market/product/igrovoy-rul-logitech-g29-s-kpp-arenda-prokat-231455623-12478651'
+    vk: 'https://vk.com/market/product/igrovoy-rul-logitech-g29-s-kpp-arenda-prokat-231455623-12701626',
   },
   equipment: [
     'Игровой руль Logitech G29',
@@ -65,6 +75,6 @@ export const LOGITECH_G29: Product = {
     'прокат игрового руля',
     'арендовать игровой руль',
     'аренда игрового руля Ярославль',
-    'прокат игрового руля Ярославль'
-  ]
+    'прокат игрового руля Ярославль',
+  ],
 }
