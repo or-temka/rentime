@@ -1,0 +1,82 @@
+import { Product } from '@/entities/product'
+
+export const DUALSENSE_ID: Product['id'] = 'dualsense'
+
+export const DUALSENSE: Product = {
+  id: DUALSENSE_ID,
+  name: {
+    base: 'Геймпад Dualsense для игровой приставки PlayStation 5',
+    short: 'Dualsense для PlayStation 5',
+    cases: {
+      accusative: 'геймпад Dualsense для PlayStation 5',
+      dative: 'геймпаду Dualsense для PlayStation 5',
+      genitive: 'геймпада Dualsense для PlayStation 5',
+      instrumental: 'геймпад Dualsense для PlayStation 5',
+      nominative: 'геймпадом Dualsense для PlayStation 5',
+      prepositional: 'геймпада Dualsense для PlayStation 5',
+    },
+  },
+  feedbackCount: 0,
+  rating: 0,
+  imagesURL: {
+    thumbnail: `/images/products/${DUALSENSE_ID}/thumbnail.webp`,
+    full: `/images/products/${DUALSENSE_ID}/full.webp`,
+  },
+  price: {
+    weekdays: {
+      '1': 180,
+      '2': 130,
+      '3': 105,
+      '4': 90,
+      '5': 80,
+      '6': 80,
+      '7': 80,
+      '10': 80,
+      '14': 80,
+      '30': 80,
+      '60': 70,
+    },
+    weekends: {
+      '1': 220,
+      '2': 160,
+      '3': 135,
+      '4': 110,
+      '5': 110,
+      '6': 110,
+      '7': 110,
+      '10': 110,
+      '14': 95,
+      '30': 90,
+      '60': 70,
+    },
+  },
+  category: 'rest and leisure',
+  description:
+    'Dualsense - революционный геймпад с адаптивными триггерами и тактильной обратной связью, превращающий каждое действие в игре в физически ощутимый опыт.',
+  links: {
+    vk: 'https://vk.com/market/product/geympad-dualsense-ps5-arenda-231455623-12715907',
+  },
+  equipment: ['Геймад Dualsense для игровой консоли PlayStation 5'],
+  keywords: [
+    'аренда геймпада dualsense',
+    'прокат геймпада dualsense',
+    'аренда контроллера dualsense',
+    'прокат контроллера dualsense',
+    'аренда геймпада dualsense для игровой консоли PlayStation 5',
+    'прокат геймпада dualsense для игровой консоли PlayStation 5',
+    'аренда геймпада dualsense для PlayStation 5',
+    'прокат геймпада dualsense для PlayStation 5',
+    'аренда геймпада dualsense для ps 5',
+    'прокат геймпада dualsense для ps 5',
+    'аренда геймпада dualsense для ps5',
+    'прокат геймпада dualsense для ps5',
+    'аренда геймпада dualsense для пс 5',
+    'прокат геймпада dualsense для пс 5',
+    'аренда геймпада dualsense для пс5',
+    'прокат геймпада dualsense для пс5',
+    'арендовать геймпад dualsense для консоли PlayStation 5',
+    'арендовать контроллер dualsense для PlayStation 5',
+    'аренда геймпада dualsense для PlayStation 5 Ярославль',
+    'аренда контроллера dualsense для ps 5 Ярославль',
+  ],
+}
