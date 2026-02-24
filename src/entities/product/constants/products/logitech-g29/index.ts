@@ -56,7 +56,7 @@ export const LOGITECH_G29: Product = {
   links: {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/igrovoy_rul_logitech_g29_s_kpp_arenda_prokat_7774617447',
-    vk: 'https://vk.com/market/product/igrovoy-rul-logitech-g29-s-kpp-arenda-prokat-231455623-12701626',
+    vk: 'https://vk.com/market/product/igrovoy-rul-logitech-g29-s-kpp-arenda-231455623-12701626',
   },
   equipment: [
     'Игровой руль Logitech G29',

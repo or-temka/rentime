@@ -64,7 +64,7 @@ export const PICO4: Product = {
   links: {
     avito:
       'https://www.avito.ru/yaroslavl/predlozheniya_uslug/viar_ochki_pico_4_arenda_prokat_7326125846?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJvcVBkaUZCYWtaeFFaaE1VIjt9few2Lz8AAAA',
-    vk: 'https://vk.com/market/product/arenda-vr-ochki-pico-4-231455623-12701624',
+    vk: 'https://vk.com/market/product/vr-ochki-pico-4-arenda-231455623-12701624',
   },
   equipment: [
     'Очки виртуальной реальности Pico 4',
