@@ -75,7 +75,7 @@ export const Footer = () => {
         <div className={styles.additionalRight}>
           <p>г. Ярославль, ул. 2 Мельничная 35</p>
           <div className={styles.splitTextCircle} />
-          <p>© 2025 Rentime. Все права защищены.</p>
+          <p>© 2026 Rentime. Все права защищены.</p>
         </div>
       </div>
     </footer>
