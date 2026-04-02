@@ -4,7 +4,6 @@ import {
   MailSVG,
   PhoneSVG,
   PinSVG,
-  TelegramLogoSVG,
   VkLogoSVG,
 } from '@/shared/components'
 import styles from './index.module.scss'
@@ -30,7 +29,7 @@ export const ContactButtons = () => {
         icon={
           <PinSVG
             className={[styles.contactBtnIcon, styles.contactBtnIcon__pin].join(
-              ' '
+              ' ',
             )}
           />
         }
@@ -73,14 +72,19 @@ export const ContactButtons = () => {
             <AvitoLogoSVG />
           </a>
           <a
-            target="_blank"
-            href={process.env.NEXT_PUBLIC_TELEGRAM_COMPANY_PROFILE_LINK}
+            href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`}
             className={[
-              styles.contactMailBtnContent__icon,
-              styles.contactMailBtnContent__icon__telegram,
+              styles.contactMailBtnContent__link,
+              styles.contactMailBtnContent__link_mail,
             ].join(' ')}
           >
-            <TelegramLogoSVG />
+            <MailSVG
+              className={[
+                styles.contactMailBtnContent__icon,
+                styles.contactMailBtnContent__icon__vk,
+              ].join(' ')}
+            />
+            <span>{process.env.NEXT_PUBLIC_MAIL}</span>
           </a>
         </div>
       </ContactButton>
