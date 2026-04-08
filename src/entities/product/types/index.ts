@@ -12,6 +12,7 @@ export type dayKey =
   | '7'
   | '10'
   | '14'
+  | '21'
   | '30'
   | '60'
 
@@ -36,14 +37,21 @@ export type Product = {
     full: string
   }
   price: {
+    useOnlyWeekdaysPrice?: boolean
     /**
      * Рабочие дни
+     *
+     * цена 0, если продажа по такому количеству дней не разрешена
      */
     weekdays: Record<dayKey, ProductPriceForDays>
+    weekdaysHideDays?: dayKey[]
     /**
      * Выходные и праздничные дни
+     *
+     * цена 0, если продажа по такому количеству дней не разрешена
      */
     weekends: Record<dayKey, ProductPriceForDays>
+    weekendsHideDays?: dayKey[]
   }
   description?: string
   category?: ProductCategory

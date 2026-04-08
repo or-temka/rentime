@@ -9,24 +9,42 @@ import {
   DAY_NAMES,
 } from '@/entities/product/constants'
 
-const WEEKDAY_NOT_SHOW_DAYS: dayKey[] = ['6', '7', '10', '14', '30', '60']
+const WEEKDAY_NOT_SHOW_DAYS_DEFAULT: dayKey[] = [
+  '6',
+  '7',
+  '10',
+  '14',
+  '21',
+  '30',
+  '60',
+]
 const WEEKDAYS_WITH_FROM_LABEL: dayKey[] = []
 
-const WEEKEND_NOT_SHOW_DAYS: dayKey[] = ['5', '6', '7', '10']
+const WEEKEND_NOT_SHOW_DAYS_DEFAULT: dayKey[] = ['5', '6', '7', '10', '21']
 const WEEKENDS_WITH_FROM_LABEL: dayKey[] = ['4', '14']
 
 const PricePerDay = ({
   day,
   pricePerDay,
   type,
+  customHideDays,
 }: {
   type: keyof Product['price']
   day: dayKey
   pricePerDay: number
+  customHideDays?: dayKey[]
 }) => {
   if (
-    (type === 'weekdays' && WEEKDAY_NOT_SHOW_DAYS.includes(day)) ||
-    (type === 'weekends' && WEEKEND_NOT_SHOW_DAYS.includes(day))
+    (type === 'weekdays' &&
+      (customHideDays
+        ? customHideDays
+        : WEEKDAY_NOT_SHOW_DAYS_DEFAULT
+      ).includes(day)) ||
+    (type === 'weekends' &&
+      (customHideDays
+        ? customHideDays
+        : WEEKEND_NOT_SHOW_DAYS_DEFAULT
+      ).includes(day))
   )
     return <></>
 
@@ -88,9 +106,15 @@ export const Price = ({ product }: PriceProps) => {
 
       <div className={styles.pricesContainer}>
         <section className={styles.prices}>
-          <h3 className="visually-hidden">Стоимость аренды в будние дни</h3>
+          <h3 className="visually-hidden">
+            {product.price.useOnlyWeekdaysPrice
+              ? 'Стоимость аренды'
+              : 'Стоимость аренды в будние дни'}
+          </h3>
           <div className={styles.pricesLabel}>
-            <span className={styles.pricesLabel__text}>Будние дни</span>
+            <span className={styles.pricesLabel__text}>
+              {product.price.useOnlyWeekdaysPrice ? 'Стоимость' : 'Будние дни'}
+            </span>
           </div>
           <table className={styles.pricesTable}>
             <thead>
@@ -109,43 +133,47 @@ export const Price = ({ product }: PriceProps) => {
                   pricePerDay={value}
                   type="weekdays"
                   key={key}
+                  customHideDays={product.price.weekdaysHideDays}
                 />
               ))}
             </tbody>
           </table>
         </section>
 
-        <section className={styles.prices}>
-          <h3 className="visually-hidden">
-            Стоимость аренды в выходные и праздничные дни
-          </h3>
-          <div className={styles.pricesLabel}>
-            <span className={styles.pricesLabel__text}>
-              Выходные и праздничные
-            </span>
-          </div>
-          <table className={styles.pricesTable}>
-            <thead>
-              <tr>
-                <th>Кол-во дней</th>
-                <th>Стоимость за сутки, руб.</th>
-                <th>Итог, руб.</th>
-              </tr>
-            </thead>
-            <tbody className={styles.pricesTableTbody}>
-              {(
-                Object.entries(product.price.weekends) as [dayKey, number][]
-              ).map(([key, value]) => (
-                <PricePerDay
-                  day={key}
-                  pricePerDay={value}
-                  type="weekends"
-                  key={key}
-                />
-              ))}
-            </tbody>
-          </table>
-        </section>
+        {!product.price.useOnlyWeekdaysPrice && (
+          <section className={styles.prices}>
+            <h3 className="visually-hidden">
+              Стоимость аренды в выходные и праздничные дни
+            </h3>
+            <div className={styles.pricesLabel}>
+              <span className={styles.pricesLabel__text}>
+                Выходные и праздничные
+              </span>
+            </div>
+            <table className={styles.pricesTable}>
+              <thead>
+                <tr>
+                  <th>Кол-во дней</th>
+                  <th>Стоимость за сутки, руб.</th>
+                  <th>Итог, руб.</th>
+                </tr>
+              </thead>
+              <tbody className={styles.pricesTableTbody}>
+                {(
+                  Object.entries(product.price.weekends) as [dayKey, number][]
+                ).map(([key, value]) => (
+                  <PricePerDay
+                    day={key}
+                    pricePerDay={value}
+                    type="weekends"
+                    key={key}
+                    customHideDays={product.price.weekendsHideDays}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </section>
+        )}
       </div>
     </div>
   )
