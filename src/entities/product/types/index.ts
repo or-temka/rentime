@@ -2,6 +2,19 @@ import { GameRecord, Games } from '@/entities/game'
 
 export type ProductPriceForDays = number
 
+export type dayKey =
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '10'
+  | '14'
+  | '30'
+  | '60'
+
 export type Product = {
   id: string
   name: {
@@ -23,22 +36,14 @@ export type Product = {
     full: string
   }
   price: {
-    weekdays: {
-      one: ProductPriceForDays
-      two: ProductPriceForDays
-      three: ProductPriceForDays
-      four: ProductPriceForDays
-      five: ProductPriceForDays
-    }
-    weekends: {
-      one: ProductPriceForDays
-      two: ProductPriceForDays
-      three: ProductPriceForDays
-      overFour: ProductPriceForDays
-      overTwoWeeks: ProductPriceForDays
-      oneMonth: ProductPriceForDays
-      twoMonths: ProductPriceForDays
-    }
+    /**
+     * Рабочие дни
+     */
+    weekdays: Record<dayKey, ProductPriceForDays>
+    /**
+     * Выходные и праздничные дни
+     */
+    weekends: Record<dayKey, ProductPriceForDays>
   }
   description?: string
   category?: ProductCategory
@@ -49,12 +54,20 @@ export type Product = {
   }
   links?: {
     avito?: string
+    vk?: string
   }
   equipment?: string[]
   keywords?: string[]
   markup?: {
     listOfGames?: {
       desc?: string
+    }
+  }
+  textWithResourceBtn?: {
+    text: string
+    button: {
+      text: string
+      link: string
     }
   }
 }

@@ -2,7 +2,7 @@ import styles from './index.module.scss'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { menuSections } from './constants'
-import { AvitoLogoSVG, Logo, TelegramLogoSVG, VkLogoSVG } from '../svgs'
+import { AvitoLogoSVG, Logo, MailSVG, VkLogoSVG } from '../svgs'
 
 export const Logos = () => {
   return (
@@ -16,11 +16,9 @@ export const Logos = () => {
       >
         <AvitoLogoSVG width={66} className={styles.serviceLogo} />
       </a>
-      <a
-        target="_blank"
-        href={process.env.NEXT_PUBLIC_TELEGRAM_COMPANY_PROFILE_LINK}
-      >
-        <TelegramLogoSVG width={25} className={styles.serviceLogo} />
+      <a href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`} className={styles.logos__mail}>
+        <MailSVG width={24} className={styles.serviceLogo} />
+        <span>{process.env.NEXT_PUBLIC_MAIL}</span>
       </a>
     </>
   )
@@ -75,7 +73,7 @@ export const Footer = () => {
         <div className={styles.additionalRight}>
           <p>г. Ярославль, ул. 2 Мельничная 35</p>
           <div className={styles.splitTextCircle} />
-          <p>© 2025 Rentime. Все права защищены.</p>
+          <p>© 2026 Rentime. Все права защищены.</p>
         </div>
       </div>
     </footer>

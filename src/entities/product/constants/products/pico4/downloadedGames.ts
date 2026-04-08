@@ -5,7 +5,6 @@ export const DOWNLOADED_PICO_4_GAMES: string[] = [
   'VR chat',
   'GORN 2',
   'BONELAB',
-  'I am cat',
   'Job simulator',
   'Fruit Ninja',
   'Hello Neighbour: Search and rescue',

@@ -3,54 +3,45 @@ import styles from './index.module.scss'
 import { ROUTES } from '@/config/routes'
 import { PriceProps } from './types'
 import { getRubleWord } from '@/shared/utils'
+import { dayKey, Product } from '@/entities/product'
+import {
+  DAILY_PRICE_MULTIPLIERS,
+  DAY_NAMES,
+} from '@/entities/product/constants'
 
-const getDayName = (day: number, type: 'weekdays' | 'weekends') => {
-  const isWeekdays = type === 'weekdays'
-  switch (day) {
-    case 1:
-      return '1 день'
-    case 4:
-      return isWeekdays ? '4 дня' : 'от 4 дней'
-    case 5:
-      return isWeekdays ? '5 дней' : 'от 14 дней'
-    case 6:
-      return '1 месяц'
-    case 7:
-      return '2 месяца'
-    default:
-      return `${day} дня`
-  }
-}
+const WEEKDAY_NOT_SHOW_DAYS: dayKey[] = ['6', '7', '10', '14', '30', '60']
+const WEEKDAYS_WITH_FROM_LABEL: dayKey[] = []
+
+const WEEKEND_NOT_SHOW_DAYS: dayKey[] = ['5', '6', '7', '10']
+const WEEKENDS_WITH_FROM_LABEL: dayKey[] = ['4', '14']
 
 const PricePerDay = ({
   day,
   pricePerDay,
   type,
 }: {
-  day: number
+  type: keyof Product['price']
+  day: dayKey
   pricePerDay: number
-  type: 'weekdays' | 'weekends'
 }) => {
-  if (day > 7) return <></>
+  if (
+    (type === 'weekdays' && WEEKDAY_NOT_SHOW_DAYS.includes(day)) ||
+    (type === 'weekends' && WEEKEND_NOT_SHOW_DAYS.includes(day))
+  )
+    return <></>
 
-  const isWeekdays = type === 'weekends'
-  const showFromPriceLabel = isWeekdays && day > 3
+  const showFromPriceLabel =
+    type === 'weekdays'
+      ? WEEKDAYS_WITH_FROM_LABEL.includes(day)
+      : WEEKENDS_WITH_FROM_LABEL.includes(day)
 
-  let totalPrice = pricePerDay * day
-  if (isWeekdays) {
-    totalPrice =
-      day < 5
-        ? pricePerDay * day
-        : day === 6
-        ? pricePerDay * 30
-        : day === 5
-        ? pricePerDay * 14
-        : pricePerDay * 60
-  }
+  const totalPrice = pricePerDay * DAILY_PRICE_MULTIPLIERS[day]
 
   return (
     <tr>
-      <td>{getDayName(day, type)}</td>
+      <td>
+        {showFromPriceLabel ? DAY_NAMES[day].fromDays : DAY_NAMES[day].simple}
+      </td>
       <td>
         {pricePerDay}
         <span className="visually-hidden"> {getRubleWord(totalPrice)}</span>
@@ -110,16 +101,16 @@ export const Price = ({ product }: PriceProps) => {
               </tr>
             </thead>
             <tbody className={styles.pricesTableTbody}>
-              {Object.entries(product.price.weekdays).map(
-                ([key, value], index) => (
-                  <PricePerDay
-                    day={index + 1}
-                    pricePerDay={value}
-                    type="weekdays"
-                    key={key}
-                  />
-                )
-              )}
+              {(
+                Object.entries(product.price.weekdays) as [dayKey, number][]
+              ).map(([key, value]) => (
+                <PricePerDay
+                  day={key}
+                  pricePerDay={value}
+                  type="weekdays"
+                  key={key}
+                />
+              ))}
             </tbody>
           </table>
         </section>
@@ -142,16 +133,16 @@ export const Price = ({ product }: PriceProps) => {
               </tr>
             </thead>
             <tbody className={styles.pricesTableTbody}>
-              {Object.entries(product.price.weekends).map(
-                ([key, value], index) => (
-                  <PricePerDay
-                    day={index + 1}
-                    pricePerDay={value}
-                    type="weekends"
-                    key={key}
-                  />
-                )
-              )}
+              {(
+                Object.entries(product.price.weekends) as [dayKey, number][]
+              ).map(([key, value]) => (
+                <PricePerDay
+                  day={key}
+                  pricePerDay={value}
+                  type="weekends"
+                  key={key}
+                />
+              ))}
             </tbody>
           </table>
         </section>

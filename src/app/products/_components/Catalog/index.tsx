@@ -22,26 +22,28 @@ export const Catalog = ({
   const searchParams = useSearchParams()
   const [activeCategory, setActiveCategory] = useState<SegmentedSelectOption>(
     productCategoriesOptions.find(
-      (category) => category.value === userActiveCategory
-    ) || productCategoriesOptions[0]
+      (category) => category.value === userActiveCategory,
+    ) || productCategoriesOptions[0],
   )
   const [sort, setSort] = useState<Sort>('no')
 
   const filteredProducts = products.filter(
-    (product) => product.category === activeCategory.value
+    (product) => product.category === activeCategory.value,
   )
   if (sort !== 'no') {
     filteredProducts.sort((p1, p2) => {
-      const p1price = p1.price.weekends.one || p1.price.weekdays.one || 0
-      const p2price = p2.price.weekends.one || p1.price.weekdays.one || 0
+      const p1price = p1.price.weekends?.['1'] || p1.price.weekdays?.['1'] || 0
+      const p2price = p2.price.weekends?.['1'] || p1.price.weekdays?.['1'] || 0
       if (sort === 'bottom') return p1price - p2price
       return p2price - p1price
     })
+  } else {
+    filteredProducts.sort((p1, p2) => p2.feedbackCount - p1.feedbackCount)
   }
 
   const handleSortClick = () => {
     setSort((prev) =>
-      prev === 'no' ? 'bottom' : prev === 'bottom' ? 'top' : 'no'
+      prev === 'no' ? 'bottom' : prev === 'bottom' ? 'top' : 'no',
     )
   }
 
@@ -51,7 +53,7 @@ export const Catalog = ({
     router.push(
       withQuery<ProductsRouteQueryRecord>('/products', {
         productCategory: option.value as ProductCategory,
-      })
+      }),
     )
     setActiveCategory(option)
   }

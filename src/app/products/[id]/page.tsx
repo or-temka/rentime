@@ -9,6 +9,7 @@ import {
 } from './_components'
 import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
+import { TextWithResourceBtn } from './_components/TextWithResourceBtn'
 
 interface ProductPageProps {
   params: Promise<{ id: string }>
@@ -82,7 +83,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         info={{
           text: product.description || '',
           button: (
-            <a href={product.links?.avito} target="_blank">
+            <a href={product.links?.vk} target="_blank">
               <RentButton href="" />
             </a>
           ),
@@ -96,6 +97,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <MainContentContainer>
         <ProductInformation product={product} />
         <InstanceOfGames product={product} />
+        {product.textWithResourceBtn && (
+          <TextWithResourceBtn {...product.textWithResourceBtn} />
+        )}
         <Advertisement product={product} />
       </MainContentContainer>
     </main>

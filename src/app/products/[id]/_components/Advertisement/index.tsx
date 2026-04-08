@@ -18,7 +18,7 @@ export const Advertisement = ({ product }: AdvertisementProps) => {
           Арендуй. Пользуйся. Возвращай. Легко!
         </span>
         <div className={styles.rent}>
-          <a href={product.links?.avito} target="_blank">
+          <a href={product.links?.vk} target="_blank">
             <RentButton theme="dark" href="" />
           </a>
           <Link

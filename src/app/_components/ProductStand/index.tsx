@@ -49,11 +49,11 @@ export const ProductStand = () => {
             {SHOW_DETAILS_TEXT}
           </Link>
           <strong className={styles.price}>
-            от {PLAYSTATION5.price.weekends.twoMonths} руб. за день
+            от {PLAYSTATION5.price.weekends['60']} руб. за день
           </strong>
           <RentButton
             theme="dark"
-            href={PRODUCTS.playstation5.links?.avito}
+            href={PRODUCTS.playstation5.links?.vk}
             target="_blank"
           />
         </div>
