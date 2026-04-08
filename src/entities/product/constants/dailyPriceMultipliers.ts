@@ -10,6 +10,7 @@ export const DAILY_PRICE_MULTIPLIERS: Record<dayKey, number> = {
   '7': 7,
   '10': 10,
   '14': 14,
+  '21': 21,
   '30': 30,
   '60': 60,
 }

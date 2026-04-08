@@ -10,6 +10,7 @@ export const DAY_NAMES: Record<dayKey, { simple: string; fromDays: string }> = {
   '7': { simple: '7 дней', fromDays: 'от 7 дней' },
   '10': { simple: '10 дней', fromDays: 'от 10 дней' },
   '14': { simple: '14 дней', fromDays: 'от 14 дней' },
+  '21': { simple: '21 день', fromDays: 'от 21 дня' },
   '30': { simple: '1 месяц', fromDays: 'от 1 месяца' },
   '60': { simple: '2 месяца', fromDays: 'от 2 месяцев' },
 }
