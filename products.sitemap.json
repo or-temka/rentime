@@ -1,5 +1,8 @@
 [
   { "id": "playstation5", "priority": 0.85, "changefreq": "monthly" },
   { "id": "pico4", "priority": 0.8, "changefreq": "monthly" },
-  { "id": "logitech-g29", "priority": 0.7, "changefreq": "monthly" }
+  { "id": "pico4-ultra", "priority": 0.75, "changefreq": "monthly" },
+  { "id": "disk-for-ps5", "priority": 0.7, "changefreq": "monthly" },
+  { "id": "dualsense", "priority": 0.7, "changefreq": "monthly" },
+  { "id": "logitech-g29", "priority": 0.5, "changefreq": "monthly" }
 ]

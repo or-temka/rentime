@@ -6,6 +6,7 @@ import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5
 import { LOGITECH_G29 } from '@/entities/product/constants/products/logitech-g29'
 import { DISK_FOR_PS5 } from '@/entities/product/constants/products/disk-for-ps5'
 import { DUALSENSE } from '@/entities/product/constants/products/dualsense'
+import { PICO4_ULTRA } from '@/entities/product/constants/products/pico4-ultra'
 
 export const sortMap: Record<Sort, string> = {
   no: 'по умолчанию',
@@ -29,9 +30,10 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
 ]
 
 export const products: ProductCardProps[] = [
-  PICO4,
   PLAYSTATION5,
-  LOGITECH_G29,
+  PICO4_ULTRA,
+  PICO4,
   DISK_FOR_PS5,
   DUALSENSE,
+  LOGITECH_G29,
 ]

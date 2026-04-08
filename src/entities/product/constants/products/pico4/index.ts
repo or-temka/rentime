@@ -19,7 +19,7 @@ export const PICO4: Product = {
       prepositional: 'VR-очках Pico 4',
     },
   },
-  feedbackCount: 12,
+  feedbackCount: 14,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PICO4_ID}/thumbnail.webp`,
