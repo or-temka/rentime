@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type RuleProps = {
+export type RentRuleProps = {
   title: string
   children: ReactNode
   id?: string

@@ -1,4 +1,7 @@
 import { Product } from '@/entities/product'
+import { UlLi } from '@/shared/components'
+import { RentRule } from '@/shared/components/RentRule'
+import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const DISK_FOR_PS5_ID: Product['id'] = 'disk-for-ps5'
 
@@ -90,4 +93,15 @@ export const DISK_FOR_PS5: Product = {
         'https://vk.com/rental_rentime',
     },
   },
+  leaseAndTerms: (
+    <RentRule title="Для диска PlayStation 5 запрещено:">
+      <ul className={generalStyles.ul}>
+        <UlLi>
+          Мыть диск или протирать чем-либо, кроме специальной салфетки для
+          оптики.
+        </UlLi>
+        <UlLi>Брать диск за плоскую сторону - необходимо брать только за края.</UlLi>
+      </ul>
+    </RentRule>
+  ),
 }

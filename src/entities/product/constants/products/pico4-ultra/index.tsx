@@ -2,6 +2,9 @@ import { PICO_4_GAMES } from '@/entities/game'
 import { Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_ULTRA_GAMES } from './availableGames'
 import { DOWNLOADED_PICO_4_ULTRA_GAMES } from './downloadedGames'
+import { RentRule } from '@/shared/components/RentRule'
+import { UlLi } from '@/shared/components'
+import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const PICO4_ULTRA_ID: Product['id'] = 'pico4-ultra'
 
@@ -92,4 +95,20 @@ export const PICO4_ULTRA: Product = {
     'аренда пико 4 ультра Ярославль',
     'аренда пико4 ультра Ярославль',
   ],
+  leaseAndTerms: (
+    <RentRule title="Для Pico 4 ultra запрещено:">
+      <ul className={generalStyles.ul}>
+        <UlLi>
+          Удалять игры, изменять настройки шлема, выходить из текущей учётной
+          записи, создавать новый аккаунт Pico.
+        </UlLi>
+        <UlLi>Использовать читы, прошивать, взламывать консоль.</UlLi>
+        <UlLi>
+          Направлять линзы VR-шлема на источник света, особенно солнца.
+        </UlLi>
+        <UlLi>Поднимать очки за верхнюю стяжку.</UlLi>
+        <UlLi>Выкидывать батарейки, даже если они сели.</UlLi>
+      </ul>
+    </RentRule>
+  ),
 }

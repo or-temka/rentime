@@ -1,4 +1,5 @@
 import { GameRecord, Games } from '@/entities/game'
+import { ReactNode } from 'react'
 
 export type ProductPriceForDays = number
 
@@ -78,6 +79,7 @@ export type Product = {
       link: string
     }
   }
+  leaseAndTerms?: ReactNode
 }
 
 export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'

@@ -90,7 +90,8 @@ export const Price = ({ product }: PriceProps) => {
           </p>
           <div className={styles.additional}>
             <span className={styles.additional__text}>
-              Доставка по всему городу: 100-600 рублей в зависимости от района (
+              Доставка по всему городу: 100-1200 рублей в зависимости от района
+              (
               <a
                 href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
                 className={styles.deliveryLink}
