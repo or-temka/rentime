@@ -2,6 +2,7 @@ import { MainContentContainer } from '@/shared/components'
 import styles from './page.module.scss'
 import { ThinPageHeader } from '@/widgets'
 import { LeaseAgreement, RentRules } from './_components'
+import { HowToApply } from './_components/HowToApply'
 
 export const metadata = {
   title: 'Условия аренды | Rentime — аренда в Ярославле',
@@ -44,9 +45,10 @@ function LeaseTermsPage() {
         className={styles.pageHeader}
       />
 
-      <MainContentContainer>
-        <RentRules />
+      <MainContentContainer style={{ gap: 20 }}>
         <LeaseAgreement />
+        <RentRules />
+        <HowToApply />
       </MainContentContainer>
     </main>
   )

@@ -1,23 +1,23 @@
 'use client'
 
 import Link from 'next/link'
-import { Rule } from './Rule'
 import { ROUTES } from '@/config/routes'
-import styles from './index.module.scss'
+import generalStyles from '../../rulesGeneral.module.scss'
 import { UlLi } from '@/shared/components'
 import { BLOCKS_IDS } from '../../constants'
+import { RentRule } from '../../../../shared/components/RentRule'
 
 export const RentRules = () => {
   return (
-    <section className={styles.section}>
-      <Rule title="Требования к арендатору" id={BLOCKS_IDS.tenantRequirements}>
-        <ul className={styles.ul}>
+    <section className={generalStyles.section}>
+      <RentRule title="Требования к арендатору" id={BLOCKS_IDS.tenantRequirements}>
+        <ul className={generalStyles.ul}>
           <UlLi>Арендатор должен быть старше 18 лет.</UlLi>
           <UlLi>
             Обязательная проверка оригинала паспорта и наличия задолженностей.
           </UlLi>
           <UlLi>
-            <span className={styles.strong}>Без залога:</span>
+            <span className={generalStyles.strong}>Без залога:</span>
             <span>
               Наличие паспорта гражданина РФ с действующей постоянной
               регистрацией{' '}
@@ -28,19 +28,20 @@ export const RentRules = () => {
             </span>
           </UlLi>
           <UlLi>
-            <span className={styles.strong}>С залогом:</span> Возможна аренда с
-            временной регистрацией при внесении залога в размере 5000 рублей.
+            <span className={generalStyles.strong}>С залогом:</span> Возможна
+            аренда с временной регистрацией при внесении залога в размере 5000
+            рублей.
           </UlLi>
           <UlLi>
             <p>
-              <span className={styles.strong}>Важно:</span> В случае наличия
-              исполнительных производств (долгов), передача оборудования
+              <span className={generalStyles.strong}>Важно:</span> В случае
+              наличия исполнительных производств (долгов), передача оборудования
               возможна только при 100% залоге (полная стоимость товара).
               Проверить наличие задолженностей можно самостоятельно на сайте{' '}
               <a
                 href="https://fssp.gov.ru/iss/ip/"
                 target="_blank"
-                className={styles.link}
+                className={generalStyles.link}
               >
                 ФССП России
               </a>
@@ -48,21 +49,23 @@ export const RentRules = () => {
             </p>
           </UlLi>
         </ul>
-      </Rule>
+      </RentRule>
 
-      <Rule
+      <RentRule
         title="Условия доставки и самовывоза"
         id={BLOCKS_IDS.deliveryTermsAndConditions}
       >
-        <ul className={styles.ul}>
+        <ul className={generalStyles.ul}>
           <UlLi>Самовывоз и самостоятельный возврат: бесплатно</UlLi>
           <UlLi>
             <p>
-              <span className={styles.strong}>Доставка (привезти к вам):</span>{' '}
+              <span className={generalStyles.strong}>
+                Доставка (привезти к вам):
+              </span>{' '}
               Стоимость доставки можно уточнить на странице{' '}
               <Link
                 href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
-                className={styles.link}
+                className={generalStyles.link}
               >
                 Доставка и оплата
               </Link>
@@ -71,12 +74,14 @@ export const RentRules = () => {
           </UlLi>
           <UlLi>
             <p>
-              <span className={styles.strong}>Доставка (забрать от вас):</span>{' '}
+              <span className={generalStyles.strong}>
+                Доставка (забрать от вас):
+              </span>{' '}
               Равняется стоимости &quot;привезти к вам&quot;. Можно уточнить на
               странице{' '}
               <Link
                 href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
-                className={styles.link}
+                className={generalStyles.link}
               >
                 Доставка и оплата
               </Link>
@@ -91,13 +96,13 @@ export const RentRules = () => {
             </p>
           </UlLi>
         </ul>
-      </Rule>
+      </RentRule>
 
-      <Rule
+      <RentRule
         title="Бронирование товара на определенное число"
         id={BLOCKS_IDS.reservation}
       >
-        <ul className={styles.ul}>
+        <ul className={generalStyles.ul}>
           <UlLi>
             Для бронирования товара необходимо внести предоплату в размере 500
             рублей, чтобы закрепить за собой слот на определенную дату/время.
@@ -106,75 +111,15 @@ export const RentRules = () => {
           <UlLi>
             <span>
               Мы не принуждаем вас бронировать.{' '}
-              <span className={styles.strong}>Вы можете не бронировать</span> и
-              написать нам в день, в который вы бы хотели арендовать, однако нет
-              гарантии, что в наличии будет свободная позиция товара.
+              <span className={generalStyles.strong}>
+                Вы можете не бронировать
+              </span>{' '}
+              и написать нам в день, в который вы бы хотели арендовать, однако
+              нет гарантии, что в наличии будет свободная позиция товара.
             </span>
           </UlLi>
         </ul>
-      </Rule>
-
-      <Rule title="Как оформить заказ?" id={BLOCKS_IDS.howPlaceOrder}>
-        <ul className={styles.ul}>
-          <UlLi>
-            <span>
-              Выберите подходящий товар в{' '}
-              <Link href={ROUTES.PRODUCTS.BASE} className={styles.link}>
-                каталоге
-              </Link>
-            </span>
-          </UlLi>
-          <UlLi>
-            <span>
-              Ознакомьтесь с{' '}
-              <Link
-                href={
-                  ROUTES.LEASE_TERMS.BASE + `#${BLOCKS_IDS.tenantRequirements}`
-                }
-                className={styles.link}
-              >
-                условиями аренды
-              </Link>
-              , стоимостью товара,{' '}
-              <Link
-                href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
-                className={styles.link}
-              >
-                оплатой и доставкой
-              </Link>
-              .
-            </span>
-          </UlLi>
-          <UlLi>
-            Нажмите на кнопку “Арендовать” на страницы товара. Вы будете
-            перенаправлены в диалог с арендодателем на Авито.
-          </UlLi>
-          <UlLi>
-            Перед бронированием необязательно:
-            <ol className={styles.ol}>
-              <li className={[styles.li, styles.ol__li].join(' ')}>
-                ФИО и дата рождения для проверки на задолженностей;
-              </li>
-              <li className={[styles.li, styles.ol__li].join(' ')}>
-                Предоплата в размере 500р только при доставке (вернётся при
-                передаче товара). Эта сумма возвращается при передаче товара и
-                служит гарантией вашего присутствия на сделке.
-              </li>
-            </ol>
-          </UlLi>
-          <UlLi>
-            На месте передачи:
-            <ol className={styles.ol}>
-              <li className={[styles.li, styles.ol__li].join(' ')}>
-                Проверка оригинала паспорта;
-              </li>
-              <li className={[styles.li, styles.ol__li].join(' ')}>
-                Подписание договора аренды.
-              </li>
-            </ol>
-          </UlLi>
-        </ul>
-      </Rule>
+      </RentRule>
     </section>
   )
 }
