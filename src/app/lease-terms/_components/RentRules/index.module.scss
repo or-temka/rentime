@@ -49,6 +49,10 @@
 
 .link {
   color: var(--link-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .strong {
