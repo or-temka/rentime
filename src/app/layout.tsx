@@ -1,8 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import './globals.scss'
 import { Footer, Header } from '@/shared/components'
 import styles from './layout.module.scss'
 import Analytics from './_analytics/Analytics'
+
+export const viewport: Viewport = {
+  themeColor: '#0b0b0bf2',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rentime.ru'),
@@ -54,11 +60,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Rentime" />
       </head>
       <body>
-        <Analytics />
+        <div className="global-background">
+          <Analytics />
 
-        <Header />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+          <Header />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
