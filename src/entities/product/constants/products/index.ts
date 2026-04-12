@@ -3,7 +3,7 @@ import { DISK_FOR_PS5 } from './disk-for-ps5'
 import { DUALSENSE } from './dualsense'
 import { LOGITECH_G29 } from './logitech-g29'
 import { PICO4 } from './pico4'
-import { PICO4_ULTRA } from './pico4-ultra/index.tsx'
+import { PICO4_ULTRA } from './pico4-ultra'
 import { PLAYSTATION5 } from './playstation5'
 
 export const PRODUCTS: Record<Product['id'], Product> = {
