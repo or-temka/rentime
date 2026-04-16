@@ -126,6 +126,9 @@
 
 .serviceLogo {
   cursor: pointer;
+  & path {
+    fill-opacity: 0.5;
+  }
 
   @include hover-smart(desktop) {
     & path {

@@ -1,4 +1,10 @@
+.socialButtons {
+  display: flex;
+  gap: 10px;
+}
+
 .pageHeader {
-  background-image: url('/images/backgrounds/main-page-background-image.webp?v=2'),
+  background-image:
+    url('/images/backgrounds/main-page-background-image.webp?v=2'),
     var(--header-background-gradient);
 }

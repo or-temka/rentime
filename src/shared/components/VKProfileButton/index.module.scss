@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.button {
+  background-color: rgb(0, 119, 255);
+  border: none;
+  padding: 13px;
+
+  @include hover-smart(desktop) {
+    background-color: rgb(65, 141, 227);
+  }
+}
