@@ -19,8 +19,8 @@ export const DISK_FOR_PS5: Product = {
       prepositional: 'диска для PlayStation 5',
     },
   },
-  feedbackCount: 0,
-  rating: 0,
+  feedbackCount: 1,
+  rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${DISK_FOR_PS5_ID}/thumbnail.webp`,
     full: `/images/products/${DISK_FOR_PS5_ID}/full.webp`,

@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+
+.button {
+  border: none;
+  padding: 13px 18px;
+
+  & svg {
+    & path {
+      fill: var(--dark);
+    }
+  }
+}

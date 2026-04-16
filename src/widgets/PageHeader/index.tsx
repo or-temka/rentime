@@ -30,7 +30,7 @@ export const PageHeader = ({
             <div className={styles.splitLine} />
             <div className={styles.info}>
               <p className={styles.paragraph}>{info.text}</p>
-              {info.button}
+              {info.buttons}
             </div>
           </>
         )}
