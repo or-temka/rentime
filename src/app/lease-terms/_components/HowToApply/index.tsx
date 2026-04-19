@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import generalStyles from '../../rulesGeneral.module.scss'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import { BLOCKS_IDS } from '../../constants'
 import { RentRule } from '../../../../shared/components/RentRule'
 
@@ -12,15 +12,15 @@ export const HowToApply = () => {
     <section className={generalStyles.section} style={{ marginTop: 100 }}>
       <RentRule title="Как оформить заказ?" id={BLOCKS_IDS.howPlaceOrder}>
         <ul className={generalStyles.ul}>
-          <UlLi>
+          <Li>
             <span>
               Выберите подходящий товар в{' '}
               <Link href={ROUTES.PRODUCTS.BASE} className={generalStyles.link}>
                 каталоге
               </Link>
             </span>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <span>
               Ознакомьтесь с{' '}
               <Link
@@ -40,12 +40,12 @@ export const HowToApply = () => {
               </Link>
               .
             </span>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             Нажмите на кнопку “Арендовать” на страницы товара. Вы будете
             перенаправлены в диалог с арендодателем на Авито.
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             Перед бронированием необязательно:
             <ol className={generalStyles.ol}>
               <li
@@ -61,8 +61,8 @@ export const HowToApply = () => {
                 служит гарантией вашего присутствия на сделке.
               </li>
             </ol>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             На месте передачи:
             <ol className={generalStyles.ol}>
               <li
@@ -76,7 +76,7 @@ export const HowToApply = () => {
                 Подписание договора аренды.
               </li>
             </ol>
-          </UlLi>
+          </Li>
         </ul>
       </RentRule>
     </section>

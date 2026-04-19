@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, LiHTMLAttributes } from 'react'
 
-export type UlLiProps = {} & DetailedHTMLProps<
+export type LiProps = { usePoint?: boolean } & DetailedHTMLProps<
   LiHTMLAttributes<HTMLLIElement>,
   HTMLLIElement
 >

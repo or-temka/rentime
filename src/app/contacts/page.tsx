@@ -1,8 +1,8 @@
-import { AttentionBlock, ThinPageHeader } from '@/widgets'
-import styles from './page.module.scss'
+import { AttentionBlock } from '@/widgets'
 import { MainContentContainer } from '@/shared/components'
 import { ContactButtons, OnMap } from './_components'
 import { BLOCKS_IDS } from './constants'
+import { CommonThinPageHeader } from '@/widgets/CommonThinPageHeader'
 
 export const metadata = {
   title: 'Контакты | Rentime — аренда в Ярославле',
@@ -42,10 +42,7 @@ export const metadata = {
 function ContactsPage() {
   return (
     <main>
-      <ThinPageHeader
-        title={{ content: 'Контакты' }}
-        className={styles.pageHeader}
-      />
+      <CommonThinPageHeader title={{ content: 'Контакты' }} />
 
       <MainContentContainer id={BLOCKS_IDS.main}>
         <ContactButtons />

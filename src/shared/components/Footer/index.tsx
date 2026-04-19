@@ -16,7 +16,10 @@ export const Logos = () => {
       >
         <AvitoLogoSVG width={66} className={styles.serviceLogo} />
       </a>
-      <a href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`} className={styles.logos__mail}>
+      <a
+        href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`}
+        className={styles.logos__mail}
+      >
         <MailSVG width={24} className={styles.serviceLogo} />
         <span>{process.env.NEXT_PUBLIC_MAIL}</span>
       </a>
@@ -71,9 +74,21 @@ export const Footer = () => {
           {Logos()}
         </div>
         <div className={styles.additionalRight}>
-          <p>г. Ярославль, ул. 2 Мельничная 35</p>
-          <div className={styles.splitTextCircle} />
-          <p>© 2026 Rentime. Все права защищены.</p>
+          <p>
+            © 2024-{new Date().getFullYear()} {process.env.NEXT_PUBLIC_OWNER_STATUS}{' '}
+            {process.env.NEXT_PUBLIC_OWNER_NAME}, ИНН&nbsp;
+            {process.env.NEXT_PUBLIC_OWNER_INN}.
+          </p>
+          <p>Адрес: {process.env.NEXT_PUBLIC_ADDRESS}.</p>
+          <p>
+            <Link
+              className={styles.licenseLink}
+              href={ROUTES.LEGAL.PRIVACY.BASE}
+            >
+              Политика конфиденциальности
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </footer>

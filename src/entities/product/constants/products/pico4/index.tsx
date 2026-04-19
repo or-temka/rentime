@@ -3,7 +3,7 @@ import { Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_GAMES } from './availableGames'
 import { DOWNLOADED_PICO_4_GAMES } from './downloadedGames'
 import { RentRule } from '@/shared/components/RentRule'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const PICO4_ID: Product['id'] = 'pico4'
@@ -98,16 +98,14 @@ export const PICO4: Product = {
   leaseAndTerms: (
     <RentRule title="Для Pico 4 запрещено:">
       <ul className={generalStyles.ul}>
-        <UlLi>
+        <Li>
           Удалять игры, изменять настройки шлема, выходить из текущей учётной
           записи, создавать новый аккаунт Pico.
-        </UlLi>
-        <UlLi>Использовать читы, прошивать, взламывать консоль.</UlLi>
-        <UlLi>
-          Направлять линзы VR-шлема на источник света, особенно солнца.
-        </UlLi>
-        <UlLi>Поднимать очки за верхнюю стяжку.</UlLi>
-        <UlLi>Выкидывать батарейки, даже если они сели.</UlLi>
+        </Li>
+        <Li>Использовать читы, прошивать, взламывать консоль.</Li>
+        <Li>Направлять линзы VR-шлема на источник света, особенно солнца.</Li>
+        <Li>Поднимать очки за верхнюю стяжку.</Li>
+        <Li>Выкидывать батарейки, даже если они сели.</Li>
       </ul>
     </RentRule>
   ),

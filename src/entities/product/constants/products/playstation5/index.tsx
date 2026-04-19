@@ -2,7 +2,7 @@ import { PLAYSTATION_5_GAMES } from '@/entities/game'
 import { Product } from '@/entities/product'
 import { AVAILABLE_PLAYSTATION_5_GAMES } from './availableGames'
 import { RentRule } from '@/shared/components/RentRule'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
@@ -106,24 +106,22 @@ export const PLAYSTATION5: Product = {
   leaseAndTerms: (
     <RentRule title="Для PlayStation 5 запрещено:">
       <ul className={generalStyles.ul}>
-        <UlLi>
-          Изменять настройки консоли, выходить из текущей учётной записи.
-        </UlLi>
-        <UlLi>
+        <Li>Изменять настройки консоли, выходить из текущей учётной записи.</Li>
+        <Li>
           Нарушать правила PlayStation, в том числе использовать нецензурную
           лексику, оскорбления в оналйн-играх.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Осуществять любые действия, ведущие к блокировке консоли или аккаунта,
           в том числе использование читов, ботов, стороннего программного
           обеспечения.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Отключать кабель питания, пока консоль полностью не выключиться.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Ставить консоль с источниками тепла и в пыльные или влажные места.
-        </UlLi>
+        </Li>
       </ul>
     </RentRule>
   ),

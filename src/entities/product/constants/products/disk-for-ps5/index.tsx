@@ -1,5 +1,5 @@
 import { Product } from '@/entities/product'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import { RentRule } from '@/shared/components/RentRule'
 import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
@@ -96,11 +96,13 @@ export const DISK_FOR_PS5: Product = {
   leaseAndTerms: (
     <RentRule title="Для диска PlayStation 5 запрещено:">
       <ul className={generalStyles.ul}>
-        <UlLi>
+        <Li>
           Мыть диск или протирать чем-либо, кроме специальной салфетки для
           оптики.
-        </UlLi>
-        <UlLi>Брать диск за плоскую сторону - необходимо брать только за края.</UlLi>
+        </Li>
+        <Li>
+          Брать диск за плоскую сторону - необходимо брать только за края.
+        </Li>
       </ul>
     </RentRule>
   ),
