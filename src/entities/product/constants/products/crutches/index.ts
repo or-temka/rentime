@@ -55,7 +55,7 @@ export const CRUTCHES: Product = {
       '60': 0,
     },
   },
-  category: 'rest and leisure',
+  category: 'health',
   description:
     'Костыли подмышечные локтевые - это специальные устройства, которые помогают людям с ограниченными возможностями передвигаться.',
   links: {

@@ -17,6 +17,12 @@ export const menuSections: MenuSection[] = [
         }),
       },
       {
+        label: 'Здоровье',
+        link: ROUTES.PRODUCTS.WITH_QUERY({
+          productCategory: 'health',
+        }),
+      },
+      {
         label: 'Для дома',
         link: ROUTES.PRODUCTS.WITH_QUERY({
           productCategory: 'for home',

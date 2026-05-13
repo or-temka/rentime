@@ -21,6 +21,10 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
     label: productCattegoryMap['rest and leisure'],
   },
   {
+    value: 'health',
+    label: productCattegoryMap.health,
+  },
+  {
     value: 'for home',
     label: productCattegoryMap['for home'],
   },
