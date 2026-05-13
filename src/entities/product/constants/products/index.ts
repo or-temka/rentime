@@ -1,4 +1,5 @@
 import { Product } from '../../types'
+import { CRUTCHES } from './crutches'
 import { DISK_FOR_PS5 } from './disk-for-ps5'
 import { DUALSENSE } from './dualsense'
 import { LOGITECH_G29 } from './logitech-g29'
@@ -13,4 +14,5 @@ export const PRODUCTS: Record<Product['id'], Product> = {
   [DISK_FOR_PS5.id]: DISK_FOR_PS5,
   [DUALSENSE.id]: DUALSENSE,
   [LOGITECH_G29.id]: LOGITECH_G29,
+  [CRUTCHES.id]: CRUTCHES,
 }

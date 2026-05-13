@@ -61,7 +61,7 @@ const PricePerDay = ({
         {showFromPriceLabel ? DAY_NAMES[day].fromDays : DAY_NAMES[day].simple}
       </td>
       <td>
-        {pricePerDay}
+        {Math.round(pricePerDay)}
         <span className="visually-hidden"> {getRubleWord(totalPrice)}</span>
       </td>
       <td>
@@ -70,7 +70,7 @@ const PricePerDay = ({
         ) : (
           ''
         )}
-        {totalPrice}
+        {Math.round(totalPrice)}
         <span className="visually-hidden"> {getRubleWord(totalPrice)}</span>
       </td>
     </tr>
