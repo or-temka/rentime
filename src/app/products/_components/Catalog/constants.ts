@@ -15,6 +15,11 @@ export const sortMap: Record<Sort, string> = {
   top: 'сначала дороже',
 }
 
+export const DEFAULT_CATEGORY_OPTION: SegmentedSelectOption = {
+  label: "Все",
+  value: "all"
+}
+
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {
     value: 'rest and leisure',

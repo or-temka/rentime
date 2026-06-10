@@ -6,7 +6,7 @@ import {
   SegmentedSelectOption,
   ShelvesArrowSVG,
 } from '@/shared/components'
-import { productCategoriesOptions, products, sortMap } from './constants'
+import { DEFAULT_CATEGORY_OPTION, productCategoriesOptions, products, sortMap } from './constants'
 import { useState } from 'react'
 import { ProductCard, ProductCategory } from '@/entities/product'
 import styles from './index.module.scss'
@@ -23,11 +23,12 @@ export const Catalog = ({
   const [activeCategory, setActiveCategory] = useState<SegmentedSelectOption>(
     productCategoriesOptions.find(
       (category) => category.value === userActiveCategory,
-    ) || productCategoriesOptions[0],
+    ) || DEFAULT_CATEGORY_OPTION,
   )
   const [sort, setSort] = useState<Sort>('no')
 
-  const filteredProducts = products.filter(
+  const isAllProducts = activeCategory.value === DEFAULT_CATEGORY_OPTION.value
+  const filteredProducts = isAllProducts ? products : products.filter(
     (product) => product.category === activeCategory.value,
   )
   if (sort !== 'no') {
@@ -62,7 +63,7 @@ export const Catalog = ({
     <section className={styles.section}>
       <header className={styles.header}>
         <SegmentedSelect
-          options={productCategoriesOptions}
+          options={[DEFAULT_CATEGORY_OPTION, ...productCategoriesOptions]}
           activeOption={activeCategory}
           setActiveOption={setActiveCategoryHandler}
         />
