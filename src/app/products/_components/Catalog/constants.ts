@@ -9,6 +9,7 @@ import { DUALSENSE } from '@/entities/product/constants/products/dualsense'
 import { PICO4_ULTRA } from '@/entities/product/constants/products/pico4-ultra'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
 import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
+import { DUALSENSE_EDGE } from '@/entities/product/constants/products/dualsense-edge'
 
 export const sortMap: Record<Sort, string> = {
   no: 'по умолчанию',
@@ -45,6 +46,7 @@ export const products: ProductCardProps[] = [
   PICO4_ULTRA,
   PICO4,
   DISK_FOR_PS5,
+  DUALSENSE_EDGE,
   DUALSENSE,
   LOGITECH_G29,
   CRUTCHES,

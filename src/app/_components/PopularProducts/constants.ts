@@ -6,6 +6,7 @@ import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5
 import { SegmentedSelectOption } from '@/shared/components'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
 import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
+import { DUALSENSE_EDGE } from '@/entities/product/constants/products/dualsense-edge'
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {
@@ -30,6 +31,7 @@ export const popularProducts: ProductCardProps[] = [
   PLAYSTATION5,
   PICO4_ULTRA,
   LOGITECH_G29,
+  DUALSENSE_EDGE,
   PICO4,
   CRUTCHES,
   CLEANBOT_TURBO,

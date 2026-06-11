@@ -3,6 +3,7 @@ import { CLEANBOT_TURBO } from './cleanbot-turbo'
 import { CRUTCHES } from './crutches'
 import { DISK_FOR_PS5 } from './disk-for-ps5'
 import { DUALSENSE } from './dualsense'
+import { DUALSENSE_EDGE } from './dualsense-edge'
 import { LOGITECH_G29 } from './logitech-g29'
 import { PICO4 } from './pico4'
 import { PICO4_ULTRA } from './pico4-ultra'
@@ -14,6 +15,7 @@ export const PRODUCTS: Record<Product['id'], Product> = {
   [PICO4_ULTRA.id]: PICO4_ULTRA,
   [DISK_FOR_PS5.id]: DISK_FOR_PS5,
   [DUALSENSE.id]: DUALSENSE,
+  [DUALSENSE_EDGE.id]: DUALSENSE_EDGE,
   [LOGITECH_G29.id]: LOGITECH_G29,
   [CRUTCHES.id]: CRUTCHES,
   [CLEANBOT_TURBO.id]: CLEANBOT_TURBO,
