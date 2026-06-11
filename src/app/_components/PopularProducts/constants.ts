@@ -7,6 +7,7 @@ import { SegmentedSelectOption } from '@/shared/components'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
 import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
 import { DUALSENSE_EDGE } from '@/entities/product/constants/products/dualsense-edge'
+import { KARCHER_SC4_DELUXE } from '@/entities/product/constants/products/karcher-sc4-deluxe'
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {
@@ -35,4 +36,5 @@ export const popularProducts: ProductCardProps[] = [
   PICO4,
   CRUTCHES,
   CLEANBOT_TURBO,
+  KARCHER_SC4_DELUXE
 ]

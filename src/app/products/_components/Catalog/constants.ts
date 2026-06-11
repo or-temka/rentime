@@ -10,6 +10,7 @@ import { PICO4_ULTRA } from '@/entities/product/constants/products/pico4-ultra'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
 import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
 import { DUALSENSE_EDGE } from '@/entities/product/constants/products/dualsense-edge'
+import { KARCHER_SC4_DELUXE } from '@/entities/product/constants/products/karcher-sc4-deluxe'
 
 export const sortMap: Record<Sort, string> = {
   no: 'по умолчанию',
@@ -51,4 +52,5 @@ export const products: ProductCardProps[] = [
   LOGITECH_G29,
   CRUTCHES,
   CLEANBOT_TURBO,
+  KARCHER_SC4_DELUXE
 ]

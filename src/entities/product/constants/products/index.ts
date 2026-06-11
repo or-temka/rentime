@@ -4,6 +4,7 @@ import { CRUTCHES } from './crutches'
 import { DISK_FOR_PS5 } from './disk-for-ps5'
 import { DUALSENSE } from './dualsense'
 import { DUALSENSE_EDGE } from './dualsense-edge'
+import { KARCHER_SC4_DELUXE } from './karcher-sc4-deluxe'
 import { LOGITECH_G29 } from './logitech-g29'
 import { PICO4 } from './pico4'
 import { PICO4_ULTRA } from './pico4-ultra'
@@ -19,4 +20,5 @@ export const PRODUCTS: Record<Product['id'], Product> = {
   [LOGITECH_G29.id]: LOGITECH_G29,
   [CRUTCHES.id]: CRUTCHES,
   [CLEANBOT_TURBO.id]: CLEANBOT_TURBO,
+  [KARCHER_SC4_DELUXE.id]: KARCHER_SC4_DELUXE,
 }

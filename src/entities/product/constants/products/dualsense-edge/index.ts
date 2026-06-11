@@ -59,7 +59,7 @@ export const DUALSENSE_EDGE: Product = {
   description:
     'Dualsense Edge - Улучшенная версия геймпада Dualsense для игровой приставки PlayStation 5. Геймпад оснащён настраиваемыми кнопками, регулируемыми курками и триггерами, а также сменными стиками и D-pad для максимальной персонализации игрового процесса. Подходит для компьютера.',
   links: {
-    vk: 'https://vk.com/market/product/geympad-dualsense-ps5-arenda-231455623-12715907',
+    vk: 'https://vk.com/market/product/geympad-dualsense-ps5-arenda-231455623-13472316',
   },
   equipment: [
     'Геймад Dualsense Edge для игровой консоли PlayStation 5 или Компьютера',
