@@ -184,7 +184,11 @@ export const Price = ({ product }: PriceProps) => {
           )}
         </div>
 
-        <Button onClick={() => setCalcCostModalIsOpen(true)} theme="dark">
+        <Button
+          onClick={() => setCalcCostModalIsOpen(true)}
+          theme="dark"
+          variant="outlined"
+        >
           Рассчитать стоимость аренды
         </Button>
       </div>

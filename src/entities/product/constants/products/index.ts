@@ -1,4 +1,5 @@
 import { Product } from '../../types'
+import { CLEANBOT_TURBO } from './cleanbot-turbo'
 import { CRUTCHES } from './crutches'
 import { DISK_FOR_PS5 } from './disk-for-ps5'
 import { DUALSENSE } from './dualsense'
@@ -15,4 +16,5 @@ export const PRODUCTS: Record<Product['id'], Product> = {
   [DUALSENSE.id]: DUALSENSE,
   [LOGITECH_G29.id]: LOGITECH_G29,
   [CRUTCHES.id]: CRUTCHES,
+  [CLEANBOT_TURBO.id]: CLEANBOT_TURBO,
 }

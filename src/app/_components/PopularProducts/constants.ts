@@ -5,6 +5,7 @@ import { PICO4_ULTRA } from '@/entities/product/constants/products/pico4-ultra'
 import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
 import { SegmentedSelectOption } from '@/shared/components'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
+import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {
@@ -12,12 +13,12 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
     label: productCattegoryMap['rest and leisure'],
   },
   {
-    value: 'health',
-    label: productCattegoryMap.health,
-  },
-  {
     value: 'for home',
     label: productCattegoryMap['for home'],
+  },
+  {
+    value: 'health',
+    label: productCattegoryMap.health,
   },
   {
     value: 'tourism',
@@ -31,4 +32,5 @@ export const popularProducts: ProductCardProps[] = [
   LOGITECH_G29,
   PICO4,
   CRUTCHES,
+  CLEANBOT_TURBO,
 ]

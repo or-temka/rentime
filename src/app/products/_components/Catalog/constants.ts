@@ -8,6 +8,7 @@ import { DISK_FOR_PS5 } from '@/entities/product/constants/products/disk-for-ps5
 import { DUALSENSE } from '@/entities/product/constants/products/dualsense'
 import { PICO4_ULTRA } from '@/entities/product/constants/products/pico4-ultra'
 import { CRUTCHES } from '@/entities/product/constants/products/crutches'
+import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-turbo'
 
 export const sortMap: Record<Sort, string> = {
   no: 'по умолчанию',
@@ -16,8 +17,8 @@ export const sortMap: Record<Sort, string> = {
 }
 
 export const DEFAULT_CATEGORY_OPTION: SegmentedSelectOption = {
-  label: "Все",
-  value: "all"
+  label: 'Все',
+  value: 'all',
 }
 
 export const productCategoriesOptions: SegmentedSelectOption[] = [
@@ -26,12 +27,12 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
     label: productCattegoryMap['rest and leisure'],
   },
   {
-    value: 'health',
-    label: productCattegoryMap.health,
-  },
-  {
     value: 'for home',
     label: productCattegoryMap['for home'],
+  },
+  {
+    value: 'health',
+    label: productCattegoryMap.health,
   },
   {
     value: 'tourism',
@@ -47,4 +48,5 @@ export const products: ProductCardProps[] = [
   DUALSENSE,
   LOGITECH_G29,
   CRUTCHES,
+  CLEANBOT_TURBO,
 ]
