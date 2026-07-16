@@ -1,4 +1,4 @@
-import { H2 } from '@/shared/components'
+import { Button, H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { ROUTES } from '@/config/routes'
 import { PriceProps } from './types'
@@ -8,6 +8,8 @@ import {
   DAILY_PRICE_MULTIPLIERS,
   DAY_NAMES,
 } from '@/entities/product/constants'
+import { CalcCost } from '../CalcCost'
+import { useState } from 'react'
 
 const WEEKDAY_NOT_SHOW_DAYS_DEFAULT: dayKey[] = [
   '6',
@@ -61,7 +63,7 @@ const PricePerDay = ({
         {showFromPriceLabel ? DAY_NAMES[day].fromDays : DAY_NAMES[day].simple}
       </td>
       <td>
-        {pricePerDay}
+        {Math.round(pricePerDay)}
         <span className="visually-hidden"> {getRubleWord(totalPrice)}</span>
       </td>
       <td>
@@ -70,7 +72,7 @@ const PricePerDay = ({
         ) : (
           ''
         )}
-        {totalPrice}
+        {Math.round(totalPrice)}
         <span className="visually-hidden"> {getRubleWord(totalPrice)}</span>
       </td>
     </tr>
@@ -78,77 +80,48 @@ const PricePerDay = ({
 }
 
 export const Price = ({ product }: PriceProps) => {
+  const [calcCostModalIsOpen, setCalcCostModalIsOpen] = useState(false)
+
   return (
-    <div className={styles.container}>
-      <div className={styles.information}>
-        <H2 className="visually-hidden">Стоимость</H2>
-        <div className={styles.infoContent}>
-          <p className={styles.paragraph}>
-            Стоимость аренды рассчитывается в зависимости от количества дней,
-            которые вы планируете использовать товар. Чем дольше аренда, тем
-            выгоднее цена за день.
-          </p>
-          <div className={styles.additional}>
-            <span className={styles.additional__text}>
-              Доставка по всему городу: 100-1200 рублей в зависимости от района
-              (
-              <a
-                href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
-                className={styles.deliveryLink}
-                target="_blank"
-              >
-                узнать цену доставки на карте
-              </a>
-              )
-            </span>
+    <>
+      <div className={styles.container}>
+        <div className={styles.information}>
+          <H2 className="visually-hidden">Стоимость</H2>
+          <div className={styles.infoContent}>
+            <p className={styles.paragraph}>
+              Стоимость аренды рассчитывается в зависимости от количества дней,
+              которые вы планируете использовать товар. Чем дольше аренда, тем
+              выгоднее цена за день.
+            </p>
+            <div className={styles.additional}>
+              <span className={styles.additional__text}>
+                Доставка по всему городу: 100-1200 рублей в зависимости от
+                района (
+                <a
+                  href={ROUTES.PAYMENT_AND_DELIVERY.BASE}
+                  className={styles.deliveryLink}
+                  target="_blank"
+                >
+                  узнать цену доставки на карте
+                </a>
+                )
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.pricesContainer}>
-        <section className={styles.prices}>
-          <h3 className="visually-hidden">
-            {product.price.useOnlyWeekdaysPrice
-              ? 'Стоимость аренды'
-              : 'Стоимость аренды в будние дни'}
-          </h3>
-          <div className={styles.pricesLabel}>
-            <span className={styles.pricesLabel__text}>
-              {product.price.useOnlyWeekdaysPrice ? 'Стоимость' : 'Будние дни'}
-            </span>
-          </div>
-          <table className={styles.pricesTable}>
-            <thead>
-              <tr>
-                <th>Кол-во дней</th>
-                <th>Стоимость за сутки, руб.</th>
-                <th>Итог, руб.</th>
-              </tr>
-            </thead>
-            <tbody className={styles.pricesTableTbody}>
-              {(
-                Object.entries(product.price.weekdays) as [dayKey, number][]
-              ).map(([key, value]) => (
-                <PricePerDay
-                  day={key}
-                  pricePerDay={value}
-                  type="weekdays"
-                  key={key}
-                  customHideDays={product.price.weekdaysHideDays}
-                />
-              ))}
-            </tbody>
-          </table>
-        </section>
-
-        {!product.price.useOnlyWeekdaysPrice && (
+        <div className={styles.pricesContainer}>
           <section className={styles.prices}>
             <h3 className="visually-hidden">
-              Стоимость аренды в выходные и праздничные дни
+              {product.price.useOnlyWeekdaysPrice
+                ? 'Стоимость аренды'
+                : 'Стоимость аренды в будние дни'}
             </h3>
             <div className={styles.pricesLabel}>
               <span className={styles.pricesLabel__text}>
-                Выходные и праздничные
+                {product.price.useOnlyWeekdaysPrice
+                  ? 'Стоимость'
+                  : 'Будние дни'}
               </span>
             </div>
             <table className={styles.pricesTable}>
@@ -161,21 +134,70 @@ export const Price = ({ product }: PriceProps) => {
               </thead>
               <tbody className={styles.pricesTableTbody}>
                 {(
-                  Object.entries(product.price.weekends) as [dayKey, number][]
+                  Object.entries(product.price.weekdays) as [dayKey, number][]
                 ).map(([key, value]) => (
                   <PricePerDay
                     day={key}
                     pricePerDay={value}
-                    type="weekends"
+                    type="weekdays"
                     key={key}
-                    customHideDays={product.price.weekendsHideDays}
+                    customHideDays={product.price.weekdaysHideDays}
                   />
                 ))}
               </tbody>
             </table>
           </section>
-        )}
+
+          {!product.price.useOnlyWeekdaysPrice && (
+            <section className={styles.prices}>
+              <h3 className="visually-hidden">
+                Стоимость аренды в выходные и праздничные дни
+              </h3>
+              <div className={styles.pricesLabel}>
+                <span className={styles.pricesLabel__text}>
+                  Выходные и праздничные
+                </span>
+              </div>
+              <table className={styles.pricesTable}>
+                <thead>
+                  <tr>
+                    <th>Кол-во дней</th>
+                    <th>Стоимость за сутки, руб.</th>
+                    <th>Итог, руб.</th>
+                  </tr>
+                </thead>
+                <tbody className={styles.pricesTableTbody}>
+                  {(
+                    Object.entries(product.price.weekends) as [dayKey, number][]
+                  ).map(([key, value]) => (
+                    <PricePerDay
+                      day={key}
+                      pricePerDay={value}
+                      type="weekends"
+                      key={key}
+                      customHideDays={product.price.weekendsHideDays}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+        </div>
+
+        <Button
+          onClick={() => setCalcCostModalIsOpen(true)}
+          theme="dark"
+          variant="outlined"
+        >
+          Рассчитать стоимость аренды
+        </Button>
       </div>
-    </div>
+
+      <CalcCost
+        isOpen={calcCostModalIsOpen}
+        onClose={() => setCalcCostModalIsOpen(false)}
+        product={product}
+      />
+    </>
   )
 }

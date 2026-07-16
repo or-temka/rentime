@@ -1,0 +1,28 @@
+.cookie-banner-container {
+  background: var(--surface-color) !important;
+  padding: 5px 10px !important;
+  align-items: center !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-banner-button {
+  background: var(--light) !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  border-radius: 3px !important;
+  padding: 10px 25px !important;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.cookie-banner-link {
+  text-decoration: underline !important;
+  transition: color 0.1s;
+
+  &:hover {
+    color: var(--accent-color) !important;
+  }
+}

@@ -23,6 +23,12 @@ export const menuSections: MenuSection[] = [
         }),
       },
       {
+        label: 'Здоровье',
+        link: ROUTES.PRODUCTS.WITH_QUERY({
+          productCategory: 'health',
+        }),
+      },
+      {
         label: 'Туризм',
         link: ROUTES.PRODUCTS.WITH_QUERY({
           productCategory: 'tourism',

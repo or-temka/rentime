@@ -21,8 +21,13 @@ export const ROUTES = {
       withQuery<PaymentAndDeliveryRouteQueryRecord>(
         '/payment-and-delivery',
         query,
-        hash
+        hash,
       ),
   },
   CONTACTS: { BASE: '/contacts' },
+  LEGAL: {
+    PRIVACY: {
+      BASE: '/legal/privacy',
+    },
+  },
 }

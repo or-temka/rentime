@@ -3,10 +3,19 @@
 .button {
   border: none;
   padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   & svg {
     & path {
       fill: var(--dark);
+    }
+  }
+
+  &__numberText {
+    @media (max-width: 300px) {
+      display: none;
     }
   }
 }

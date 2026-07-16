@@ -82,4 +82,8 @@ export type Product = {
   leaseAndTerms?: ReactNode
 }
 
-export type ProductCategory = 'rest and leisure' | 'for home' | 'tourism'
+export type ProductCategory =
+  | 'rest and leisure'
+  | 'health'
+  | 'for home'
+  | 'tourism'

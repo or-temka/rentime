@@ -3,20 +3,23 @@
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import generalStyles from '../../rulesGeneral.module.scss'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import { BLOCKS_IDS } from '../../constants'
 import { RentRule } from '../../../../shared/components/RentRule'
 
 export const RentRules = () => {
   return (
     <section className={generalStyles.section}>
-      <RentRule title="Требования к арендатору" id={BLOCKS_IDS.tenantRequirements}>
+      <RentRule
+        title="Требования к арендатору"
+        id={BLOCKS_IDS.tenantRequirements}
+      >
         <ul className={generalStyles.ul}>
-          <UlLi>Арендатор должен быть старше 18 лет.</UlLi>
-          <UlLi>
+          <Li>Арендатор должен быть старше 18 лет.</Li>
+          <Li>
             Обязательная проверка оригинала паспорта и наличия задолженностей.
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <span className={generalStyles.strong}>Без залога:</span>
             <span>
               Наличие паспорта гражданина РФ с действующей постоянной
@@ -26,13 +29,13 @@ export const RentRules = () => {
               </span>
               .
             </span>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <span className={generalStyles.strong}>С залогом:</span> Возможна
             аренда с временной регистрацией при внесении залога в размере 5000
             рублей.
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <p>
               <span className={generalStyles.strong}>Важно:</span> В случае
               наличия исполнительных производств (долгов), передача оборудования
@@ -47,7 +50,7 @@ export const RentRules = () => {
               </a>
               .
             </p>
-          </UlLi>
+          </Li>
         </ul>
       </RentRule>
 
@@ -56,8 +59,8 @@ export const RentRules = () => {
         id={BLOCKS_IDS.deliveryTermsAndConditions}
       >
         <ul className={generalStyles.ul}>
-          <UlLi>Самовывоз и самостоятельный возврат: бесплатно</UlLi>
-          <UlLi>
+          <Li>Самовывоз и самостоятельный возврат: бесплатно</Li>
+          <Li>
             <p>
               <span className={generalStyles.strong}>
                 Доставка (привезти к вам):
@@ -71,8 +74,8 @@ export const RentRules = () => {
               </Link>
               .
             </p>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <p>
               <span className={generalStyles.strong}>
                 Доставка (забрать от вас):
@@ -88,13 +91,13 @@ export const RentRules = () => {
               . На месте необходимо будет проверить устройство, поэтому
               необходимо оставить его подключенным к сети.
             </p>
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <p>
               При доставке обязательно потребуется предоплата в размере 500
               рублей, ФИО и дата рождения. Сумма пойдет в стоимость заказа.
             </p>
-          </UlLi>
+          </Li>
         </ul>
       </RentRule>
 
@@ -103,12 +106,12 @@ export const RentRules = () => {
         id={BLOCKS_IDS.reservation}
       >
         <ul className={generalStyles.ul}>
-          <UlLi>
+          <Li>
             Для бронирования товара необходимо внести предоплату в размере 500
             рублей, чтобы закрепить за собой слот на определенную дату/время.
             Это выступает подтверждением вашего намерения на аренду.
-          </UlLi>
-          <UlLi>
+          </Li>
+          <Li>
             <span>
               Мы не принуждаем вас бронировать.{' '}
               <span className={generalStyles.strong}>
@@ -117,7 +120,7 @@ export const RentRules = () => {
               и написать нам в день, в который вы бы хотели арендовать, однако
               нет гарантии, что в наличии будет свободная позиция товара.
             </span>
-          </UlLi>
+          </Li>
         </ul>
       </RentRule>
     </section>

@@ -5,6 +5,7 @@ import './globals.scss'
 import { Footer, Header } from '@/shared/components'
 import styles from './layout.module.scss'
 import Analytics from './_analytics/Analytics'
+import { CookieBanner } from '@/widgets/CookieBanner'
 
 export const viewport: Viewport = {
   themeColor: '#0b0b0bf2',
@@ -66,6 +67,7 @@ export default function RootLayout({
           <Header />
           <main className={styles.main}>{children}</main>
           <Footer />
+          <CookieBanner />
         </div>
       </body>
     </html>

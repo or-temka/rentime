@@ -2,7 +2,7 @@ import { PLAYSTATION_5_GAMES } from '@/entities/game'
 import { Product } from '@/entities/product'
 import { AVAILABLE_PLAYSTATION_5_GAMES } from './availableGames'
 import { RentRule } from '@/shared/components/RentRule'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const PLAYSTATION5_ID: Product['id'] = 'playstation5'
@@ -21,7 +21,7 @@ export const PLAYSTATION5: Product = {
       prepositional: 'игровой консоли PlayStation 5',
     },
   },
-  feedbackCount: 23,
+  feedbackCount: 34,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.webp`,
@@ -29,32 +29,32 @@ export const PLAYSTATION5: Product = {
   },
   price: {
     weekdays: {
-      '1': 660,
-      '2': 610,
-      '3': 520,
-      '4': 470,
-      '5': 420,
-      '6': 420,
-      '7': 420,
-      '10': 420,
-      '14': 420,
-      '21': 420,
-      '30': 310,
-      '60': 230,
+      '1': 700,
+      '2': 650,
+      '3': 550,
+      '4': 500,
+      '5': 450,
+      '6': 450,
+      '7': 450,
+      '10': 450,
+      '14': 450,
+      '21': 450,
+      '30': 330,
+      '60': 250,
     },
     weekends: {
-      '1': 800,
-      '2': 760,
-      '3': 660,
-      '4': 570,
-      '5': 570,
-      '6': 570,
-      '7': 570,
-      '10': 570,
-      '14': 460,
-      '21': 460,
-      '30': 310,
-      '60': 230,
+      '1': 850,
+      '2': 800,
+      '3': 700,
+      '4': 600,
+      '5': 600,
+      '6': 600,
+      '7': 600,
+      '10': 600,
+      '14': 490,
+      '21': 490,
+      '30': 330,
+      '60': 250,
     },
   },
   category: 'rest and leisure',
@@ -84,6 +84,7 @@ export const PLAYSTATION5: Product = {
     'аренда ps5 Ярославль',
     'прокат ps5 Ярославль',
     'аренда пс5',
+    'аренда пс',
     'прокат пс5',
     'арендовать пс5',
     'аренда пс5 Ярославль',
@@ -100,30 +101,28 @@ export const PLAYSTATION5: Product = {
   markup: {
     listOfGames: {
       desc: `Всего игр более 500 - здесь представлена только меньшая из них часть. 
-      Если вам нужна определенная игра и вы не увидели ее в этом списке, напишите нам для уточнения наличия игры в подписке.`,
+      Если вам нужна определенная игра и вы не увидели ее в этом списке, напишите нам для уточнения наличия игры.`,
     },
   },
   leaseAndTerms: (
     <RentRule title="Для PlayStation 5 запрещено:">
       <ul className={generalStyles.ul}>
-        <UlLi>
-          Изменять настройки консоли, выходить из текущей учётной записи.
-        </UlLi>
-        <UlLi>
+        <Li>Изменять настройки консоли, выходить из текущей учётной записи.</Li>
+        <Li>
           Нарушать правила PlayStation, в том числе использовать нецензурную
           лексику, оскорбления в оналйн-играх.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Осуществять любые действия, ведущие к блокировке консоли или аккаунта,
           в том числе использование читов, ботов, стороннего программного
           обеспечения.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Отключать кабель питания, пока консоль полностью не выключиться.
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           Ставить консоль с источниками тепла и в пыльные или влажные места.
-        </UlLi>
+        </Li>
       </ul>
     </RentRule>
   ),

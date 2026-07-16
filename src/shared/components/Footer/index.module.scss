@@ -204,6 +204,7 @@
 .additional {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   font-weight: 400;
 
   @media (max-width: 700px) {
@@ -213,12 +214,15 @@
 
 .additionalRight {
   display: flex;
+  flex-direction: column;
+  text-align: right;
   gap: 10px;
-  align-items: center;
-  opacity: 0.3;
+  max-width: 800px;
+  color: #919191;
 
   @media (max-width: 1050px) {
     font-size: 14px;
+    gap: 5px;
   }
 
   @media (max-width: 1080px) {
@@ -228,15 +232,15 @@
   }
 
   @media (max-width: 700px) {
-    font-size: 10px;
     align-items: center;
-    gap: 5px;
+    text-align: center;
   }
 }
 
 .licenseLink {
   @include hover-smart(desktop) {
     text-decoration: underline;
+    color: #c7c7c7;
   }
 }
 

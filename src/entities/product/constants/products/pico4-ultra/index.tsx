@@ -3,7 +3,7 @@ import { Product } from '@/entities/product'
 import { AVAILABLE_PICO_4_ULTRA_GAMES } from './availableGames'
 import { DOWNLOADED_PICO_4_ULTRA_GAMES } from './downloadedGames'
 import { RentRule } from '@/shared/components/RentRule'
-import { UlLi } from '@/shared/components'
+import { Li } from '@/shared/components'
 import generalStyles from '@/app/lease-terms/rulesGeneral.module.scss'
 
 export const PICO4_ULTRA_ID: Product['id'] = 'pico4-ultra'
@@ -22,7 +22,7 @@ export const PICO4_ULTRA: Product = {
       prepositional: 'VR-шлеме Pico 4 Ultra',
     },
   },
-  feedbackCount: 1,
+  feedbackCount: 4,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PICO4_ULTRA_ID}/thumbnail.webp`,
@@ -30,32 +30,32 @@ export const PICO4_ULTRA: Product = {
   },
   price: {
     weekdays: {
-      '1': 998,
-      '2': 760,
-      '3': 641,
-      '4': 546,
-      '5': 499,
-      '6': 499,
-      '7': 499,
-      '10': 499,
-      '14': 499,
-      '21': 499,
-      '30': 356,
-      '60': 285,
+      '1': 1050,
+      '2': 800,
+      '3': 675,
+      '4': 575,
+      '5': 525,
+      '6': 525,
+      '7': 525,
+      '10': 525,
+      '14': 525,
+      '21': 525,
+      '30': 375,
+      '60': 300,
     },
     weekends: {
-      '1': 1188,
-      '2': 950,
-      '3': 831,
-      '4': 712,
-      '5': 712,
-      '6': 712,
-      '7': 712,
-      '10': 712,
-      '14': 499,
-      '21': 499,
-      '30': 356,
-      '60': 285,
+      '1': 1250,
+      '2': 1000,
+      '3': 875,
+      '4': 750,
+      '5': 750,
+      '6': 750,
+      '7': 750,
+      '10': 750,
+      '14': 525,
+      '21': 525,
+      '30': 375,
+      '60': 300,
     },
   },
   category: 'rest and leisure',
@@ -98,16 +98,14 @@ export const PICO4_ULTRA: Product = {
   leaseAndTerms: (
     <RentRule title="Для Pico 4 ultra запрещено:">
       <ul className={generalStyles.ul}>
-        <UlLi>
+        <Li>
           Удалять игры, изменять настройки шлема, выходить из текущей учётной
           записи, создавать новый аккаунт Pico.
-        </UlLi>
-        <UlLi>Использовать читы, прошивать, взламывать консоль.</UlLi>
-        <UlLi>
-          Направлять линзы VR-шлема на источник света, особенно солнца.
-        </UlLi>
-        <UlLi>Поднимать очки за верхнюю стяжку.</UlLi>
-        <UlLi>Выкидывать батарейки, даже если они сели.</UlLi>
+        </Li>
+        <Li>Использовать читы, прошивать, взламывать консоль.</Li>
+        <Li>Направлять линзы VR-шлема на источник света, особенно солнца.</Li>
+        <Li>Поднимать очки за верхнюю стяжку.</Li>
+        <Li>Выкидывать батарейки, даже если они сели.</Li>
       </ul>
     </RentRule>
   ),
