@@ -7,6 +7,7 @@ import { KARCHER_SC4_DELUXE } from './karcher-sc4-deluxe'
 import { LOGITECH_G29 } from './logitech-g29'
 import { PICO4_ULTRA } from './pico4-ultra'
 import { PLAYSTATION5 } from './playstation5'
+import { KARCHER_PUZZI_8_1 } from './karcher-puzzi-8-1'
 
 export const PRODUCTS: Record<Product['id'], Product> = {
   [PLAYSTATION5.id]: PLAYSTATION5,
@@ -17,4 +18,5 @@ export const PRODUCTS: Record<Product['id'], Product> = {
   [CRUTCHES.id]: CRUTCHES,
   [CLEANBOT_TURBO.id]: CLEANBOT_TURBO,
   [KARCHER_SC4_DELUXE.id]: KARCHER_SC4_DELUXE,
+  [KARCHER_PUZZI_8_1.id]: KARCHER_PUZZI_8_1,
 }
