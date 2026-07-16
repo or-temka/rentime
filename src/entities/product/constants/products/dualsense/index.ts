@@ -16,8 +16,8 @@ export const DUALSENSE: Product = {
       prepositional: 'геймпада Dualsense для PlayStation 5',
     },
   },
-  feedbackCount: 0,
-  rating: 0,
+  feedbackCount: 1,
+  rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${DUALSENSE_ID}/thumbnail.webp`,
     full: `/images/products/${DUALSENSE_ID}/full.webp`,

@@ -21,7 +21,7 @@ export const PLAYSTATION5: Product = {
       prepositional: 'игровой консоли PlayStation 5',
     },
   },
-  feedbackCount: 23,
+  feedbackCount: 34,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PLAYSTATION5_ID}/thumbnail.webp`,

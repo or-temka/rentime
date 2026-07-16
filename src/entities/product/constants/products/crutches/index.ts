@@ -16,8 +16,8 @@ export const CRUTCHES: Product = {
       prepositional: 'костылей подмышечных локтевых',
     },
   },
-  feedbackCount: 0,
-  rating: 0,
+  feedbackCount: 3,
+  rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${CRUTCHES_ID}/thumbnail.webp`,
     full: `/images/products/${CRUTCHES_ID}/full.webp`,
