@@ -64,7 +64,7 @@ export async function generateMetadata({
       locale: 'ru_RU',
       type: 'website',
     },
-    metadataBase: new URL('https://rentime.ru'),
+    metadataBase: new URL(`https://rentime.ru/products/${product.id}`),
   }
 }
 
