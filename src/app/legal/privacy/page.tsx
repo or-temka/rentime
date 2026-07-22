@@ -1,5 +1,6 @@
 import { MainContentContainer, Li } from '@/shared/components'
 import { RentRule } from '@/shared/components/RentRule'
+import { COOKIE_CONSENT_VERSION_DISPLAY } from '@/shared/constants/cookieConsent'
 import { CommonThinPageHeader } from '@/widgets/CommonThinPageHeader'
 import React from 'react'
 import generalStyles from '../../lease-terms/rulesGeneral.module.scss'
@@ -47,14 +48,15 @@ function PrivacyPage() {
             <span>
               Приказом Самозанятого{' '}
               {process.env.NEXT_PUBLIC_OWNER_NAME_GENITIVE}
-              <br /> от 23.07.2026 № 1
+              <br /> от {COOKIE_CONSENT_VERSION_DISPLAY} №{' '}
+              {process.env.NEXT_PUBLIC_PRIVACY_ORDER_NUMBER}
             </span>
           </p>
           <RentRule>
             <p>
-              Настоящая политика конфиденциальности опубликована в редакции от
-              23.07.2026 и действует до момента принятия новой редакции политики
-              конфиденциальности.
+              Настоящая политика конфиденциальности опубликована в редакции от{' '}
+              {COOKIE_CONSENT_VERSION_DISPLAY} и действует до момента принятия
+              новой редакции политики конфиденциальности.
             </p>
           </RentRule>
 

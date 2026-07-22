@@ -1,4 +1,10 @@
-export const COOKIE_CONSENT_VERSION = '23-07-2026'
+export const COOKIE_CONSENT_VERSION =
+  process.env.NEXT_PUBLIC_COOKIE_CONSENT_VERSION ?? ''
+
+export const COOKIE_CONSENT_VERSION_DISPLAY = COOKIE_CONSENT_VERSION.replaceAll(
+  '-',
+  '.',
+)
 
 export const COOKIE_CONSENT_NAME = `rentime_consent_v${COOKIE_CONSENT_VERSION}`
 
