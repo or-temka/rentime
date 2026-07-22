@@ -6,6 +6,7 @@ import { ROUTES } from '@/config/routes'
 import { Button } from '@/shared/components'
 import {
   COOKIE_CONSENT_ACCEPTED_EVENT,
+  COOKIE_CONSENT_DECLINED_EVENT,
   acceptCookieConsent,
   hasCookieConsent,
 } from '@/shared/constants/cookieConsent'
@@ -28,10 +29,13 @@ export const ConsentGatedMap = ({
     setHasConsent(hasCookieConsent())
 
     const onAccepted = () => setHasConsent(true)
+    const onDeclined = () => setHasConsent(false)
     window.addEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+    window.addEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
 
     return () => {
       window.removeEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+      window.removeEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
     }
   }, [])
 

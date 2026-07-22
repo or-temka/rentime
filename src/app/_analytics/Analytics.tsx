@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from 'react'
 import YandexMetrikaHit from '../_components/YandexMetrikaHit'
 import {
   COOKIE_CONSENT_ACCEPTED_EVENT,
+  COOKIE_CONSENT_DECLINED_EVENT,
   hasCookieConsent,
 } from '@/shared/constants/cookieConsent'
 
@@ -22,10 +23,13 @@ export default function Analytics() {
     }
 
     const onAccepted = () => setHasConsent(true)
+    const onDeclined = () => setHasConsent(false)
     window.addEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+    window.addEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
 
     return () => {
       window.removeEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+      window.removeEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
     }
   }, [])
 

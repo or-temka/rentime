@@ -1,6 +1,7 @@
 import { MainContentContainer, Li } from '@/shared/components'
 import { RentRule } from '@/shared/components/RentRule'
 import { COOKIE_CONSENT_VERSION_DISPLAY } from '@/shared/constants/cookieConsent'
+import { ROUTES } from '@/config/routes'
 import { CommonThinPageHeader } from '@/widgets/CommonThinPageHeader'
 import React from 'react'
 import generalStyles from '../../lease-terms/rulesGeneral.module.scss'
@@ -419,8 +420,17 @@ function PrivacyPage() {
                   <strong>7.1.</strong> Согласие на обработку персональных данных действует с момента
                   его предоставления до момента достижения целей обработки, указанных в настоящей
                   Политике, либо до момента его отзыва Пользователем. Пользователь вправе отозвать
-                  согласие на обработку своих персональных данных, направив соответствующее заявление
-                  по электронной почте на адрес:{' '}
+                  согласие на обработку cookie и данных аналитики на Сайте, перейдя по ссылке{' '}
+                  <a
+                    href={ROUTES.LEGAL.PRIVACY.WITHDRAW}
+                    className={generalStyles.link}
+                  >
+                    rentime.ru{ROUTES.LEGAL.PRIVACY.WITHDRAW}
+                  </a>
+                  {' '}
+                  (при переходе файлы cookie Сайта очищаются, согласие отзывается). Также Пользователь
+                  вправе отозвать согласие на обработку своих персональных данных, направив
+                  соответствующее заявление по электронной почте на адрес:{' '}
                   <a
                     href={`mailto:${process.env.NEXT_PUBLIC_PRIVACY_EMAIL}`}
                     className={generalStyles.link}

@@ -22,9 +22,11 @@ export const CookieBanner = () => {
   useEffect(() => {
     const hide = () => setVisible('hidden')
     window.addEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, hide)
+    window.addEventListener(COOKIE_CONSENT_DECLINED_EVENT, hide)
 
     return () => {
       window.removeEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, hide)
+      window.removeEventListener(COOKIE_CONSENT_DECLINED_EVENT, hide)
     }
   }, [])
 
