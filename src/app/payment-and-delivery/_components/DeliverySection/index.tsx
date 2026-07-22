@@ -2,7 +2,7 @@ import { ROUTES } from '@/config/routes'
 import { H2 } from '@/shared/components'
 import styles from './index.module.scss'
 import { questionsAnswers } from './constants'
-import { AttentionBlock, Questions } from '@/widgets'
+import { AttentionBlock, ConsentGatedMap, Questions } from '@/widgets'
 import { BLOCKS_IDS } from '../../constants'
 
 export const DeliverySection = () => {
@@ -48,11 +48,11 @@ export const DeliverySection = () => {
             область, чтобы увидеть цену:
           </p>
 
-          <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A2c4944bbf1a9773180a7f197bb2031171183e3102db7ec28ee8af7e5773db122&amp;source=constructor"
-            frameBorder="0"
+          <ConsentGatedMap
             className={styles.map}
-          ></iframe>
+            title="Карта с ценой доставки"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A2c4944bbf1a9773180a7f197bb2031171183e3102db7ec28ee8af7e5773db122&amp;source=constructor"
+          />
         </div>
       </div>
 

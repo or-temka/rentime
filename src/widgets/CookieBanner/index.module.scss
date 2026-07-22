@@ -18,6 +18,21 @@
   }
 }
 
+.cookie-banner-decline {
+  background: transparent !important;
+  color: var(--light) !important;
+  font-weight: 500 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 3px !important;
+  padding: 10px 25px !important;
+  margin-right: 10px !important;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .cookie-banner-link {
   text-decoration: underline !important;
   transition: color 0.1s;

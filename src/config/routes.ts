@@ -28,6 +28,7 @@ export const ROUTES = {
   LEGAL: {
     PRIVACY: {
       BASE: '/legal/privacy',
+      WITHDRAW: '/legal/privacy/withdraw',
     },
   },
 }

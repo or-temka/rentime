@@ -30,7 +30,7 @@ export const metadata = {
     title: 'Каталог товаров — аренда в Ярославле | Rentime',
     description:
       'Актуальный каталог товаров для аренды: от игровых приставок до инструментов. Rentime — просто арендуй!',
-    url: 'https://rentime.ru',
+    url: 'https://rentime.ru/products',
     siteName: 'Rentime',
     images: [
       {

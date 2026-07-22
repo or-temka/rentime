@@ -1,12 +1,39 @@
+'use client'
+
 import Script from 'next/script'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import YandexMetrikaHit from '../_components/YandexMetrikaHit'
+import {
+  COOKIE_CONSENT_ACCEPTED_EVENT,
+  COOKIE_CONSENT_DECLINED_EVENT,
+  hasCookieConsent,
+} from '@/shared/constants/cookieConsent'
 
 const isProd = process.env.NODE_ENV === 'production'
 const YM_ID = process.env.NEXT_PUBLIC_YM_ID
 
 export default function Analytics() {
-  if (!isProd || !YM_ID) return null
+  const [hasConsent, setHasConsent] = useState(false)
+
+  useEffect(() => {
+    if (!isProd || !YM_ID) return
+
+    if (hasCookieConsent()) {
+      setHasConsent(true)
+    }
+
+    const onAccepted = () => setHasConsent(true)
+    const onDeclined = () => setHasConsent(false)
+    window.addEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+    window.addEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
+
+    return () => {
+      window.removeEventListener(COOKIE_CONSENT_ACCEPTED_EVENT, onAccepted)
+      window.removeEventListener(COOKIE_CONSENT_DECLINED_EVENT, onDeclined)
+    }
+  }, [])
+
+  if (!isProd || !YM_ID || !hasConsent) return null
 
   return (
     <>
@@ -31,12 +58,6 @@ export default function Analytics() {
           });
         `}
       </Script>
-
-      <noscript
-        dangerouslySetInnerHTML={{
-          __html: `<div><img src="https://mc.yandex.ru/watch/${YM_ID}" style="position:absolute;left:-9999px" alt=""/></div>`,
-        }}
-      />
 
       <Suspense fallback={null}>
         <YandexMetrikaHit />
