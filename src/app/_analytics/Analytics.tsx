@@ -8,7 +8,7 @@ import {
   hasCookieConsent,
 } from '@/shared/constants/cookieConsent'
 
-const isProd = true
+const isProd = process.env.NODE_ENV === 'production'
 const YM_ID = process.env.NEXT_PUBLIC_YM_ID
 
 export default function Analytics() {
