@@ -79,11 +79,13 @@ export async function InstructionDocument({
     <div id={INSTRUCTION_PAGE_ID}>
       <CommonThinPageHeader title={{ content: loaded.title }} />
       <InstructionReadingAids />
-      <MainContentContainer>
-        <article id={INSTRUCTION_ARTICLE_ID} className={styles.article}>
-          {loaded.content}
-        </article>
-      </MainContentContainer>
+      <div className={styles.sheet}>
+        <MainContentContainer>
+          <article id={INSTRUCTION_ARTICLE_ID} className={styles.article}>
+            {loaded.content}
+          </article>
+        </MainContentContainer>
+      </div>
     </div>
   )
 }
