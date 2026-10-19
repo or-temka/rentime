@@ -50,14 +50,22 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
 
   return (
     <>
-      <button
-        ref={triggerRef}
-        type="button"
-        className={styles.trigger}
-        onClick={() => setOpen(true)}
-      >
-        <img className={styles.image} src={src} alt={alt} />
-      </button>
+      <figure className={styles.figure}>
+        <button
+          ref={triggerRef}
+          type="button"
+          className={styles.trigger}
+          aria-label={alt ? undefined : 'Увеличить изображение'}
+          onClick={() => setOpen(true)}
+        >
+          <img className={styles.image} src={src} alt={alt} />
+        </button>
+        {alt ? (
+          <figcaption className={styles.caption} aria-hidden="true">
+            {alt}
+          </figcaption>
+        ) : null}
+      </figure>
       {open &&
         createPortal(
           <div

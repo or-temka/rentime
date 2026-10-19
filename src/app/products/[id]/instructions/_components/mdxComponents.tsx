@@ -1,6 +1,6 @@
 import { resolveInstructionHref } from '@/entities/product/instructions'
 import Link from 'next/link'
-import { ComponentProps, isValidElement, ReactNode } from 'react'
+import { Children, ComponentProps, isValidElement, ReactNode } from 'react'
 import { InstructionImage } from './InstructionImage'
 import styles from './mdxComponents.module.scss'
 
@@ -27,6 +27,27 @@ function slugify(value: string) {
     .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/^-+|-+$/g, '')
   return slug || 'section'
+}
+
+function InstructionMdxImage({ alt, src }: MdxTagProps<'img'>) {
+  return (
+    <InstructionImage
+      src={typeof src === 'string' ? src : undefined}
+      alt={alt || ''}
+    />
+  )
+}
+
+function isLoneInstructionImage(children: ReactNode) {
+  const nodes = Children.toArray(children).filter(
+    (node) => !(typeof node === 'string' && node.trim() === ''),
+  )
+
+  return (
+    nodes.length === 1 &&
+    isValidElement(nodes[0]) &&
+    nodes[0].type === InstructionMdxImage
+  )
 }
 
 function createHeadingIdFactory() {
@@ -116,9 +137,14 @@ export function createMdxComponents(productId: string) {
         {children}
       </h3>
     ),
-    p: ({ className, ...props }: MdxTagProps<'p'>) => (
-      <p className={classNames(styles.paragraph, className)} {...props} />
-    ),
+    p: ({ className, children, ...props }: MdxTagProps<'p'>) =>
+      isLoneInstructionImage(children) ? (
+        children
+      ) : (
+        <p className={classNames(styles.paragraph, className)} {...props}>
+          {children}
+        </p>
+      ),
     ul: ({ className, ...props }: MdxTagProps<'ul'>) => (
       <ul className={classNames(styles.ul, className)} {...props} />
     ),
@@ -156,11 +182,6 @@ export function createMdxComponents(productId: string) {
       <pre className={classNames(styles.pre, className)} {...props} />
     ),
     hr: () => <hr className={styles.hr} />,
-    img: ({ alt, src }: MdxTagProps<'img'>) => (
-      <InstructionImage
-        src={typeof src === 'string' ? src : undefined}
-        alt={alt || ''}
-      />
-    ),
+    img: InstructionMdxImage,
   }
 }
