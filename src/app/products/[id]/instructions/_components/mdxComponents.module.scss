@@ -123,6 +123,11 @@
 .blockquote {
   border-left: 3px solid var(--grey);
   padding-left: 16px;
+
+  & + & {
+    margin-top: calc(-1 * var(--instruction-flow-gap, 20px));
+    padding-top: var(--instruction-flow-gap, 20px);
+  }
 }
 
 .code {
