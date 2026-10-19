@@ -6,6 +6,11 @@ import { CommonThinPageHeader } from '@/widgets/CommonThinPageHeader'
 import { Metadata } from 'next'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
+import {
+  INSTRUCTION_ARTICLE_ID,
+  INSTRUCTION_PAGE_ID,
+  InstructionReadingAids,
+} from './InstructionReadingAids'
 import { createMdxComponents } from './mdxComponents'
 import styles from './instructionDocument.module.scss'
 
@@ -71,11 +76,14 @@ export async function InstructionDocument({
   if (!loaded) notFound()
 
   return (
-    <main>
+    <div id={INSTRUCTION_PAGE_ID}>
       <CommonThinPageHeader title={{ content: loaded.title }} />
+      <InstructionReadingAids />
       <MainContentContainer>
-        <article className={styles.article}>{loaded.content}</article>
+        <article id={INSTRUCTION_ARTICLE_ID} className={styles.article}>
+          {loaded.content}
+        </article>
       </MainContentContainer>
-    </main>
+    </div>
   )
 }

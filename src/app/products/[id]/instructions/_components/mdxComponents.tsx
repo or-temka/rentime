@@ -1,6 +1,6 @@
 import { resolveInstructionHref } from '@/entities/product/instructions'
 import Link from 'next/link'
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps, isValidElement, ReactNode } from 'react'
 import { InstructionImage } from './InstructionImage'
 import styles from './mdxComponents.module.scss'
 
@@ -9,6 +9,40 @@ type MdxTagProps<Tag extends keyof React.JSX.IntrinsicElements> =
 
 function classNames(...parts: Array<string | undefined>) {
   return parts.filter(Boolean).join(' ')
+}
+
+function textOf(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(textOf).join('')
+  if (isValidElement<{ children?: ReactNode }>(node)) {
+    return textOf(node.props.children)
+  }
+  return ''
+}
+
+function slugify(value: string) {
+  const slug = value
+    .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '')
+  return slug || 'section'
+}
+
+function createHeadingIdFactory() {
+  const used = new Set<string>()
+
+  return (explicitId: string | undefined, children: ReactNode) => {
+    const base = explicitId || slugify(textOf(children))
+    let id = base
+    let suffix = 2
+    while (used.has(id)) {
+      id = `${base}-${suffix}`
+      suffix += 1
+    }
+    used.add(id)
+    return id
+  }
 }
 
 function InstructionLink({
@@ -44,15 +78,43 @@ function InstructionLink({
 }
 
 export function createMdxComponents(productId: string) {
+  const headingId = createHeadingIdFactory()
+
   return {
     h1: ({ className, ...props }: MdxTagProps<'h1'>) => (
       <h1 className={classNames(styles.h1, className)} {...props} />
     ),
-    h2: ({ className, ...props }: MdxTagProps<'h2'>) => (
-      <h2 className={classNames(styles.h2, className)} {...props} />
+    h2: ({
+      className,
+      id,
+      children,
+      tabIndex,
+      ...props
+    }: MdxTagProps<'h2'>) => (
+      <h2
+        {...props}
+        id={headingId(id, children)}
+        tabIndex={tabIndex ?? -1}
+        className={classNames(styles.h2, className)}
+      >
+        {children}
+      </h2>
     ),
-    h3: ({ className, ...props }: MdxTagProps<'h3'>) => (
-      <h3 className={classNames(styles.h3, className)} {...props} />
+    h3: ({
+      className,
+      id,
+      children,
+      tabIndex,
+      ...props
+    }: MdxTagProps<'h3'>) => (
+      <h3
+        {...props}
+        id={headingId(id, children)}
+        tabIndex={tabIndex ?? -1}
+        className={classNames(styles.h3, className)}
+      >
+        {children}
+      </h3>
     ),
     p: ({ className, ...props }: MdxTagProps<'p'>) => (
       <p className={classNames(styles.paragraph, className)} {...props} />

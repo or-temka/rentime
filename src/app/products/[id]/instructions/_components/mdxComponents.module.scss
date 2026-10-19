@@ -4,6 +4,13 @@
   font-family: var(--font-bounded);
   font-weight: 500;
   line-height: 1.25;
+  scroll-margin-top: 24px;
+}
+
+.h2:focus-visible,
+.h3:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 4px;
 }
 
 .h1 {
