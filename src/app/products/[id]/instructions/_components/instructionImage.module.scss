@@ -44,17 +44,24 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 72px 24px 24px;
-  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.92);
   cursor: zoom-out;
+
+  @media (max-width: 834px) {
+    padding: 0;
+  }
 }
 
 .close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  z-index: 1;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
   width: 40px;
   height: 40px;
   border: none;
@@ -67,11 +74,12 @@
 }
 
 .full {
-  max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 96px);
+  display: block;
+  flex-shrink: 0;
   width: auto;
   height: auto;
+  max-width: 100%;
+  margin-block: auto;
   object-fit: contain;
   cursor: default;
-  border-radius: 3px;
 }

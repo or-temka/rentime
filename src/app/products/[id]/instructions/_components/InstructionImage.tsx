@@ -9,10 +9,55 @@ type InstructionImageProps = {
   alt?: string
 }
 
+const MOBILE_LIGHTBOX = '(max-width: 834px)'
+
+type LightboxFrame = {
+  width: number
+  height: number
+}
+
 export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
   const [open, setOpen] = useState(false)
+  const [frame, setFrame] = useState<LightboxFrame | null>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  const fit = () => {
+    const image = imageRef.current
+    const overlay = overlayRef.current
+    if (!image?.naturalWidth || !overlay) return
+
+    const computed = getComputedStyle(overlay)
+    const maxWidth =
+      overlay.clientWidth -
+      parseFloat(computed.paddingLeft) -
+      parseFloat(computed.paddingRight)
+    const maxHeight =
+      overlay.clientHeight -
+      parseFloat(computed.paddingTop) -
+      parseFloat(computed.paddingBottom)
+    if (maxWidth <= 0 || maxHeight <= 0) return
+
+    const mobile = window.matchMedia(MOBILE_LIGHTBOX).matches
+    const width = mobile
+      ? maxWidth
+      : Math.floor(
+          image.naturalWidth *
+            Math.min(
+              maxWidth / image.naturalWidth,
+              maxHeight / image.naturalHeight,
+            ),
+        )
+
+    const height = Math.round((image.naturalHeight * width) / image.naturalWidth)
+
+    setFrame({
+      width: Math.floor(width),
+      height: mobile ? height : Math.min(height, Math.floor(maxHeight)),
+    })
+  }
 
   useEffect(() => {
     if (!open) return
@@ -36,13 +81,18 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
     }
 
     document.addEventListener('keydown', onKeyDown)
+    const frameId = requestAnimationFrame(fit)
+    window.addEventListener('resize', fit)
 
     return () => {
       body.style.overflow = originalBodyOverflow
       html.style.overflow = originalHtmlOverflow
       body.style.paddingRight = originalPaddingRight
       document.removeEventListener('keydown', onKeyDown)
+      cancelAnimationFrame(frameId)
+      window.removeEventListener('resize', fit)
       triggerRef.current?.focus()
+      setFrame(null)
     }
   }, [open])
 
@@ -69,6 +119,7 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
       {open &&
         createPortal(
           <div
+            ref={overlayRef}
             className={styles.overlay}
             role="dialog"
             aria-modal="true"
@@ -85,9 +136,22 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
               ✕
             </button>
             <img
+              ref={imageRef}
               className={styles.full}
               src={src}
               alt={alt}
+              width={frame?.width}
+              height={frame?.height}
+              style={
+                frame
+                  ? {
+                      width: frame.width,
+                      height: frame.height,
+                      maxWidth: 'none',
+                    }
+                  : { position: 'absolute', visibility: 'hidden' }
+              }
+              onLoad={fit}
               onClick={(event) => event.stopPropagation()}
             />
           </div>,
