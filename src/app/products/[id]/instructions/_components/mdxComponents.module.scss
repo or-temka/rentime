@@ -113,7 +113,7 @@
 }
 
 .strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .em {
@@ -121,8 +121,9 @@
 }
 
 .blockquote {
-  border-left: 3px solid var(--grey);
+  border-left: 3px solid #cfcfcf;
   padding-left: 16px;
+  color: #666;
 
   & + & {
     margin-top: calc(-1 * var(--instruction-flow-gap, 20px));
