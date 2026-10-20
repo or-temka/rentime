@@ -30,7 +30,7 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover,
     &:focus-visible {
-      background: rgba(0, 0, 0, 0.14);
+      background: rgba(0, 0, 0, 0.02);
       outline: none;
 
       .arrow {
@@ -84,7 +84,7 @@
       overflow-y: auto;
       scrollbar-width: thin;
       overscroll-behavior: contain;
-      background: rgba(0, 0, 0, 0.14);
+      background: rgba(0, 0, 0, 0.03);
 
       .list {
         opacity: 1;
