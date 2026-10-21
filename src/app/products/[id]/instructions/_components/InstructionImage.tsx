@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './instructionImage.module.scss'
@@ -123,7 +124,15 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
           aria-label={alt ? undefined : 'Увеличить изображение'}
           onClick={() => setOpen(true)}
         >
-          <img className={styles.image} src={src} alt={alt} />
+          <Image
+            className={styles.image}
+            src={src}
+            alt={alt}
+            width={1440}
+            height={1080}
+            sizes="(max-width: 834px) 100vw, 720px"
+            style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}
+          />
         </button>
         {alt ? (
           <figcaption className={styles.caption} aria-hidden="true">
@@ -150,13 +159,14 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
             >
               ✕
             </button>
-            <img
+            <Image
               ref={imageRef}
               className={styles.full}
               src={src}
               alt={alt}
-              width={frame?.width}
-              height={frame?.height}
+              width={frame?.width || 1}
+              height={frame?.height || 1}
+              sizes="100vw"
               style={
                 frame
                   ? {
