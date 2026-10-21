@@ -20,11 +20,16 @@ type LightboxFrame = {
 
 export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
   const [open, setOpen] = useState(false)
+  const [loaded, setLoaded] = useState(false)
   const [frame, setFrame] = useState<LightboxFrame | null>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    setLoaded(false)
+  }, [src])
 
   const fit = () => {
     const image = imageRef.current
@@ -123,16 +128,24 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
           type="button"
           className={styles.trigger}
           aria-label={alt ? undefined : 'Увеличить изображение'}
+          aria-busy={!loaded}
           onClick={() => setOpen(true)}
         >
+          {!loaded ? (
+            <span className={styles.loader} aria-live="polite">
+              Загрузка изображения
+            </span>
+          ) : null}
           <Image
             className={styles.image}
+            data-loaded={loaded || undefined}
             src={src}
             alt={alt}
             width={1440}
             height={1080}
             sizes="(max-width: 834px) 100vw, 720px"
             style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}
+            onLoad={() => setLoaded(true)}
           />
         </button>
         {alt ? (
