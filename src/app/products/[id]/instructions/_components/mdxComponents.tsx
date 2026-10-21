@@ -1,6 +1,12 @@
 import { resolveInstructionHref } from '@/entities/product/instructions'
 import Link from 'next/link'
-import { Children, ComponentProps, isValidElement, ReactNode } from 'react'
+import {
+  Children,
+  ComponentProps,
+  CSSProperties,
+  isValidElement,
+  ReactNode,
+} from 'react'
 import { InstructionImage } from './InstructionImage'
 import styles from './mdxComponents.module.scss'
 
@@ -148,11 +154,23 @@ export function createMdxComponents(productId: string) {
     ul: ({ className, ...props }: MdxTagProps<'ul'>) => (
       <ul className={classNames(styles.ul, className)} {...props} />
     ),
-    ol: ({ className, ...props }: MdxTagProps<'ol'>) => (
-      <ol className={classNames(styles.ol, className)} {...props} />
+    ol: ({ className, start, style, ...props }: MdxTagProps<'ol'>) => (
+      <ol
+        {...props}
+        start={start}
+        className={classNames(styles.ol, className)}
+        style={
+          {
+            ...style,
+            '--list-start': Number(start ?? 1) - 1,
+          } as CSSProperties
+        }
+      />
     ),
-    li: ({ className, ...props }: MdxTagProps<'li'>) => (
-      <li className={classNames(styles.li, className)} {...props} />
+    li: ({ className, children, ...props }: MdxTagProps<'li'>) => (
+      <li className={classNames(styles.li, className)} {...props}>
+        <span className={styles.itemBody}>{children}</span>
+      </li>
     ),
     a: ({ href, children, className }: MdxTagProps<'a'>) => (
       <InstructionLink
