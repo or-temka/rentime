@@ -6,6 +6,7 @@ import { CommonThinPageHeader } from '@/widgets/CommonThinPageHeader'
 import { Metadata } from 'next'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
+import { InstructionCopySource } from './InstructionCopySource'
 import {
   INSTRUCTION_ARTICLE_ID,
   INSTRUCTION_PAGE_ID,
@@ -78,6 +79,7 @@ export async function InstructionDocument({
   return (
     <div id={INSTRUCTION_PAGE_ID}>
       <CommonThinPageHeader title={{ content: loaded.title }} />
+      <InstructionCopySource />
       <InstructionReadingAids />
       <div className={styles.sheet}>
         <MainContentContainer>
