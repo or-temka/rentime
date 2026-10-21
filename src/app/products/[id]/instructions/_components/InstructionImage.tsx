@@ -64,6 +64,7 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
   useEffect(() => {
     if (!open) return
 
+    const trigger = triggerRef.current
     const { body, documentElement: html } = document
     const originalBodyOverflow = body.style.overflow
     const originalHtmlOverflow = html.style.overflow
@@ -107,7 +108,7 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
       document.removeEventListener('wheel', onWheel, { capture: true })
       cancelAnimationFrame(frameId)
       window.removeEventListener('resize', fit)
-      triggerRef.current?.focus()
+      trigger?.focus()
       setFrame(null)
     }
   }, [open])
