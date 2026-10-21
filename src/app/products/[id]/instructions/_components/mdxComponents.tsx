@@ -44,16 +44,22 @@ function InstructionMdxImage({ alt, src }: MdxTagProps<'img'>) {
   )
 }
 
-function isLoneInstructionImage(children: ReactNode) {
+function isInstructionImageNode(node: ReactNode) {
+  if (!isValidElement(node)) return false
+  if (node.type === InstructionMdxImage) return true
+  // next-mdx-remote / bundling can break function identity
+  return (
+    typeof node.type === 'function' && node.type.name === 'InstructionMdxImage'
+  )
+}
+
+/** MDX puts consecutive images without a blank line into one <p>. */
+function isOnlyInstructionImages(children: ReactNode) {
   const nodes = Children.toArray(children).filter(
     (node) => !(typeof node === 'string' && node.trim() === ''),
   )
 
-  return (
-    nodes.length === 1 &&
-    isValidElement(nodes[0]) &&
-    nodes[0].type === InstructionMdxImage
-  )
+  return nodes.length > 0 && nodes.every(isInstructionImageNode)
 }
 
 function createHeadingIdFactory() {
@@ -144,7 +150,7 @@ export function createMdxComponents(productId: string) {
       </h3>
     ),
     p: ({ className, children, ...props }: MdxTagProps<'p'>) =>
-      isLoneInstructionImage(children) ? (
+      isOnlyInstructionImages(children) ? (
         children
       ) : (
         <p className={classNames(styles.paragraph, className)} {...props}>
