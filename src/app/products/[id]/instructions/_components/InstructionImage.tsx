@@ -10,6 +10,7 @@ type InstructionImageProps = {
 }
 
 const MOBILE_LIGHTBOX = '(max-width: 834px)'
+const DESKTOP_POINTER = '(hover: hover) and (pointer: fine)'
 
 type LightboxFrame = {
   width: number
@@ -80,7 +81,20 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
       setOpen(false)
     }
 
+    const desktopPointer = window.matchMedia(DESKTOP_POINTER)
+
+    const onWheel = (event: WheelEvent) => {
+      if (window.matchMedia(MOBILE_LIGHTBOX).matches) return
+      if (!desktopPointer.matches) return
+      if (event.ctrlKey || event.metaKey) return
+      if (event.deltaX === 0 && event.deltaY === 0) return
+
+      event.preventDefault()
+      setOpen(false)
+    }
+
     document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('wheel', onWheel, { capture: true, passive: false })
     const frameId = requestAnimationFrame(fit)
     window.addEventListener('resize', fit)
 
@@ -89,6 +103,7 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
       html.style.overflow = originalHtmlOverflow
       body.style.paddingRight = originalPaddingRight
       document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('wheel', onWheel, { capture: true })
       cancelAnimationFrame(frameId)
       window.removeEventListener('resize', fit)
       triggerRef.current?.focus()
