@@ -8,6 +8,7 @@ import styles from './instructionImage.module.scss'
 type InstructionImageProps = {
   src?: string
   alt?: string
+  id?: string
 }
 
 const MOBILE_LIGHTBOX = '(max-width: 834px)'
@@ -18,7 +19,11 @@ type LightboxFrame = {
   height: number
 }
 
-export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
+export function InstructionImage({
+  src,
+  alt = '',
+  id,
+}: InstructionImageProps) {
   const [open, setOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   const [frame, setFrame] = useState<LightboxFrame | null>(null)
@@ -122,7 +127,7 @@ export function InstructionImage({ src, alt = '' }: InstructionImageProps) {
 
   return (
     <>
-      <figure className={styles.figure}>
+      <figure id={id} className={styles.figure}>
         <button
           ref={triggerRef}
           type="button"

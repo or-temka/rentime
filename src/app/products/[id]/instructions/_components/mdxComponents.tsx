@@ -1,13 +1,12 @@
-import { resolveInstructionHref } from '@/entities/product/instructions'
-import Link from 'next/link'
 import {
   Children,
-  ComponentProps,
   CSSProperties,
   isValidElement,
   ReactNode,
 } from 'react'
+import { InstructionAnchor } from './InstructionAnchor'
 import { InstructionImage } from './InstructionImage'
+import { InstructionLink } from './InstructionLink'
 import styles from './mdxComponents.module.scss'
 
 type MdxTagProps<Tag extends keyof React.JSX.IntrinsicElements> =
@@ -35,38 +34,11 @@ function slugify(value: string) {
   return slug || 'section'
 }
 
-function InstructionMdxImage({ alt, src }: MdxTagProps<'img'>) {
-  return (
-    <InstructionImage
-      src={typeof src === 'string' ? src : undefined}
-      alt={alt || ''}
-    />
-  )
-}
-
-function isInstructionImageNode(node: ReactNode) {
-  if (!isValidElement(node)) return false
-  if (node.type === InstructionMdxImage) return true
-  // next-mdx-remote / bundling can break function identity
-  return (
-    typeof node.type === 'function' && node.type.name === 'InstructionMdxImage'
-  )
-}
-
-/** MDX puts consecutive images without a blank line into one <p>. */
-function isOnlyInstructionImages(children: ReactNode) {
-  const nodes = Children.toArray(children).filter(
-    (node) => !(typeof node === 'string' && node.trim() === ''),
-  )
-
-  return nodes.length > 0 && nodes.every(isInstructionImageNode)
-}
-
-function createHeadingIdFactory() {
+function createIdFactory() {
   const used = new Set<string>()
 
-  return (explicitId: string | undefined, children: ReactNode) => {
-    const base = explicitId || slugify(textOf(children))
+  return (explicitId: string | undefined, fallback: string) => {
+    const base = explicitId || slugify(fallback)
     let id = base
     let suffix = 2
     while (used.has(id)) {
@@ -78,42 +50,68 @@ function createHeadingIdFactory() {
   }
 }
 
-function InstructionLink({
-  productId,
-  href,
-  children,
-  className,
-  ...rest
-}: ComponentProps<'a'> & { productId: string }) {
-  const resolvedHref = resolveInstructionHref(productId, href)
-  const classNameValue = classNames(styles.link, className)
-  const isExternal = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(resolvedHref)
+const INSTRUCTION_IMAGE_MARKER = '__instructionImage'
 
-  if (isExternal) {
-    return (
-      <a
-        {...rest}
-        href={resolvedHref}
-        className={classNameValue}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    )
-  }
-
+function InstructionMdxImage({
+  alt,
+  src,
+  id,
+}: MdxTagProps<'img'> & { id?: string }) {
   return (
-    <Link href={resolvedHref} className={classNameValue}>
-      {children}
-    </Link>
+    <InstructionImage
+      src={typeof src === 'string' ? src : undefined}
+      alt={alt || ''}
+      id={id}
+    />
   )
 }
 
+Object.assign(InstructionMdxImage, { [INSTRUCTION_IMAGE_MARKER]: true })
+
+function isInstructionImageNode(node: ReactNode) {
+  if (!isValidElement(node)) return false
+  const type = node.type as { [INSTRUCTION_IMAGE_MARKER]?: boolean }
+  return Boolean(type[INSTRUCTION_IMAGE_MARKER])
+}
+
+/** MDX puts consecutive images without a blank line into one <p>. */
+function isOnlyInstructionImages(children: ReactNode) {
+  const nodes = Children.toArray(children).filter(
+    (node) => !(typeof node === 'string' && node.trim() === ''),
+  )
+
+  return nodes.length > 0 && nodes.every(isInstructionImageNode)
+}
+
 export function createMdxComponents(productId: string) {
-  const headingId = createHeadingIdFactory()
+  const nextId = createIdFactory()
+
+  function ImageWithId({ alt, src, id, ...rest }: MdxTagProps<'img'>) {
+    const resolvedId = nextId(
+      typeof id === 'string' ? id : undefined,
+      alt || 'image',
+    )
+    return (
+      <InstructionMdxImage {...rest} alt={alt} src={src} id={resolvedId} />
+    )
+  }
+
+  Object.assign(ImageWithId, { [INSTRUCTION_IMAGE_MARKER]: true })
 
   return {
+    Anchor: ({
+      id,
+      children,
+      className,
+    }: {
+      id: string
+      children?: ReactNode
+      className?: string
+    }) => (
+      <InstructionAnchor id={id} className={className}>
+        {children}
+      </InstructionAnchor>
+    ),
     h1: ({ className, ...props }: MdxTagProps<'h1'>) => (
       <h1 className={classNames(styles.h1, className)} {...props} />
     ),
@@ -126,7 +124,7 @@ export function createMdxComponents(productId: string) {
     }: MdxTagProps<'h2'>) => (
       <h2
         {...props}
-        id={headingId(id, children)}
+        id={nextId(id, textOf(children))}
         tabIndex={tabIndex ?? -1}
         className={classNames(styles.h2, className)}
       >
@@ -142,7 +140,7 @@ export function createMdxComponents(productId: string) {
     }: MdxTagProps<'h3'>) => (
       <h3
         {...props}
-        id={headingId(id, children)}
+        id={nextId(id, textOf(children))}
         tabIndex={tabIndex ?? -1}
         className={classNames(styles.h3, className)}
       >
@@ -182,7 +180,7 @@ export function createMdxComponents(productId: string) {
       <InstructionLink
         productId={productId}
         href={href}
-        className={className}
+        className={classNames(styles.link, className)}
       >
         {children as ReactNode}
       </InstructionLink>
@@ -206,6 +204,6 @@ export function createMdxComponents(productId: string) {
       <pre className={classNames(styles.pre, className)} {...props} />
     ),
     hr: () => <hr className={styles.hr} />,
-    img: InstructionMdxImage,
+    img: ImageWithId,
   }
 }

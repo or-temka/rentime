@@ -1,6 +1,12 @@
 'use client'
 
 import { CSSProperties, MouseEvent, useEffect, useRef, useState } from 'react'
+import {
+  applyInstructionHashFromLocation,
+  instructionScrollBehavior,
+  isModifiedClick,
+  navigateInstructionHash,
+} from './instructionHashNav'
 import styles from './instructionReadingAids.module.scss'
 
 export const INSTRUCTION_ARTICLE_ID = 'instruction-article'
@@ -28,12 +34,6 @@ type Heading = {
   id: string
   text: string
   level: 2 | 3
-}
-
-function scrollBehavior(): ScrollBehavior {
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ? 'auto'
-    : 'smooth'
 }
 
 function tocCap() {
@@ -75,6 +75,22 @@ export function InstructionReadingAids() {
       })
     })
     setHeadings(next)
+  }, [])
+
+  useEffect(() => {
+    const run = () => {
+      requestAnimationFrame(() => {
+        applyInstructionHashFromLocation()
+      })
+    }
+
+    run()
+    window.addEventListener('hashchange', run)
+    window.addEventListener('popstate', run)
+    return () => {
+      window.removeEventListener('hashchange', run)
+      window.removeEventListener('popstate', run)
+    }
   }, [])
 
   useEffect(() => {
@@ -149,32 +165,9 @@ export function InstructionReadingAids() {
   }, [headings])
 
   const scrollToHeading = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    if (
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey ||
-      event.button !== 0
-    ) {
-      return
-    }
-
-    const element = document.getElementById(id)
-    if (!element) return
+    if (isModifiedClick(event)) return
+    if (!navigateInstructionHash(id)) return
     event.preventDefault()
-    element.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
-    element.focus({ preventScroll: true })
-
-    const nextHash = `#${id}`
-    let currentHash = window.location.hash
-    try {
-      currentHash = decodeURIComponent(currentHash)
-    } catch {
-      currentHash = window.location.hash
-    }
-    if (currentHash !== nextHash) {
-      history.pushState(null, '', nextHash)
-    }
   }
 
   return (
@@ -187,7 +180,9 @@ export function InstructionReadingAids() {
         aria-label="Наверх"
         aria-hidden={pastHeader ? undefined : true}
         tabIndex={pastHeader ? undefined : -1}
-        onClick={() => window.scrollTo({ top: 0, behavior: scrollBehavior() })}
+        onClick={() =>
+          window.scrollTo({ top: 0, behavior: instructionScrollBehavior() })
+        }
       >
         <span className={styles.arrow} aria-hidden="true">
           <svg viewBox="0 0 24 24" width="32" height="32">

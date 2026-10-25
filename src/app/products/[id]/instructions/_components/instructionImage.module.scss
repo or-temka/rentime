@@ -4,9 +4,24 @@
   align-items: center;
   gap: 8px;
   width: 100%;
+  scroll-margin-top: 24px;
+  border-radius: 3px;
 
   &:has(.caption) {
     margin-bottom: 10px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[data-instruction-flash] .trigger {
+    z-index: 1;
+    animation: instructionImagePulse 2s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: instructionImagePulseReduced 0.4s ease;
+    }
   }
 }
 
@@ -36,10 +51,43 @@
   background: none;
   cursor: zoom-in;
   border-radius: 3px;
+  transform-origin: center center;
 
   &:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
+  }
+}
+
+@keyframes instructionImagePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.04);
+  }
+
+  70% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes instructionImagePulseReduced {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 

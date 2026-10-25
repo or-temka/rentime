@@ -13,6 +13,47 @@
   outline-offset: 4px;
 }
 
+.anchor {
+  border-radius: 2px;
+  scroll-margin-top: 24px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.anchor[data-instruction-flash] {
+  animation: instructionTextFlash 2s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: instructionTextFlashReduced 0.4s ease;
+  }
+}
+
+@keyframes instructionTextFlash {
+  0%,
+  20% {
+    background-color: color-mix(in srgb, var(--accent-color) 55%, transparent);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes instructionTextFlashReduced {
+  0%,
+  70% {
+    background-color: color-mix(in srgb, var(--accent-color) 55%, transparent);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
 .h1:first-child,
 .h2:first-child,
 .h3:first-child {
