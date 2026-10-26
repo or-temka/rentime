@@ -4,10 +4,30 @@ const FLASH_MS = 2000
 const FLASH_REDUCED_MS = 400
 const SCROLL_SETTLE_MS = 120
 const SCROLL_MAX_WAIT_MS = 2500
+/** After this, drop the hash so a later reload does not re-jump. */
+const HASH_CLEAR_MS = 15_000
 
 let flashTimer: ReturnType<typeof setTimeout> | null = null
 let flashingElement: HTMLElement | null = null
+let hashClearTimer: ReturnType<typeof setTimeout> | null = null
 let navigationGeneration = 0
+
+function scheduleHashClear(expectedHash: string) {
+  if (hashClearTimer !== null) {
+    clearTimeout(hashClearTimer)
+    hashClearTimer = null
+  }
+
+  hashClearTimer = setTimeout(() => {
+    hashClearTimer = null
+    if (decodeLocationHash() !== expectedHash) return
+    history.replaceState(
+      history.state,
+      '',
+      `${window.location.pathname}${window.location.search}`,
+    )
+  }, HASH_CLEAR_MS)
+}
 
 export function instructionScrollBehavior(): ScrollBehavior {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -138,8 +158,10 @@ export function navigateInstructionHash(id: string) {
 
   const nextHash = `#${id}`
   if (decodeLocationHash() !== nextHash) {
-    history.pushState(null, '', nextHash)
+    // Replace, don't push — Back should leave the article, not step anchors.
+    history.replaceState(history.state, '', nextHash)
   }
+  scheduleHashClear(nextHash)
 
   return true
 }
@@ -151,6 +173,7 @@ export function applyInstructionHashFromLocation() {
   if (!element) return false
   const generation = ++navigationGeneration
   void scrollThenFlash(element, generation)
+  scheduleHashClear(`#${id}`)
   return true
 }
 
