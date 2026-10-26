@@ -16,7 +16,7 @@ export const LOGITECH_G29: Product = {
       prepositional: 'игрового руля Logitech G29',
     },
   },
-  feedbackCount: 2,
+  feedbackCount: 3,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${LOGITECH_G29_ID}/thumbnail.webp`,

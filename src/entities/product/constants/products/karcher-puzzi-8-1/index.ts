@@ -16,7 +16,7 @@ export const KARCHER_PUZZI_8_1: Product = {
       prepositional: 'моющем пылесосе Karcher Puzzi 8/1',
     },
   },
-  feedbackCount: 2,
+  feedbackCount: 25,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${KARCHER_PUZZI_8_1_ID}/thumbnail.webp`,
