@@ -9,6 +9,10 @@ export const ROUTES = {
   PRODUCTS: {
     BASE: '/products',
     PRODUCT: (productName: string) => `/products/${productName}`,
+    INSTRUCTION: (productId: string, slug?: string) =>
+      slug && slug !== 'index'
+        ? `/products/${productId}/instructions/${slug}`
+        : `/products/${productId}/instructions`,
     WITH_QUERY: (query?: ProductsRouteQueryRecord) =>
       withQuery<ProductsRouteQueryRecord>('/products', query),
   },

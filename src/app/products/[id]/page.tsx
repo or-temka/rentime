@@ -9,6 +9,7 @@ import {
 } from './_components'
 import { Metadata } from 'next'
 import { PRODUCTS } from '@/entities/product'
+import { hasMainInstruction } from '@/entities/product/instructions'
 import { TextWithResourceBtn } from './_components/TextWithResourceBtn'
 
 interface ProductPageProps {
@@ -95,7 +96,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       />
 
       <MainContentContainer>
-        <ProductInformation product={product} />
+        <ProductInformation
+          product={product}
+          hasMainInstruction={hasMainInstruction(product.id)}
+        />
         <InstanceOfGames product={product} />
         {product.textWithResourceBtn && (
           <TextWithResourceBtn {...product.textWithResourceBtn} />

@@ -1,0 +1,27 @@
+.sheet {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #fff;
+}
+
+.article {
+  --instruction-flow-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--instruction-flow-gap);
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  font-size: 18px;
+  font-weight: 500;
+
+  @media (max-width: 1400px) {
+    --instruction-flow-gap: 18px;
+    font-size: 16px;
+  }
+  @media (max-width: 1000px) {
+    --instruction-flow-gap: 15px;
+  }
+}
