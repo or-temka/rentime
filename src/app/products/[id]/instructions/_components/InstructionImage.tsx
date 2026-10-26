@@ -9,6 +9,8 @@ type InstructionImageProps = {
   src?: string
   alt?: string
   id?: string
+  width?: number
+  height?: number
 }
 
 const MOBILE_LIGHTBOX = '(max-width: 834px)'
@@ -23,6 +25,8 @@ export function InstructionImage({
   src,
   alt = '',
   id,
+  width,
+  height,
 }: InstructionImageProps) {
   const [open, setOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
@@ -132,12 +136,23 @@ export function InstructionImage({
           ref={triggerRef}
           type="button"
           className={styles.trigger}
+          style={
+            width && height ? { width: `min(100%, ${width}px)` } : undefined
+          }
           aria-label={alt ? undefined : 'Увеличить изображение'}
           aria-busy={!loaded}
           onClick={() => setOpen(true)}
         >
           {!loaded ? (
-            <span className={styles.loader} aria-live="polite">
+            <span
+              className={styles.loader}
+              style={
+                width && height
+                  ? { aspectRatio: `${width} / ${height}` }
+                  : undefined
+              }
+              aria-live="polite"
+            >
               Загрузка изображения
             </span>
           ) : null}
@@ -146,9 +161,13 @@ export function InstructionImage({
             data-loaded={loaded || undefined}
             src={src}
             alt={alt}
-            width={1440}
-            height={1080}
-            sizes="(max-width: 834px) 100vw, 720px"
+            width={width || 1440}
+            height={height || 1080}
+            sizes={
+              width
+                ? `(max-width: 834px) min(100vw, ${width}px), min(720px, ${width}px)`
+                : '(max-width: 834px) 100vw, 720px'
+            }
             style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}
             onLoad={() => setLoaded(true)}
           />

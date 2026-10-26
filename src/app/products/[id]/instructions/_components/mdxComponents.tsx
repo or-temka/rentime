@@ -7,6 +7,7 @@ import {
 import { InstructionAnchor } from './InstructionAnchor'
 import { InstructionImage } from './InstructionImage'
 import { InstructionLink } from './InstructionLink'
+import { readPublicImageSize } from './readPublicImageSize'
 import styles from './mdxComponents.module.scss'
 
 type MdxTagProps<Tag extends keyof React.JSX.IntrinsicElements> =
@@ -57,11 +58,16 @@ function InstructionMdxImage({
   src,
   id,
 }: MdxTagProps<'img'> & { id?: string }) {
+  const source = typeof src === 'string' ? src : undefined
+  const size = source ? readPublicImageSize(source) : null
+
   return (
     <InstructionImage
-      src={typeof src === 'string' ? src : undefined}
+      src={source}
       alt={alt || ''}
       id={id}
+      width={size?.width}
+      height={size?.height}
     />
   )
 }
