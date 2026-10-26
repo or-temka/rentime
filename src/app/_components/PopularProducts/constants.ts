@@ -8,6 +8,11 @@ import { CLEANBOT_TURBO } from '@/entities/product/constants/products/cleanbot-t
 import { KARCHER_SC4_DELUXE } from '@/entities/product/constants/products/karcher-sc4-deluxe'
 import { KARCHER_PUZZI_8_1 } from '@/entities/product/constants/products/karcher-puzzi-8-1'
 
+export const DEFAULT_CATEGORY_OPTION: SegmentedSelectOption = {
+  label: 'Все',
+  value: 'all',
+}
+
 export const productCategoriesOptions: SegmentedSelectOption[] = [
   {
     value: 'rest and leisure',
@@ -29,10 +34,10 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
 
 export const popularProducts: ProductCardProps[] = [
   PLAYSTATION5,
+  KARCHER_PUZZI_8_1,
+  KARCHER_SC4_DELUXE,
   PICO4_ULTRA,
   LOGITECH_G29,
-  CRUTCHES,
   CLEANBOT_TURBO,
-  KARCHER_SC4_DELUXE,
-  KARCHER_PUZZI_8_1,
+  CRUTCHES,
 ]

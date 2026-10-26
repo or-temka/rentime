@@ -12,7 +12,7 @@ import { KARCHER_SC4_DELUXE } from '@/entities/product/constants/products/karche
 import { KARCHER_PUZZI_8_1 } from '@/entities/product/constants/products/karcher-puzzi-8-1'
 
 export const sortMap: Record<Sort, string> = {
-  no: 'по умолчанию',
+  no: 'по популярности',
   bottom: 'сначала дешевле',
   top: 'сначала дороже',
 }
@@ -43,12 +43,12 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
 
 export const products: ProductCardProps[] = [
   PLAYSTATION5,
+  KARCHER_PUZZI_8_1,
+  KARCHER_SC4_DELUXE,
+  CLEANBOT_TURBO,
   PICO4_ULTRA,
+  LOGITECH_G29,
   DISK_FOR_PS5,
   DUALSENSE,
-  LOGITECH_G29,
   CRUTCHES,
-  CLEANBOT_TURBO,
-  KARCHER_SC4_DELUXE,
-  KARCHER_PUZZI_8_1,
 ]

@@ -22,7 +22,7 @@ export const PICO4_ULTRA: Product = {
       prepositional: 'VR-шлеме Pico 4 Ultra',
     },
   },
-  feedbackCount: 4,
+  feedbackCount: 7,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${PICO4_ULTRA_ID}/thumbnail.webp`,
