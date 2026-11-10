@@ -1,0 +1,153 @@
+.toTop,
+.toc {
+  display: none;
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .toTop,
+  .toc {
+    display: flex;
+  }
+}
+
+.toTop {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 28px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 0, 0, 0.02);
+      outline: none;
+
+      .arrow {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.toTop,
+.toc {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.railVisible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.arrow {
+  display: flex;
+  opacity: 0;
+  color: var(--grey);
+  transition: opacity 0.2s ease;
+}
+
+.toc {
+  --toc-open-width: 120px;
+
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: transparent;
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:has(:focus-visible) {
+      width: var(--toc-open-width);
+      overflow-x: hidden;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      overscroll-behavior: contain;
+      background: #f7f7f7;
+
+      .list {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: max-content;
+  max-width: min(380px, calc(100vw - 140px));
+  margin: 0;
+  padding: 24px 16px;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.itemNested {
+  padding-left: 14px;
+}
+
+.link,
+.linkActive {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+  }
+}
+
+.link {
+  color: var(--foreground);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--light);
+      background: var(--dark);
+    }
+  }
+}
+
+.linkActive,
+.linkActive:hover {
+  color: var(--accent-color);
+  background: var(--dark);
+}
+
+@media print {
+  .toTop,
+  .toc {
+    display: none;
+  }
+}

@@ -7,10 +7,12 @@ import { KARCHER_SC4_DELUXE } from './karcher-sc4-deluxe'
 import { LOGITECH_G29 } from './logitech-g29'
 import { PICO4_ULTRA } from './pico4-ultra'
 import { PLAYSTATION5 } from './playstation5'
+import { PLAYSTATION5_GTA6 } from './playstation5-gta6'
 import { KARCHER_PUZZI_8_1 } from './karcher-puzzi-8-1'
 
 export const PRODUCTS: Record<Product['id'], Product> = {
   [PLAYSTATION5.id]: PLAYSTATION5,
+  [PLAYSTATION5_GTA6.id]: PLAYSTATION5_GTA6,
   [PICO4_ULTRA.id]: PICO4_ULTRA,
   [DISK_FOR_PS5.id]: DISK_FOR_PS5,
   [DUALSENSE.id]: DUALSENSE,

@@ -1,3 +1,60 @@
+@use 'mixins' as *;
+
+.toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.tabs {
+  min-width: 0;
+  flex: 1;
+}
+
+.instructionButton {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 39px;
+  padding: 0 30px;
+  border: 1px solid var(--dark);
+  border-radius: 3px;
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: 100ms;
+
+  @include hover-smart(desktop) {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 600px) {
+    gap: 8px;
+    padding: 0 24px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
+}
+
+.instructionIcon {
+  width: 12px;
+  height: 16px;
+
+  path {
+    fill: currentColor;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;

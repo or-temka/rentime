@@ -2,6 +2,7 @@ import { ProductCardProps, productCattegoryMap } from '@/entities/product'
 import { SegmentedSelectOption } from '@/shared/components'
 import { Sort } from './types'
 import { PLAYSTATION5 } from '@/entities/product/constants/products/playstation5'
+import { PLAYSTATION5_GTA6 } from '@/entities/product/constants/products/playstation5-gta6'
 import { LOGITECH_G29 } from '@/entities/product/constants/products/logitech-g29'
 import { DISK_FOR_PS5 } from '@/entities/product/constants/products/disk-for-ps5'
 import { DUALSENSE } from '@/entities/product/constants/products/dualsense'
@@ -12,7 +13,7 @@ import { KARCHER_SC4_DELUXE } from '@/entities/product/constants/products/karche
 import { KARCHER_PUZZI_8_1 } from '@/entities/product/constants/products/karcher-puzzi-8-1'
 
 export const sortMap: Record<Sort, string> = {
-  no: 'по умолчанию',
+  no: 'по популярности',
   bottom: 'сначала дешевле',
   top: 'сначала дороже',
 }
@@ -43,12 +44,13 @@ export const productCategoriesOptions: SegmentedSelectOption[] = [
 
 export const products: ProductCardProps[] = [
   PLAYSTATION5,
+  PLAYSTATION5_GTA6,
+  KARCHER_PUZZI_8_1,
+  KARCHER_SC4_DELUXE,
+  CLEANBOT_TURBO,
   PICO4_ULTRA,
+  LOGITECH_G29,
   DISK_FOR_PS5,
   DUALSENSE,
-  LOGITECH_G29,
   CRUTCHES,
-  CLEANBOT_TURBO,
-  KARCHER_SC4_DELUXE,
-  KARCHER_PUZZI_8_1,
 ]

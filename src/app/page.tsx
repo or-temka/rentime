@@ -69,8 +69,8 @@ function Home() {
 
       <MainContentContainer>
         <PopularProducts />
-        <ProductStand />
         <HowItWork />
+        <ProductStand />
       </MainContentContainer>
     </main>
   )

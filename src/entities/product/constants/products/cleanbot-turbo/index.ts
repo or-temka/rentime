@@ -16,7 +16,7 @@ export const CLEANBOT_TURBO: Product = {
       prepositional: 'роботе-мойщике окон CleanBot Turbo',
     },
   },
-  feedbackCount: 1,
+  feedbackCount: 3,
   rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${CLEANBOT_TURBO_ID}/thumbnail.webp`,

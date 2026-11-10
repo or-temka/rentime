@@ -16,8 +16,8 @@ export const KARCHER_SC4_DELUXE: Product = {
       prepositional: 'пароочистителе Karcher SC4 Deluxe',
     },
   },
-  feedbackCount: 0,
-  rating: 0,
+  feedbackCount: 6,
+  rating: 5,
   imagesURL: {
     thumbnail: `/images/products/${KARCHER_SC4_DELUXE_ID}/thumbnail.webp`,
     full: `/images/products/${KARCHER_SC4_DELUXE_ID}/full.webp`,

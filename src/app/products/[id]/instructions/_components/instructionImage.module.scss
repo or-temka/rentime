@@ -1,0 +1,196 @@
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  scroll-margin-top: 24px;
+  border-radius: 3px;
+
+  &:has(.caption) {
+    margin-bottom: 10px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[data-instruction-flash] .trigger {
+    z-index: 1;
+    animation: instructionImagePulse 2s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: instructionImagePulseReduced 0.4s ease;
+    }
+  }
+}
+
+.caption {
+  width: 100%;
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+
+  @media (max-width: 1000px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 834px) {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 3px;
+  transform-origin: center center;
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes instructionImagePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.04);
+  }
+
+  70% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes instructionImagePulseReduced {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  overflow: hidden;
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--grey) 12%, transparent) 0%,
+    color-mix(in srgb, var(--grey) 12%, transparent) 35%,
+    color-mix(in srgb, var(--light) 70%, color-mix(in srgb, var(--grey) 18%, transparent)) 50%,
+    color-mix(in srgb, var(--grey) 12%, transparent) 65%,
+    color-mix(in srgb, var(--grey) 12%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: imageSkeletonShimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes imageSkeletonShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &[data-loaded] {
+    opacity: 1;
+  }
+
+  &:not([data-loaded]) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.92);
+  cursor: zoom-out;
+
+  @media (max-width: 834px) {
+    padding: 0;
+  }
+}
+
+.close {
+  position: absolute;
+  z-index: 1;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: var(--light);
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.full {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-block: auto;
+  object-fit: contain;
+  cursor: default;
+}
